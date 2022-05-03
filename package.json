@@ -26,6 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "notiflix": "^3.2.5"
+    "notiflix": "^3.2.5",
+    "axios": "^0.27.2"
+
   }
 }
