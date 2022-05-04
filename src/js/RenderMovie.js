@@ -1,4 +1,4 @@
-import { genresOthers } from './genres';
+import { genresOthers } from './genre';
 // При визові ф-ції renderMovie передається першим параметром data, а другим якщо потрібнен рейтинг фільмів -  true.
 function renderMovie(data) {
   return data.results.map(d => markUpMovie(d)).join(' ');
