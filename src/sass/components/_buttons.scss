@@ -1,0 +1,52 @@
+button {
+    color: #FFFFFF;
+    border-radius: 5px;
+    height: 44px;
+
+    padding: 0;
+
+    display: inline-block;
+    text-align: center;
+}
+
+.library_button {
+    width: 129.5px;
+
+    @media screen and (min-width: 768px) {
+       width: 152px; 
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 148px;
+    }
+}
+
+.library_button--orange,
+.modal_button--orange {
+    background: #FF6B01;
+    border: transparent;
+}
+
+.library_button--dark {
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+}
+
+.modal_button {
+    width: 110px;
+
+    @media screen and (min-width: 768px) {
+        width: 125px;
+    }
+    
+    @media screen and (min-width: 1024px) {
+        width: 136px;
+    }
+}
+
+
+.modal_button--white {
+    color: #000000;
+    background-color: transparent;
+    border: 1px solid #000000;
+}
