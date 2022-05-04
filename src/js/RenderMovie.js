@@ -22,11 +22,7 @@ class RenderMovie {
   }
 
   render(data) {
-    const movies = data.results
-      .map(d => {
-        return this.markup(d);
-      })
-      .join(' ');
+    const movies = data.results.map(d => this.markup(d)).join(' ');
 
     this.appendGallery(movies);
   }
@@ -46,6 +42,7 @@ class RenderMovie {
             </a>
          </li>`;
   }
+
   clearGallery = () => (this.container.innerHTML = '');
   appendGallery(data) {
     this.container.insertAdjacentHTML('beforeend', data);

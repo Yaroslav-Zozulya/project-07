@@ -10,9 +10,9 @@ let renderMovie = new RenderMovie({
   isRating: false,
 });
 
-function displayMovie() {
+function displayTrandingMovie() {
   movies.getTranding().then(data => {
     renderMovie.render(data);
   });
 }
-export default displayMovie;
+export default displayTrandingMovie;
