@@ -15,12 +15,13 @@ function markUpMovie(
 ) {
   let rating = isRating ? `<span class="movie-rating">${vote_average}</span>` : '';
   let genres = markUpGenres(genre_ids);
-  return `<li class="movie-card" >
-            <a href="" class="movie-link" data-id=${id}>
+  return `<li class="movie-card" data-id=${id}>
+            <a href="" class="movie-link" >
                 <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title}" loading="lazy" class="poster" />
                 <div class="movie-info">
                     <h2>${title}</h2>
-                    <div>${genres}</div>
+                    <p>${genres}</p>
+
                     <p>${release_date}</p>
                     ${rating}                
                 </div>
