@@ -13,7 +13,7 @@
         Обов'язково робити так, оскільки грає роль this.
 3. Якщо потрібно очистити контейнер, наприклад при пагінації, метод clearGallery
 */
-import { genresOthers } from './Genres';
+import { genresOthers } from './genres';
 class RenderMovie {
   constructor({ container_link, isRating = false }) {
     this.container = container_link;

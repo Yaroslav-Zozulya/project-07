@@ -1,5 +1,5 @@
-import MovieTranding from './MovieTranding';
-import RenderMovie from './RenderMovie';
+import MovieTranding from './movieTranding';
+import RenderMovie from './renderMovie';
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
