@@ -1,18 +1,22 @@
 import MovieTranding from './movieTranding';
-import RenderMovie from './renderMovie';
+import renderMovie from './renderMovie';
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
 let movies = new MovieTranding();
 
-let renderMovie = new RenderMovie({
-  container_link: ref.containerMovies,
-  isRating: false,
-});
+const clearGallery = () => (ref.containerMovies.innerHTML = '');
+function appendGallery(data) {
+  ref.containerMovies.insertAdjacentHTML('beforeend', data);
+}
 
 function displayTrandingMovie() {
-  movies.getTranding().then(data => {
-    renderMovie.render(data);
-  });
+  movies
+    .getTranding()
+    .then(data => {
+      return renderMovie(data, true);
+    })
+    .then(appendGallery);
 }
+
 export default displayTrandingMovie;
