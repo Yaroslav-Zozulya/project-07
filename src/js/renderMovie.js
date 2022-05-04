@@ -20,7 +20,7 @@ function markUpMovie(
                 <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title}" loading="lazy" class="poster" />
                 <div class="movie-info">
                     <h2>${title}</h2>
-                    <p>${genres}</p>
+                    <div>${genres}</div>
                     <p>${release_date}</p>
                     ${rating}                
                 </div>
