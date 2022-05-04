@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@vimeo/player": "^2.16.4",
-    "simplelightbox": "^2.10.3"
+    "simplelightbox": "^2.10.3",
     "axios": "^0.27.2",
     "notiflix": "^3.2.5"
   }
