@@ -21,6 +21,7 @@ function markUpMovie(
                 <div class="movie-info">
                     <h2>${title}</h2>
                     <p>${genres}</p>
+
                     <p>${release_date}</p>
                     ${rating}                
                 </div>
