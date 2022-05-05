@@ -1,5 +1,4 @@
 import { genresOthers } from './genres';
-// При визові ф-ції renderMovie передається першим параметром data, а другим якщо потрібнен рейтинг фільмів -  true.
 
 function markUpGenres(genre_ids) {
   return genresOthers(genre_ids)
@@ -24,6 +23,7 @@ function markUpMovie({ id, poster_path, title, genre_ids, release_date, vote_ave
          </li>`;
 }
 
+// При визові ф-ції renderMovie передається першим параметром data, а другим якщо потрібнен рейтинг фільмів -  true.
 function renderMovie(data, isRating = false) {
   return data.results.map(d => markUpMovie(d, isRating)).join(' ');
 }
