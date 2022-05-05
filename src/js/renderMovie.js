@@ -22,7 +22,7 @@ function markUpMovie(
                     <h2>${title}</h2>
                     <p>${genres}</p>
 
-                    <p>${release_date}</p>
+                    <p>${release_date.substr(0, 4)}</p>
                     ${rating}                
                 </div>
             </a>
