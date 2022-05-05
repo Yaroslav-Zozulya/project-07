@@ -4,9 +4,9 @@
 }
 
 // ===================== HEADER =======================
-.header__container {
-    position: relative;
-}
+// .header__container {
+    
+// }
 .header {
     min-height: 230px;
     padding-top: 46px;
@@ -14,15 +14,9 @@
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url('../images/header/header-light/header-light-mobile.jpg');
+        url('../images/header/header-light/header-light-mobile.webp');
 
-        @media screen and (min-device-pixel-ratio: 2),
-        (-webkit-min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-                url('../images/header/header-light/header-light-mobile@2x.jpg');
-        }
+
 
   
     @media screen and (min-width: 768px) {
@@ -34,11 +28,11 @@
 
     @media screen and (min-width: 1024px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-            url('../images/header/header-light/header-light-desktop.jpg');
+            url('../images/header/header-light/header-light-desktop.webp');
 
-       
     }
-}
+    }
+
 .btn {
     background-color: transparent;
     cursor: pointer;
@@ -48,7 +42,7 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 
@@ -88,9 +82,9 @@
     border: 0;
 }
 
-.nav__item {
-    position: relative;
-}
+// .nav__item {
+//     position: relative;
+// }
 
 .nav__btn {
     transform: scale(1);
@@ -108,7 +102,7 @@
     height: 3px;
     width: 100%;
 
-    background-color: var(--secondary-text-color);
+    background-color: var(--btn-hover-background);
 
     transform: scale(0);
     opacity: 0;
@@ -119,7 +113,14 @@
     transform: scale(1);
     opacity: 0.5;
 }
+.nav__btn--currently::after {
+    transform: scale(1);
+    opacity: 1;
+}
 
+.nav__btn--currently:hover::after {
+    opacity: 1;
+}
 
 // =========================== Форма =========================
 
