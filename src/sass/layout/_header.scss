@@ -120,14 +120,6 @@
     opacity: 0.5;
 }
 
-.nav__btn--currently::after {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.nav__btn--currently:hover::after {
-    opacity: 1;
-}
 
 // =========================== Форма =========================
 
