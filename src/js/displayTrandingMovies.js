@@ -4,7 +4,6 @@ const ref = {
   containerMovies: document.querySelector('.collection'),
 };
 
-const clearGallery = () => (ref.containerMovies.innerHTML = '');
 function appendGallery(data) {
   ref.containerMovies.insertAdjacentHTML('beforeend', data);
 }
