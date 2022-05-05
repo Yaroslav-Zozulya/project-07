@@ -1,3 +1,6 @@
 import './sass/main.scss';
-import displayTrandingMovie from './js/displayTrandingMovies';
-displayTrandingMovie();
+
+import displayTrandingMovies from './js/displayTrandingMovies';
+displayTrandingMovies();
+
+
