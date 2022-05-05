@@ -1,0 +1,32 @@
+<!-- Header -->
+<header class="header">
+  <div class="container header__container">
+    <nav class="nav">
+      <button class="logo-btn btn">
+        <svg width="24" height="24">
+          <use href="/images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo-text">Filmoteka</span>
+      </button>
+      <ul class="nav__list">
+        <li class="nav__item">
+          <button class="nav__btn btn  nav__btn--currently">Home</button>
+        </li>
+        <li class="nav__item">
+          <button class="nav__btn btn">My library</button>
+        </li>
+      </ul>
+    </nav>
+
+    <form class="form" autocomplete="off">
+      <div class="form__inner">
+        <input class="form__input" type="text" name="searchQuery" placeholder="Поиск фильмов" />
+        <button class="form__btn btn" type="submit" aria-label="search films">
+          <svg class="search-icon" width="12" height="12">
+            <use href="./images/sprite.svg#icon-search-2"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>

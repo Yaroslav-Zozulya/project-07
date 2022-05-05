@@ -1,18 +1,15 @@
-import MovieTranding from './movieTranding';
+import API from './fetchAPI';
 import renderMovie from './renderMovie';
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
-let movies = new MovieTranding();
 
-const clearGallery = () => (ref.containerMovies.innerHTML = '');
 function appendGallery(data) {
   ref.containerMovies.insertAdjacentHTML('beforeend', data);
 }
 
 function displayTrandingMovie() {
-  movies
-    .getTranding()
+  API.getMoviesByTrending()
     .then(data => {
       return renderMovie(data, true);
     })
