@@ -21,7 +21,8 @@ function findMovies() {
     API.getMoviesByQuery(ref.input.value)
         .then(data => {
             if (data.results.length === 0) {
-                 Notify.failure("Search result not successful. Enter the correct movie name and");
+              Notify.failure("Search result not successful. Enter the correct movie name and");
+              return;
             }
             return renderMovie(data);
                 })
