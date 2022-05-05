@@ -179,39 +179,3 @@ position: absolute;
     }
 }
 
-.form__select {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.form__select-text {
-    position: absolute;
-}
-
-.form__select-genre {
-    background-color:  var(--main-background-color);
-    z-index: 1;
-    width: 170px;
-    border-radius: 5px;
-
-    font-weight: 400;
-    font-size: 14px;
-    line-height: calc(16 / 14);
-    color:  var(--main-background-color);
-
-    cursor: pointer;
-    transition: transform linear 200ms;
-
-    &:hover,
-    &:focus {
-        transform: scale(1.05);
-    }
-}
-
-.form__select-option {
-    background-color:  var(--main-background-color);
-    border-radius: 5px;
-}
