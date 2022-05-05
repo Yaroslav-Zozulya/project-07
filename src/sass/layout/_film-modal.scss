@@ -4,13 +4,17 @@
   top: 0;
   left: 0;
   z-index: 10;
+
   width: 100%;
   height: 100%;
+
   opacity: 1;
   visibility: visible;
   overflow-y: scroll;
+
   background-color: var(--backdrop-modal-color);
-  transition: visibility var(--duration) var(--cubic), opacity var(--duration) var(--cubic);
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 320px) {
     padding: 0 20px;
@@ -21,6 +25,12 @@
   @media screen and (min-width: 1024px) {
     padding: 0px 98px 0px 112px;
   }
+}
+
+.film-modal__backdrop--hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .film-modal__btn-close {
@@ -37,6 +47,14 @@
   stroke: #000000;
   background-color: transparent;
   border: none;
+  border-radius: 5px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: var(--btn-hover-background);
+    stroke: #f7f7f7;
+  }
 }
 
 .film-modal__content {
@@ -44,12 +62,16 @@
   position: absolute;
   top: 50%;
   left: 50%;
+
   max-height: 940px;
   height: 100%;
-  overflow-y: auto;
   width: 100%;
+  padding: 15px;
+
+  overflow-y: auto;
   background-color: var(--main-background-color);
   transform: translate(-50%, -50%) scale(1);
+
   @media screen and (min-width: 320px) {
     width: 280px;
     padding: 48px 20px 40px 20px;
@@ -59,31 +81,31 @@
     max-height: 552px;
     padding: 40px 72px 40px 36px;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 68px;
   }
   @media screen and (min-width: 1024px) {
     width: 814px;
     max-height: 558px;
     padding: 40px 16px;
+
+    grid-template-columns: 375px 1fr;
+    column-gap: 16px;
   }
 }
 
 .film-modal__image {
-  max-width: 240px;
-  max-height: 357px;
+  border-radius: 5px;
   margin-bottom: 20px;
 
-  @media screen and (min-width: 768px) {
-    max-width: 264px;
-  }
   @media screen and (min-width: 1024px) {
-    max-width: 375px;
+    max-height: 478px;
+    margin-bottom: 0;
   }
 }
 
 .film-modal__information {
-  max-width: 264px;
   @media screen and (min-width: 1024px) {
     max-width: 391px;
   }
@@ -109,37 +131,44 @@
   }
 }
 
-.film-modal__list {
+.film-modal__property-container {
   margin-bottom: 20px;
-  min-width: 215px;
 }
 
-.film-modal__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.film-modal__property {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  column-gap: 40px;
+  margin: 0;
 
   &:not(:last-child) {
     margin-bottom: 8px;
   }
+
+  @media screen and (min-width: 1024px) {
+    column-gap: 83px;
+  }
 }
 
-.film-modal__feature {
+.film-modal__property-name {
+  margin: 0;
+
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
 
-  flex-shrink: 0;
   color: var(--modal-secondary-text-color);
 }
 
-.film-modal__feature-info {
+.film-modal__property-value {
+  margin: 0;
+  justify-items: flex-start;
+
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.33px;
-  flex-shrink: 0;
+  line-height: 1.33;
 }
 
 .film-modal__vote {
@@ -152,8 +181,8 @@
 }
 
 .film-modal__line {
-  margin: 0 2px;
-  color: #8c8c8c;
+  margin: 0 3px;
+  color: var(--modal-secondary-text-color);
 }
 
 .film-modal__votes {
@@ -175,6 +204,7 @@
 }
 
 .film-modal__text {
+  max-height: 245px;
   margin-bottom: 20px;
 
   font-family: 'Roboto';
@@ -183,5 +213,36 @@
   line-height: 1.67;
   color: var(--main-text-color);
 
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 34px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-height: 165px;
+    margin-bottom: 20px;
+  }
+}
+
+.film-modal__buttons-list {
+  display: flex;
+}
+
+.film-modal__buttons-item {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &:first-child {
+      margin-left: 8px;
+    }
+  }
 }

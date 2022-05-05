@@ -1,61 +1,66 @@
-<div class="film-modal">
-  <div class="film-modal__backdrop">
-    <div class="film-modal__content">
-      <button class="film-modal__btn-close btn-close">
-        <svg class="modal__svg" width="30" height="30">
-          <use href="./images/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
-      <picture>
-        <source
-          srcset="https://www.moviemeter.nl/images/cover/1124000/1124859.jpg?cb=1648760991"
-          type="image/webp"
-        />
-        <source
-          srcset="https://www.moviemeter.nl/images/cover/1124000/1124859.jpg?cb=1648760991"
-          type="image/jpeg"
-        />
-        <img
-          class="film-modal__image"
-          src="https://www.moviemeter.nl/images/cover/1124000/1124859.jpg?cb=1648760991"
-          alt="Постер фильма"
-        />
-      </picture>
-      <div class="film-modal__information">
-        <h2 class="film-modal__title">A FISTFUL OF LEAD</h2>
-        <ul class="film-modal__list">
-          <li class="film-modal__item">
-            <p class="film-modal__feature">Vote / Votes</p>
-            <p class="film-modal__feature-info">
-              <span class="film-modal__vote">7.3</span><span class="film-modal__line">/</span
-              ><span class="film-modal__votes">1260</span>
-            </p>
-          </li>
-          <li class="film-modal__item">
-            <p class="film-modal__feature">Popularity</p>
-            <p class="film-modal__feature-info">100.2</p>
-          </li>
-          <li class="film-modal__item">
-            <p class="film-modal__feature">Original Title</p>
-            <p class="film-modal__feature-info">A FISTFUL OF LEAD</p>
-          </li>
-          <li class="film-modal__item">
-            <p class="film-modal__feature">Genre</p>
-            <p class="film-modal__feature-info">Western</p>
-          </li>
-        </ul>
-        <h3 class="film-modal__about">About</h3>
-        <p class="film-modal__text">
-          Four of the West’s most infamous outlaws assemble to steal a huge stash of gold from the
-          most corrupt settlement of the gold rush towns. But not all goes to plan one is killed and
-          the other three escapes with bags of gold hide out in the abandoned gold mine where they
-          happen across another gang of three – who themselves were planning to hit the very same
-          bank! As tensions rise, things go from bad to worse as they realise the bags of gold are
-          filled with lead... they’ve been double crossed – but by who and how?
-        </p>
-        <button class="btn">add to Watched</button>
-        <button class="btn">add to queue</button>
+<div class="film-modal__backdrop film-modal__backdrop--hidden">
+  <div class="film-modal__content">
+    <button class="film-modal__btn-close btn-close" type="button">
+      <svg class="modal__svg" width="30" height="30">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <picture>
+      <source
+        srcset="
+          https://image.tmdb.org/t/p/w500/75aHn1NOYXh4M7L5shoeQ6NGykP.jpg     1x,
+          https://image.tmdb.org/t/p/original/75aHn1NOYXh4M7L5shoeQ6NGykP.jpg 2x
+        "
+        type="image/jpeg"
+      />
+
+      <img
+        src="https://image.tmdb.org/t/p/w500/75aHn1NOYXh4M7L5shoeQ6NGykP.jpg"
+        alt="Movie Title"
+        loading="lazy"
+        class="film-modal__image"
+      />
+    </picture>
+    <div class="film-modal__information">
+      <h2 class="film-modal__title">A FISTFUL OF LEAD</h2>
+      <div class="film-modal__property-container">
+        <dl class="film-modal__property">
+          <dt class="film-modal__property-name">Vote / Votes</dt>
+          <dd class="film-modal__property-value">
+            <span class="film-modal__vote">7.3</span><span class="film-modal__line">/</span
+            ><span class="film-modal__votes">1260</span>
+          </dd>
+        </dl>
+        <dl class="film-modal__property">
+          <dt class="film-modal__property-name">Popularity</dt>
+          <dd class="film-modal__property-value">100.2</dd>
+        </dl>
+        <dl class="film-modal__property">
+          <dt class="film-modal__property-name">Original Title</dt>
+          <dd class="film-modal__property-value">A FISTFUL OF LEAD</dd>
+        </dl>
+        <dl class="film-modal__property">
+          <dt class="film-modal__property-name">Genre</dt>
+          <dd class="film-modal__property-value">Western</dd>
+        </dl>
       </div>
+      <h3 class="film-modal__about">About</h3>
+      <p class="film-modal__text">
+        Four of the West’s most infamous outlaws assemble to steal a huge stash of gold from the
+        most corrupt settlement of the gold rush towns. But not all goes to plan one is killed and
+        the other three escapes with bags of gold hide out in the abandoned gold mine where they
+        happen across another gang of three – who themselves were planning to hit the very same
+        bank! As tensions rise, things go from bad to worse as they realise the bags of gold are
+        filled with lead... they’ve been double crossed – but by who and how?
+      </p>
+      <ul class="film-modal__buttons-list">
+        <li class="film-modal__buttons-item">
+          <button class="film-modal__btn btn" type="button">add to Watched</button>
+        </li>
+        <li class="film-modal__buttons-item">
+          <button class="film-modal__btn btn" type="button">add to queue</button>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
