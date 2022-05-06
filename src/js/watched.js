@@ -33,6 +33,9 @@ function addToWatched(id) {
 // проверяет есть ли фильм в списке "Посмотреть позже"
 // принимает id фильма
 function isInWatched(id) {
+  if (!localStorage.hasOwnProperty('watchedList')) {
+    return false;
+  }
   const watchedList = JSON.parse(localStorage.getItem('watchedList'));
   return watchedList.includes(id);
 }
