@@ -4,21 +4,15 @@
 }
 
 // ===================== HEADER =======================
-.header__container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header/header-light/desk-background-home-1x.jpg');
-}
+
 .header {
     min-height: 230px;
     padding-top: 46px;
-
+    
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url('../images/header/header-light/mob-background-home-1x.jpg');
-
-
-
+    url('../images/header/header-light/header-light-mobile.jpg');
   
     @media screen and (min-width: 768px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -27,7 +21,8 @@
       
     }
 
-   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    url('../images/header/header-light/desk-background-home-1x.jpg');
     }
     
 
@@ -100,7 +95,9 @@
 
     border: 0;
 }
-
+// .nav__item {
+//     position: relative;
+// }
 
 .nav__btn {
     transform: scale(1);
@@ -111,7 +108,7 @@
     content: '';
 
     position: absolute;
-    bottom: -3px;
+    
 
     display: block;
 
@@ -180,7 +177,7 @@ padding-right: 20px;
 margin-left: -12px;
     right: 0;
     height: 100%;
-
+text-align: center;
     transition: transform linear 200ms;
 
     &:hover {
@@ -193,7 +190,7 @@ margin-left: -12px;
 
     margin-top: 50px;
 }
-.library__btn {
+.library_button {
     padding-top: 14px;
     padding-bottom: 14px;
     width: 130px;
@@ -212,11 +209,11 @@ margin-left: -12px;
     }
 }
 
-.library__btn:last-child {
+.library_button:last-child {
     margin-left: 20px;
 }
 
-.library__btn--currenly {
+.llibrary_button--currenly {
     border: 0;
     background-color: var(--secondary-text-color);
 
