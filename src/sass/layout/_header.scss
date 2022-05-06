@@ -38,6 +38,9 @@
     @media screen and (min-width: 1024px) {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
             url('../images/header/header-light/desk-background-home.jpg');
+            max-width: 1024px;
+          
+            
     
         @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2),
         (-webkit-min-device-pixel-ratio: 2),
@@ -96,6 +99,10 @@
 
 .nav__list {
     display: flex;
+
+    @media screen and (min-width: 1024px)  {
+        margin-right: 55px;
+    }
 }
 
 .nav__item:last-child {
