@@ -1,6 +1,14 @@
 import './sass/main.scss';
 
-import displayTrandingMovies from './js/displayTrandingMovies';
 import pagination from './js/pagination';
 
+import renderModal from './js/renderModal';
+import displayTrandingMovies from './js/displayTrandingMovies';
+
 displayTrandingMovies();
+renderModal;
+
+
+
+
+

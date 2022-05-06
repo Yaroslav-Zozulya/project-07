@@ -80,6 +80,8 @@
 .film-modal__image {
   border-radius: 5px;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media screen and (min-width: 1024px) {
     max-height: 478px;
