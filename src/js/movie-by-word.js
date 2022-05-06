@@ -1,47 +1,39 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import renderMovie from './renderMovie';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import API from './fetchAPI';
-
-
-const ref = {
-    containerMovies: document.querySelector('.collection'),
-    form: document.querySelector('.form'),
-    input: document.querySelector('.form__input'),
-};
-
-ref.form.addEventListener('submit', onShowGalleryMovie);
+import checkQuery from './helpers/checkQuery';
+import { refs } from './refs';
 
 function appendGallery(data) {
-  ref.containerMovies.insertAdjacentHTML('beforeend', data);
+  refs.containerMovies.innerHTML = data;
 }
 
 function findMovies() {
+  API.getMoviesByQuery(refs.input.value)
+    .then(data => {
+      if (data.results.length === 0) {
+        Notify.failure('Search result not successful. Enter the correct movie name and');
+        return;
+      }
+      return renderMovie(data);
+    })
+    .then(appendGallery)
+    .catch(error => {
+      console.log(error);
+    });
+}
 
-    API.getMoviesByQuery(ref.input.value)
-        .then(data => {
-            if (data.results.length === 0) {
-              Notify.failure("Search result not successful. Enter the correct movie name and");
-              return;
-            }
-            return renderMovie(data);
-                })
-        .then(appendGallery)
-        .catch(error => {
-            console.log(error)
-           })
-    }
+function onShowGalleryMovie(event) {
+  event.preventDefault();
 
-function onShowGalleryMovie(e) {
-  e.preventDefault();
-  const value = ref.input.value.trim();
+  const value = refs.input.value.trim();
 
-    if (value) {
-      ref.containerMovies.innerHTML = '';
-        findMovies();
-    }
-
+  if (!checkQuery(value)) {
+    Notify.failure('Enter only A-z letters or numbers, please');
+    return;
+  }
+  findMovies();
 }
 
 export default onShowGalleryMovie;
-
