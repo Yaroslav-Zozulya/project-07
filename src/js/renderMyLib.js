@@ -2,68 +2,55 @@ import renderMovie from 'renderMovie';
 import { Notify } from 'notiflix';
 
 const refs = {
-  btnMyLib: document.querySelector('.myLibrary'), //добавить класс в разметку что бы отличать Home/My Library
+  btnMyLib: document.querySelector('.myLibrary'), //добавить в разметку класс "home" и "myLibrary"
   containerMovies: document.querySelector('.collection'),
-  btnWatched: document.querySelector('.watched'),
-  btnQueue: document.querySelector('.queue'),
+  btnWatched: document.querySelector('.watched'), //добавить в разметку класс "watched"
+  btnQueue: document.querySelector('.queue'), //добавить в разметку класс "queue"
 };
 
 refs.btnMyLib.addEventListener('click', onMyLibBtnClick);
 refs.btnWatched.addEventListener('click', onWatchedBtnClick);
 refs.btnQueue.addEventListener('click', onQueueBtnClick);
 
+//рендер watched movies т.к. кнопка watched активна по умолчанию
 function onMyLibBtnClick() {
-  if (isMyLibActive()) {
-    getActiveBtn(refs.btnWatched, refs.btnQueue);
-    refs.btnMyLib.classList.add('nav__btn--currently');
-    // refs.home.classList.remove('nav__btn--currently');прописать ref кнопки Home
+  refs.containerMovies.innerHTML('');
+
+  if (!isActiveWatched()) {
+    refs.btnWatched.classList.add('active');
   }
-}
-
-function isMyLibActive() {
-  return refs.btnMyLib.classList.contains('nav__btn--currently');
-}
-
-function onWatchedBtnClick(evt) {
-  if (evt.target.classList.contains('active')) {
-    return;
-  }
-
-  evt.target.classList.add('active');
-  evt.target.nextSibling.classList.remove('active');
+  refs.btnQueue.classList.remove('active');
   renderMyLib('watched');
 }
 
-function onQueueBtnClick(evt) {
-  if (evt.target.classList.contains('active')) {
-    return;
-  }
-  evt.target.classList.add('active');
-  evt.target.previousSibling.classList.remove('active');
+function onQueueBtnClick() {
+  refs.containerMovies.innerHTML('');
+  refs.btnQueue.classList.add('active');
+  refs.btnWatched.classList.remove('active');
   renderMyLib('queue');
 }
 
-function getActiveBtn(btnWatched, btnQueue) {
-  if (btnWatched.classList.contains('active')) {
-    renderMyLib('watched');
-  }
+function onWatchedBtnClick() {
+  refs.btnWatched.classList.add('active');
+  refs.btnQueue.classList.remove('active');
+  refs.containerMovies.innerHTML('');
+  renderMyLib('watched');
+}
 
-  if (btnQueue.classList.contains('active')) {
-    renderMyLib('queue');
-  }
+function isActiveWatched() {
+  return refs.btnWatched.classList.contains('active');
 }
 
 function renderMyLib(localStorData) {
   const dataStore = localStorage.getItem(localStorData);
   if (!dataStore) {
-    Notify.info('There is no any movies in your Library');
+    Notify.info('There is no movies in your Library');
     return;
   }
 
   try {
     const parseDataStore = JSON.parse(dataStore);
     const markup = renderMovie(parseDataStore, true);
-    refs.containerMovies.innerHTML('');
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.error(error);
