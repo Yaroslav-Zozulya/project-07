@@ -1,14 +1,15 @@
 
-export default function switcher(backdropRefs, modalRefs) {
-  function toggleModal() {
-    modalRefs.classList.toggle('is-hidden');
-  }
+// Запускать при открытии модалки
+
+// Функция ожидает ссылку на бекдроп
+
+export default function closer(backdropRefs) {
 
   const closeWithEsc = event => {
     const key = event.key;
 
     if (key === 'Escape') {
-      toggleModal();
+      backdropRefs.classList.add('is-hidden');
 
       document.removeEventListener('keydown', closeWithEsc);
     } else {
@@ -18,8 +19,9 @@ export default function switcher(backdropRefs, modalRefs) {
 
   const closeWithBackdrop = event => {
     if (event.target === backdropRefs) {
-      toggleModal();
+      backdropRefs.classList.add('is-hidden');
     }
+  
   };
 
   backdropRefs.addEventListener('click', closeWithBackdrop);
