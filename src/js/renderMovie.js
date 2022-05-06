@@ -11,13 +11,17 @@ function markUpMovie({ id, poster_path, title, genre_ids, release_date, vote_ave
   let genres = markUpGenres(genre_ids);
   return `<li class="movie-card" data-id=${id}>
             <a href="" class="movie-link" >
-                <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title}" loading="lazy" class="poster" />
+              <div class="poster-thumb">
+                  <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title}" loading="lazy" class="poster"/>
+              </div>
+               
                 <div class="movie-info">
-                    <h2>${title}</h2>
-                    <p>${genres}</p>
-
-                    <p>${release_date.substr(0, 4)}</p>
-                    ${rating}                
+                    <h2 class="movie-title">${title}</h2>
+                    <div class="movie-description">
+                      <p class="movie-genres">${genres}</p>
+                      <p class="movie-date">${release_date.substr(0, 4)}</p>
+                      ${rating}
+                    </div>                                 
                 </div>
             </a>
          </li>`;
