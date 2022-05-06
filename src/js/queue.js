@@ -33,6 +33,9 @@ function addToQueue(id) {
 // проверяет есть ли фильм в списке "Queue"
 // принимает id фильма
 function isInQueue(id) {
+  if (!localStorage.hasOwnProperty('queueList')) {
+    return false;
+  }
   const queueList = JSON.parse(localStorage.getItem('queueList'));
   return queueList.includes(id);
 }
