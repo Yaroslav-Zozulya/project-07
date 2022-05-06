@@ -92,4 +92,4 @@ module.exports={genres:[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,na
 },{"./fetchAPI":"FrZ5","./renderMovie":"vOE4"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var s=e(require("./js/displayTrandingMovies"));function e(s){return s&&s.__esModule?s:{default:s}}(0,s.default)();
 },{"./sass/main.scss":"clu1","./js/displayTrandingMovies":"n5XF"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.344b148f.js.map
+//# sourceMappingURL=/project-07/src.9ebac74d.js.map
