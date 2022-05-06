@@ -8,9 +8,8 @@ function searchGenresInData(genre_ids) {
 }
 
 //Функція повертає масив значень name жанрів
-function genresFromIdToName(genre_ids) {
-  let genresItems = searchGenresInData(genre_ids);
-  return genresItems.map(item => item.name);
+function genresFromIdToName(genres) {
+  return genres.map(item => item.name);
 }
 
 //Функція повертає масив значень name жанрів. Якщо жанрів більше ніж 2, то повертаєтьсь

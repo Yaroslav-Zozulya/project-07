@@ -1,13 +1,16 @@
-
 export default function switcher(backdropRefs, modalRefs) {
   function toggleModal() {
-    modalRefs.classList.toggle('is-hidden');
+    backdropRefs.classList.add('is-hidden');
+  }
+  function clearModal() {
+    modalRefs.innerHTML = '';
   }
 
   const closeWithEsc = event => {
     const key = event.key;
 
     if (key === 'Escape') {
+      clearModal();
       toggleModal();
 
       document.removeEventListener('keydown', closeWithEsc);
@@ -18,6 +21,7 @@ export default function switcher(backdropRefs, modalRefs) {
 
   const closeWithBackdrop = event => {
     if (event.target === backdropRefs) {
+      clearModal();
       toggleModal();
     }
   };

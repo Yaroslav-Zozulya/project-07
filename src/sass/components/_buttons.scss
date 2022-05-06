@@ -1,0 +1,105 @@
+button {
+  color: var(--btn-border-color);
+  border-radius: 5px;
+  height: 44px;
+
+  padding: 0;
+
+  display: inline-block;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.library_button,
+.modal_button {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.library_button {
+  background-color: transparent;
+  border: 1px solid var(--btn-border-color);
+  width: 129.5px;
+
+  @media screen and (min-width: 768px) {
+    width: 152px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 148px;
+  }
+}
+
+.library_button:active {
+  background: var(--btn-hover-background);
+  border: transparent;
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+  -moz-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+  box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+
+  transform: translate(0px, 2px);
+}
+
+.modal_button {
+  width: 110px;
+  border: transparent;
+
+  transition: border 1000ms linear;
+
+  @media screen and (min-width: 768px) {
+    width: 125px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
+}
+
+.modal_button:active {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: translate(0px, 2px);
+}
+
+.modal_button--white {
+  color: var(--main-text-color);
+  background-color: transparent;
+  border: 1px solid var(--main-text-color);
+}
+
+.modal_button--orange {
+  background: var(--btn-hover-background);
+}
+
+.library_button::after,
+.modal_button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 172, 142, 0),
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(229, 172, 142, 0)
+  );
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+
+.library_button:hover::after,
+.library_button:focus::after,
+.modal_button:hover::after,
+.modal_button:focus::after {
+  animation: shine 1000ms forwards;
+}
+
+@keyframes shine {
+  100% {
+    transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
