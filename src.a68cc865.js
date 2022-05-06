@@ -99,4 +99,4 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{"tui-pagination":"jPMh","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=i(require("./js/displayTrandingMovies")),s=i(require("./js/pagination"));function i(e){return e&&e.__esModule?e:{default:e}}(0,e.default)();
 },{"./sass/main.scss":"clu1","./js/displayTrandingMovies":"n5XF","./js/pagination":"o8lo"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.1c01cc97.js.map
+//# sourceMappingURL=/project-07/src.a68cc865.js.map
