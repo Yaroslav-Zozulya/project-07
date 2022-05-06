@@ -1,5 +1,11 @@
 import { genresFromIdToName } from './genres';
+import { addToWatched, isInWatched, removeFromWatched } from './watched';
+
+function isInWatchedList(id) {
+  return isInWatched(id) ? 'remove from Watched' : 'add to Watched';
+}
 function markupModal({
+  id,
   poster_path,
   genres,
   overview,
@@ -10,6 +16,7 @@ function markupModal({
   original_title,
 }) {
   const genresName = genresFromIdToName(genres).join(', ');
+  //const watched = isInWatchedList(id);
   return `        
                 <button class="film-modal__btn-close btn-close" type="button">
                     <svg class="modal__svg" width="30" height="30">
@@ -19,15 +26,15 @@ function markupModal({
                 <picture>
                     <source
                         srcset="
-                        https://image.tmdb.org/t/p/w500/${poster_path}     1x,
+                        https://image.tmdb.org/t/p/original/${poster_path}     1x,
                         https://image.tmdb.org/t/p/original/${poster_path} 2x
                         "
                         type="image/jpeg"
                     />
 
                     <img
-                        src="https://image.tmdb.org/t/p/w500/${poster_path}"
-                        alt="Movie Title"
+                        src="https://image.tmdb.org/t/p/original/${poster_path}"
+                        alt="${original_title}"
                         loading="lazy"
                         class="film-modal__image"
                     />
