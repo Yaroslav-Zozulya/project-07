@@ -1,6 +1,5 @@
 import API from './fetchAPI';
 import renderMovie from './renderMovie';
-import renderModal from './renderModal';
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
