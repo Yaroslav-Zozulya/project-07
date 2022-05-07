@@ -115,4 +115,4 @@ var t,o=arguments[3];!function(o,i){"function"==typeof t&&t.amd?t([],function(){
 },{"notiflix/build/notiflix-notify-aio":"MeeU","./renderMovie":"vOE4","./fetchAPI":"FrZ5","./helpers/checkQuery":"MJAM","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=a(require("./js/pagination")),r=require("./js/refs"),s=a(require("./js/renderModal")),i=a(require("./js/displayTrandingMovies")),u=a(require("./js/movie-by-word"));function a(e){return e&&e.__esModule?e:{default:e}}r.refs.form.addEventListener("submit",u.default),(0,i.default)(),s.default;
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/refs":"VyiV","./js/renderModal":"TqZv","./js/displayTrandingMovies":"n5XF","./js/movie-by-word":"LPZ9"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.0724ed10.js.map
+//# sourceMappingURL=/project-07/src.3b086d2c.js.map
