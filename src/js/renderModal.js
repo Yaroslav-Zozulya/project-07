@@ -1,6 +1,6 @@
 import API from './fetchAPI';
 import markupModal from './markupModal';
-import switcher from './modal-switcher';
+import switcher from './modalCloser';
 const ref = {
   collectionMovie: document.querySelector('.collection'),
   modalBackdrop: document.querySelector('.film-modal__backdrop'),
