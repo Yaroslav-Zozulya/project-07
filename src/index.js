@@ -12,4 +12,3 @@ refs.form.addEventListener('submit', renderMovieByQuery);
 
 displayTrandingMovies();
 renderModal;
-
