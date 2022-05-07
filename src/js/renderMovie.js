@@ -6,20 +6,26 @@ function markUpGenres(genre_ids) {
     .join(', ');
 }
 
-function markUpMovie({ id, poster_path, title, genre_ids, release_date, vote_average }, isRating) {
+function markUpMovie(
+  { id, poster_path, title = 'None', genre_ids, release_date, vote_average },
+  isRating,
+) {
   let rating = isRating ? `<span class="movie-rating">${vote_average}</span>` : '';
   let genres = markUpGenres(genre_ids);
+  let poster = poster_path
+    ? `https://image.tmdb.org/t/p/original/${poster_path}`
+    : 'https://www.hpl24.pl/userdata/public/gfx/f6194102ce247a5d6891a7b039fc49ad.jpg';
   return `<li class="movie-card" data-id=${id}>
             <a href="" class="movie-link">
               <div class="poster-thumb">
-                  <img src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="${title}" loading="lazy" class="poster"/>
+                  <img src=${poster} alt="${title}" loading="lazy" class="poster"/>
               </div>
                
                 <div class="movie-info">
                     <h2 class="movie-title">${title}</h2>
                     <div class="movie-description">
-                      <p class="movie-genres">${genres}</p>
-                      <p class="movie-date">${release_date.substr(0, 4)}</p>
+                      <p class="movie-genres">${genres || 'None'}</p>
+                      <p class="movie-date">${release_date ? release_date.substr(0, 4) : ''}</p>
                       ${rating}
                     </div>                                 
                 </div>
