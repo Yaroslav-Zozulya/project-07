@@ -33,12 +33,11 @@ async function onOpenModal(event) {
 }
 
 function onBtnWatched(e, data) {
-  console.log(e.currentTarget.textContent);
   if (isInWatched(data.id)) {
-    //removeFromWatched(data.id);
+    removeFromWatched(data.id);
     e.currentTarget.textContent = 'add to Watched';
   } else {
-    //addToWatched(data.id);
+    addToWatched(data.id);
     e.currentTarget.textContent = 'remove from Watched';
   }
 }
