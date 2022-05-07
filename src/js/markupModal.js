@@ -1,8 +1,12 @@
 import { genresFromIdToName } from './genres';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
+import { addToQueue, isInQueue, removeFromQueue } from './queue';
 
 function isInWatchedList(id) {
   return isInWatched(id) ? 'remove from Watched' : 'add to Watched';
+}
+function isInQueueList(id) {
+  return isInQueue(id) ? 'remove from Queue' : 'add to Queue';
 }
 function markupModal({
   id,
@@ -16,11 +20,15 @@ function markupModal({
   original_title,
 }) {
   const genresName = genresFromIdToName(genres).join(', ');
-  //const watched = isInWatchedList(id);
+  const watched = isInWatchedList(id);
+  const queue = isInQueueList(id);
   return `        
                 <button class="film-modal__btn-close btn-close" type="button">
                     <svg class="modal__svg" width="30" height="30">
-                        <use href="./images/sprite.svg#icon-close"></use>
+                        <symbol id="icon-close" viewBox="0 0 32 32">
+                            <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M8.533 8.533l14.933 14.933M8.533 23.467l14.933-14.933"></path>
+                        </symbol>
+                        <use href="#icon-close"></use>
                     </svg>
                 </button>
                 <picture>
@@ -68,10 +76,10 @@ function markupModal({
                     </p>
                     <ul class="film-modal__buttons-list">
                         <li class="film-modal__buttons-item">
-                            <button class="modal_button modal_button--orange" type="button">add to Watched</button>
+                            <button class="modal_button modal_button--orange" type="button">${watched}</button>
                         </li>
                         <li class="film-modal__buttons-item">
-                            <button class="modal_button modal_button--white" type="button">add to queue</button>
+                            <button class="modal_button modal_button--white" type="button">${queue}</button>
                         </li>
                     </ul>
                 </div>          
