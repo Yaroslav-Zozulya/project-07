@@ -12,13 +12,7 @@ ref.collectionMovie.addEventListener('click', onOpenModal);
 function onOpenModal(event) {
   event.preventDefault();
 
-  if (
-    event.target.nodeName !== 'IMG' &&
-    event.target.nodeName !== 'P' &&
-    event.target.nodeName !== 'LI' &&
-    event.target.nodeName !== 'H2' &&
-    event.target.nodeName !== 'A'
-  ) {
+  if (event.target.nodeName === 'UL') {
     return;
   }
 

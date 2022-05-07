@@ -20,7 +20,7 @@ function markupModal({
   return `        
                 <button class="film-modal__btn-close btn-close" type="button">
                     <svg class="modal__svg" width="30" height="30">
-                        <use href="./images/sprite.svg#icon-close"></use>
+                        <use href="../images/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
                 <picture>
