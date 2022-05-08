@@ -1,0 +1,189 @@
+@keyframes loader__animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader__inner div {
+  box-sizing: border-box !important;
+}
+.loader__inner > div {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 15px;
+  left: 15px;
+  border-radius: 50%;
+  border: 6px solid #000;
+  border-color: #ff6b08 transparent #ff6b08 transparent;
+  animation: loader__animation 1s linear infinite;
+  @media screen and (min-width: 768px) {
+    width: 105px;
+    height: 105px;
+    top: 22.5px;
+    left: 22.5px;
+    border-width: 9px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 140px;
+    height: 140px;
+    top: 30px;
+    left: 30px;
+    border-width: 12px;
+  }
+}
+
+.loader__inner > div:nth-child(2),
+.loader__inner > div:nth-child(4) {
+  width: 56px;
+  height: 56px;
+  top: 22px;
+  left: 22px;
+  animation: loader__animation 1s linear infinite reverse;
+  @media screen and (min-width: 768px) {
+    width: 84px;
+    height: 84px;
+    top: 33px;
+    left: 33px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 112px;
+    height: 112px;
+    top: 44px;
+    left: 44px;
+  }
+}
+.loader__inner > div:nth-child(2) {
+  border-color: transparent #000000 transparent #000000;
+}
+.loader__inner > div:nth-child(3) {
+  border-color: transparent;
+}
+.loader__inner > div:nth-child(3) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.loader__inner > div:nth-child(3) div:before,
+.loader__inner > div:nth-child(3) div:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: -6px;
+  left: 26px;
+  background: #ff6b08;
+  border-radius: 50%;
+  box-shadow: 0 64px 0 0 #ff6b08;
+  @media screen and (min-width: 768px) {
+    width: 9px;
+    height: 9px;
+    top: -9px;
+    left: 39px;
+    box-shadow: 0 96px 0 0 #ff6b08;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 12px;
+    height: 12px;
+    top: -12px;
+    left: 52px;
+    box-shadow: 0 128px 0 0 #ff6b08;
+  }
+}
+.loader__inner > div:nth-child(3) div:after {
+  left: -6px;
+  top: 26px;
+  box-shadow: 64px 0 0 0 #ff6b08;
+  @media screen and (min-width: 768px) {
+    left: -9px;
+    top: 39px;
+    box-shadow: 96px 0 0 0 #ff6b08;
+  }
+  @media screen and (min-width: 1024px) {
+    left: -12px;
+    top: 52px;
+    box-shadow: 128px 0 0 0 #ff6b08;
+  }
+}
+
+.loader__inner > div:nth-child(4) {
+  border-color: transparent;
+}
+.loader__inner > div:nth-child(4) div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+.loader__inner > div:nth-child(4) div:before,
+.loader__inner > div:nth-child(4) div:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: -6px;
+  left: 19px;
+  background: #000000;
+  border-radius: 50%;
+  box-shadow: 0 50px 0 0 #000000;
+  @media screen and (min-width: 768px) {
+    width: 9px;
+    height: 9px;
+    top: -9px;
+    left: 28.5px;
+    box-shadow: 0 75px 0 0 #000000;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 12px;
+    height: 12px;
+    top: -12px;
+    left: 38px;
+    box-shadow: 0 100px 0 0 #000000;
+  }
+}
+.loader__inner > div:nth-child(4) div:after {
+  left: -6px;
+  top: 19px;
+  box-shadow: 50px 0 0 0 #000000;
+  @media screen and (min-width: 768px) {
+    left: -9px;
+    top: 28.5px;
+    box-shadow: 75px 0 0 0 #000000;
+  }
+  @media screen and (min-width: 1024px) {
+    left: -12px;
+    top: 38px;
+    box-shadow: 100px 0 0 0 #000000;
+  }
+}
+.loader {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: none;
+  @media screen and (min-width: 768px) {
+    width: 90px;
+    height: 90px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 120px;
+    height: 120px;
+  }
+}
+.loader__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(0.6);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.loader__inner div {
+  box-sizing: content-box;
+}
