@@ -2,6 +2,7 @@ import API from './fetchAPI';
 import markupModal from './markupModal';
 import switcher from './modal-switcher';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
+import { addToQueue, isInQueue, removeFromQueue } from './queue';
 const ref = {
   collectionMovie: document.querySelector('.collection'),
   modalBackdrop: document.querySelector('.film-modal__backdrop'),
@@ -30,6 +31,7 @@ async function onOpenModal(event) {
   const watchedBtn = document.querySelector('.modal_button.modal_button--orange');
   const queueBtn = document.querySelector('.modal_button.modal_button--white');
   watchedBtn.addEventListener('click', e => onBtnWatched(e, dataMovie));
+  queueBtn.addEventListener('click', e => onBtnQueue(e, dataMovie));
 }
 
 function onBtnWatched(e, data) {
@@ -39,6 +41,15 @@ function onBtnWatched(e, data) {
   } else {
     addToWatched(data.id);
     e.currentTarget.textContent = 'remove from Watched';
+  }
+}
+function onBtnQueue(e, data) {
+  if (isInQueue(data.id)) {
+    removeFromQueue(data.id);
+    e.currentTarget.textContent = 'add to Queue';
+  } else {
+    addToQueue(data.id);
+    e.currentTarget.textContent = 'remove from Queue';
   }
 }
 
