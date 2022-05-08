@@ -11,7 +11,7 @@ function appendGallery(data) {
 function displayTrandingMovie() {
   API.getMoviesByTrending()
     .then(data => {
-      return renderMovie(data, true);
+      return renderMovie(data);
     })
     .then(appendGallery);
 }

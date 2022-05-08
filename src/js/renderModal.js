@@ -36,19 +36,19 @@ async function onOpenModal(event) {
 
 function onBtnWatched(e, data) {
   if (isInWatched(data.id)) {
-    removeFromWatched(data.id);
+    removeFromWatched(data);
     e.currentTarget.textContent = 'add to Watched';
   } else {
-    addToWatched(data.id);
+    addToWatched(data);
     e.currentTarget.textContent = 'remove from Watched';
   }
 }
 function onBtnQueue(e, data) {
   if (isInQueue(data.id)) {
-    removeFromQueue(data.id);
+    removeFromQueue(data);
     e.currentTarget.textContent = 'add to Queue';
   } else {
-    addToQueue(data.id);
+    addToQueue(data);
     e.currentTarget.textContent = 'remove from Queue';
   }
 }
