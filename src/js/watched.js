@@ -1,32 +1,26 @@
-import { getMovieById } from './fetchAPI';
+// import { getMovieById } from './fetchAPI';
 // добавляет фильм в список "Посмотреть позже"
 // список "Посмотреть позже" есть массив с обьектами фильмов
 // принимает id фильма
-function addToWatched(id) {
+function addToWatched(movie) {
   // если в localStorage нет поля  'watched' то создаем его
   // и делаем в нем массив с  фильмом
   // watchedList дополнительно хранит id фильмов для быстрой проверки
 
   if (!localStorage.hasOwnProperty('watched')) {
-    getMovieById(id).then(response => {
-      const movie = response;
-      const watchedList = [id];
-      localStorage.setItem('watched', JSON.stringify([movie]));
-      localStorage.setItem('watchedList', JSON.stringify(watchedList));
-    });
+    const watchedList = [movie.id];
+    localStorage.setItem('watched', JSON.stringify([movie]));
+    localStorage.setItem('watchedList', JSON.stringify(watchedList));
   } else {
     // иначе добавляем в массив watched
 
-    if (!isInWatched(id)) {
+    if (!isInWatched(movie.id)) {
       let watchedList = JSON.parse(localStorage.getItem('watchedList'));
       let watched = JSON.parse(localStorage.getItem('watched'));
-      getMovieById(id).then(response => {
-        const movie = response;
-        watched.push(movie);
-        watchedList.push(id);
-        localStorage.setItem('watched', JSON.stringify(watched));
-        localStorage.setItem('watchedList', JSON.stringify(watchedList));
-      });
+      watched.push(movie);
+      watchedList.push(movie.id);
+      localStorage.setItem('watched', JSON.stringify(watched));
+      localStorage.setItem('watchedList', JSON.stringify(watchedList));
     }
   }
 }
