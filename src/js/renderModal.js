@@ -36,7 +36,7 @@ async function onOpenModal(event) {
 
 function onBtnWatched(e, data) {
   if (isInWatched(data.id)) {
-    removeFromWatched(data);
+    removeFromWatched(data.id);
     e.currentTarget.textContent = 'add to Watched';
   } else {
     addToWatched(data);
@@ -45,7 +45,7 @@ function onBtnWatched(e, data) {
 }
 function onBtnQueue(e, data) {
   if (isInQueue(data.id)) {
-    removeFromQueue(data);
+    removeFromQueue(data.id);
     e.currentTarget.textContent = 'add to Queue';
   } else {
     addToQueue(data);
