@@ -10,7 +10,7 @@ export default function modalСloser(backdropRefs, modalRefs, btnClose) {
     const key = event.key;
 
     if (key === 'Escape') {
-      clearModal();
+      closeModal();
 
       document.removeEventListener('keydown', closeWithEsc);
       backdropRefs.removeEventListener('click', closeWithBackdrop);
