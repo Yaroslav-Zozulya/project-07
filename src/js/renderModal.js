@@ -22,7 +22,9 @@ function onOpenModal(event) {
     .then(data => markupModal(data))
     .then(appendModal)
     .then(ref.modalBackdrop.classList.remove('is-hidden'))
-    .then(switcher(ref.modalBackdrop, ref.modal));
+    .then(r => {
+      switcher(ref.modalBackdrop, ref.modal, document.querySelector('.btn-close'));
+    });
 }
 
 function appendModal(data) {
