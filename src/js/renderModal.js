@@ -1,7 +1,7 @@
 import API from './fetchAPI';
 import markupModal from './markupModal';
 
-import switcher from './modal-switcher';
+import modalСloser from './modalCloser';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
 import { addToQueue, isInQueue, removeFromQueue } from './queue';
 
@@ -27,7 +27,7 @@ async function onOpenModal(event) {
   const append = await appendModal(dataMarkup);
 
   ref.modalBackdrop.classList.remove('is-hidden');
-  switcher(ref.modalBackdrop, ref.modal);
+  modalСloser(ref.modalBackdrop, ref.modal, document.querySelector('.btn-close'));
 
   /* --- Buttons ---- */
   const watchedBtn = document.querySelector('.modal_button.modal_button--orange');
