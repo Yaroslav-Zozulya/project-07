@@ -1,7 +1,6 @@
-// import { getMovieById } from './fetchAPI';
 // добавляет фильм в список "Посмотреть позже"
 // список "Посмотреть позже" есть массив с обьектами фильмов
-// принимает id фильма
+// принимает обьект фильма
 function addToWatched(movie) {
   // если в localStorage нет поля  'watched' то создаем его
   // и делаем в нем массив с  фильмом
@@ -13,7 +12,6 @@ function addToWatched(movie) {
     localStorage.setItem('watchedList', JSON.stringify(watchedList));
   } else {
     // иначе добавляем в массив watched
-
     if (!isInWatched(movie.id)) {
       let watchedList = JSON.parse(localStorage.getItem('watchedList'));
       let watched = JSON.parse(localStorage.getItem('watched'));
@@ -34,16 +32,15 @@ function isInWatched(id) {
   return watchedList.includes(id);
 }
 // удаляет фильм из "Посмотреть позже"
+// принимает id фильма
 function removeFromWatched(id) {
-  if (isInWatched(id)) {
-    let watchedList = JSON.parse(localStorage.getItem('watchedList'));
-    let watched = JSON.parse(localStorage.getItem('watched'));
-    const index = watchedList.indexOf(id);
-    watchedList.splice(index, 1);
-    watched.splice(index, 1);
-    localStorage.setItem('watched', JSON.stringify(watched));
-    localStorage.setItem('watchedList', JSON.stringify(watchedList));
-  }
+  let watchedList = JSON.parse(localStorage.getItem('watchedList'));
+  let watched = JSON.parse(localStorage.getItem('watched'));
+  const index = watchedList.indexOf(id);
+  watchedList.splice(index, 1);
+  watched.splice(index, 1);
+  localStorage.setItem('watched', JSON.stringify(watched));
+  localStorage.setItem('watchedList', JSON.stringify(watchedList));
 }
 
 export { addToWatched, isInWatched, removeFromWatched };
