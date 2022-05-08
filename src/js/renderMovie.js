@@ -2,15 +2,15 @@ import { genresOthers } from './genres';
 
 function markUpGenres(genre_ids) {
   return genresOthers(genre_ids)
-    .map(genre => `<a href="" class="">${genre}</a>`)
-    .join(', ');
+    .map(genre => `<li class="movie-genres">${genre}</li>`)
+    .join(' ');
 }
 
 function markUpMovie(
   { id, poster_path, title = 'None', genre_ids, release_date, vote_average },
   isRating,
 ) {
-  let rating = isRating ? `<span class="movie-rating">${vote_average}</span>` : '';
+  let rating = isRating ? `<p class="movie-rating">${vote_average}</p>` : '';
   let genres = markUpGenres(genre_ids);
   let poster = poster_path
     ? `https://image.tmdb.org/t/p/original/${poster_path}`
@@ -21,10 +21,12 @@ function markUpMovie(
                   <img src=${poster} alt="${title}" loading="lazy" class="poster"/>
               </div>
                
-                <div class="movie-info">
+                <div class="movie-info">     
                     <h2 class="movie-title">${title}</h2>
                     <div class="movie-description">
-                      <p class="movie-genres">${genres || 'None'}</p>
+                      <ul class="genres-list">
+                      ${genres || 'None'}
+                      </ul>
                       <p class="movie-date">${release_date ? release_date.substr(0, 4) : ''}</p>
                       ${rating}
                     </div>                                 
