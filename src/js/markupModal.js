@@ -22,6 +22,10 @@ function markupModal({
   const genresName = genresFromIdToName(genres).join(', ');
   const watched = isInWatchedList(id);
   const queue = isInQueueList(id);
+  let poster = poster_path
+    ? `https://image.tmdb.org/t/p/original/${poster_path}`
+    : 'https://www.hpl24.pl/userdata/public/gfx/f6194102ce247a5d6891a7b039fc49ad.jpg';
+
   return `        
                 <button class="film-modal__btn-close btn-close" type="button">
                     <svg class="modal__svg" width="30" height="30">
@@ -34,8 +38,8 @@ function markupModal({
                 <picture>
                     <source
                         srcset="
-                        https://image.tmdb.org/t/p/original/${poster_path}     1x,
-                        https://image.tmdb.org/t/p/original/${poster_path} 2x
+                       ${poster}     1x,
+                        ${poster} 2x
                         "
                         type="image/jpeg"
                     />

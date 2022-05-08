@@ -3,6 +3,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import renderMovie from './renderMovie';
 import API from './fetchAPI';
 import checkQuery from './helpers/checkQuery';
+import loader from './loader';
 import { refs } from './refs';
 
 function appendGallery(data) {
@@ -10,6 +11,9 @@ function appendGallery(data) {
 }
 
 function findMovies() {
+  refs.containerMovies.innerHTML = '';
+  loader.addLoader();
+
   API.getMoviesByQuery(refs.input.value)
     .then(data => {
       if (data.results.length === 0) {
@@ -21,7 +25,8 @@ function findMovies() {
     .then(appendGallery)
     .catch(error => {
       console.log(error);
-    });
+    })
+    .finally(loader.removeLoader);
 }
 
 function onShowGalleryMovie(event) {
