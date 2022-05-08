@@ -2,7 +2,7 @@
 <header class="header">
   <div class="container header__container">
     <nav class="nav">
-      <button class="logo-btn btn">
+      <button class="logo-btn btn logo-btn js-logo-btn">
         <svg width="24" height="24">
           <use href="/images/sprite.svg#icon-film"></use>
         </svg>
@@ -10,10 +10,10 @@
       </button>
       <ul class="nav__list">
         <li class="nav__item">
-          <button class="nav__btn btn nav__btn--currently home-btn">Home</button>
+          <button class="nav__btn btn nav__btn--currently home js-nav-home-btn">Home</button>
         </li>
         <li class="nav__item">
-          <button class="nav__btn btn library-btn">My library</button>
+          <button class="nav__btn btn library-btn myLibrary js-nav-library-btn">My library</button>
         </li>
       </ul>
     </nav>
@@ -21,7 +21,7 @@
     <form class="form" autocomplete="off">
       <div class="form__inner">
         <input class="form__input" type="text" name="searchQuery" placeholder="Поиск фильмов" />
-        <button class="form__btn btn" type="submit" aria-label="search films">
+        <button class="form__btn btn js-form-btn" type="submit" aria-label="search films">
           <svg class="search-icon" width="12" height="12">
             <use href="./images/sprite.svg#icon-search-2"></use>
           </svg>
@@ -29,8 +29,8 @@
       </div>
     </form>
     <div class="library visually-hidden">
-      <button class="library_button btn">Watched</button>
-      <button class="library_button btn">Queue</button>
+      <button class="library_button btn watched active js-btn-watched">Watched</button>
+      <button class="library_button btn queue js-btn-queue">Queue</button>
     </div>
   </div>
 </header>
