@@ -1,12 +1,8 @@
 import API from './fetchAPI';
 import markupModal from './markupModal';
-<<<<<<< Updated upstream
 import switcher from './modal-switcher';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
 import { addToQueue, isInQueue, removeFromQueue } from './queue';
-=======
-// import switcher from './modal-switcher';
->>>>>>> Stashed changes
 const ref = {
   collectionMovie: document.querySelector('.collection'),
   modalBackdrop: document.querySelector('.film-modal__backdrop'),
