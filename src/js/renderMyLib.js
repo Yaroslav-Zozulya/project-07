@@ -2,7 +2,7 @@ import renderMovie from 'renderMovie';
 import { Notify } from 'notiflix';
 
 const refs = {
-  btnMyLib: document.querySelector('.myLibrary'), //добавить в разметку класс "home" и "myLibrary"
+  btnMyLib: document.querySelector('.library-btn'),
   containerMovies: document.querySelector('.collection'),
   btnWatched: document.querySelector('.watched'), //добавить в разметку класс "watched"
   btnQueue: document.querySelector('.queue'), //добавить в разметку класс "queue"
@@ -15,7 +15,6 @@ refs.btnQueue.addEventListener('click', onQueueBtnClick);
 //рендер watched movies т.к. кнопка watched активна по умолчанию
 function onMyLibBtnClick() {
   refs.containerMovies.innerHTML('');
-
   if (!isActiveWatched()) {
     refs.btnWatched.classList.add('active');
   }
@@ -31,9 +30,9 @@ function onQueueBtnClick() {
 }
 
 function onWatchedBtnClick() {
+  refs.containerMovies.innerHTML('');
   refs.btnWatched.classList.add('active');
   refs.btnQueue.classList.remove('active');
-  refs.containerMovies.innerHTML('');
   renderMyLib('watched');
 }
 
