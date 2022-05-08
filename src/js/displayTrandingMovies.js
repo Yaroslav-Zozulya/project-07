@@ -6,16 +6,15 @@ const ref = {
 };
 
 function appendGallery(data) {
-  ref.containerMovies.insertAdjacentHTML('beforeend', data);
+  ref.containerMovies.innerHTML = data;
 }
 
 function displayTrandingMovie() {
-  ref.containerMovies.innerHTML = '';
   loader.addLoader();
 
   API.getMoviesByTrending()
     .then(data => {
-      return renderMovie(data, true);
+      return renderMovie(data);
     })
     .then(appendGallery)
     .finally(loader.removeLoader);
