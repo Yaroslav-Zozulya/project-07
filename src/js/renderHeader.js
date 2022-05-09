@@ -7,8 +7,9 @@ refs.library.addEventListener('click', onLibBtnClick);
 refs.logo.addEventListener('click', onHomeBtnClick);
 
 function onHomeBtnClick() {
-  
-  
+  refs.formEl.reset();
+ 
+
   refs.home.classList.add('nav__btn--currently');
   refs.library.classList.remove('nav__btn--currently');
   refs.header.classList.remove('header--library');
@@ -18,7 +19,7 @@ function onHomeBtnClick() {
 }
 
 function onLibBtnClick() {
-    
+  
   
   refs.home.classList.remove('nav__btn--currently');
   refs.library.classList.add('nav__btn--currently');
