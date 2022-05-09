@@ -8,7 +8,7 @@ const refs = {
   containerMovies: document.querySelector('.collection'),
   btnWatched: document.querySelector('.watched'), //добавить в разметку класс "watched"
   btnQueue: document.querySelector('.queue'), //добавить в разметку класс "queue"
-  watchedBtn: document.querySelector('.modal_button--orange'), //test
+  // watchedBtn: document.querySelector('.modal_button--orange'), //test
 };
 
 refs.btnMyLib.addEventListener('click', onMyLibBtnClick);
@@ -23,21 +23,20 @@ function onMyLibBtnClick() {
     refs.btnWatched.classList.add('active');
   }
   refs.btnQueue.classList.remove('active');
-  renderMyLib('watched', true); //рендер watched movies т.к. кнопка watched активна по умолчанию
+  renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
 function onQueueBtnClick() {
   refs.containerMovies.innerHTML = '';
   refs.btnQueue.classList.add('active');
   refs.btnWatched.classList.remove('active');
-  renderMyLib('queue', true);
+  renderMyLib('queue');
 }
 
 function onWatchedBtnClick() {
   refs.containerMovies.innerHTML = '';
   refs.btnWatched.classList.add('active');
   refs.btnQueue.classList.remove('active');
-
   renderMyLib('watched');
 }
 
@@ -61,7 +60,7 @@ function renderMyLib(localStorData) {
   }
 }
 
-//===========================нужно переписать ф-цию
+//===========================нужно переписать ф-цию для отрисовки My Library
 
 function markUpGenres(genre_ids) {
   return genresOthers(genre_ids)
