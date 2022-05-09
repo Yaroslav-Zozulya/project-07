@@ -38,7 +38,12 @@ function removeFromWatched(id) {
   if (isInWatched(id)) {
     const index = watched.findIndex(movie => movie.id === id);
     watched.splice(index, 1);
-    localStorage.setItem('watched', JSON.stringify(watched));
+    // если массив watched пустой - удаляем его
+    if (watched.length === 0) {
+      localStorage.removeItem('watched');
+    } else {
+      localStorage.setItem('watched', JSON.stringify(watched));
+    }
   }
 }
 

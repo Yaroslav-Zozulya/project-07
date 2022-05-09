@@ -38,7 +38,12 @@ function removeFromQueue(id) {
   if (isInQueue(id)) {
     const index = queue.findIndex(movie => movie.id === id);
     queue.splice(index, 1);
-    localStorage.setItem('queue', JSON.stringify(queue));
+    // если массив queue пустой - удаляем его
+    if (queue.length === 0) {
+      localStorage.removeItem('queue');
+    } else {
+      localStorage.setItem('queue', JSON.stringify(queue));
+    }
   }
 }
 
