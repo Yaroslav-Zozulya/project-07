@@ -1,54 +1,65 @@
-import { getMovieById } from './fetchAPI';
 // добавляет фильм в список "Посмотреть позже"
 // список "Посмотреть позже" есть массив с обьектами фильмов
-// принимает id фильма
-function addToWatched(id) {
+// принимает обьект фильма
+function addToWatched({
+  id,
+  poster_path,
+  genres: [genre_id, name],
+  release_date,
+  vote_average,
+  title,
+}) {
   // если в localStorage нет поля  'watched' то создаем его
   // и делаем в нем массив с  фильмом
-  // watchedList дополнительно хранит id фильмов для быстрой проверки
+  const localMovie = {
+    id: id,
+    poster_path: poster_path,
+    title: title,
+    genres: [genre_id, name],
+    release_date: release_date,
+    vote_average: vote_average,
+    // isRating: movie.isRating,
+  };
 
   if (!localStorage.hasOwnProperty('watched')) {
-    getMovieById(id).then(response => {
-      const movie = response;
-      const watchedList = [id];
-      localStorage.setItem('watched', JSON.stringify([movie]));
-      localStorage.setItem('watchedList', JSON.stringify(watchedList));
-    });
+    localStorage.setItem('watched', JSON.stringify([localMovie]));
   } else {
     // иначе добавляем в массив watched
-
     if (!isInWatched(id)) {
-      let watchedList = JSON.parse(localStorage.getItem('watchedList'));
       let watched = JSON.parse(localStorage.getItem('watched'));
-      getMovieById(id).then(response => {
-        const movie = response;
-        watched.push(movie);
-        watchedList.push(id);
-        localStorage.setItem('watched', JSON.stringify(watched));
-        localStorage.setItem('watchedList', JSON.stringify(watchedList));
-      });
+      watched.push(localMovie);
+      localStorage.setItem('watched', JSON.stringify(watched));
     }
   }
 }
 // проверяет есть ли фильм в списке "Посмотреть позже"
 // принимает id фильма
 function isInWatched(id) {
-  if (!localStorage.hasOwnProperty('watchedList')) {
+  if (!localStorage.hasOwnProperty('watched')) {
     return false;
   }
-  const watchedList = JSON.parse(localStorage.getItem('watchedList'));
-  return watchedList.includes(id);
+  const watched = JSON.parse(localStorage.getItem('watched'));
+  let result = false;
+  watched.map(movie => {
+    if (movie.id === id) {
+      result = true;
+    }
+  });
+  return result;
 }
 // удаляет фильм из "Посмотреть позже"
+// принимает id фильма
 function removeFromWatched(id) {
+  let watched = JSON.parse(localStorage.getItem('watched'));
   if (isInWatched(id)) {
-    let watchedList = JSON.parse(localStorage.getItem('watchedList'));
-    let watched = JSON.parse(localStorage.getItem('watched'));
-    const index = watchedList.indexOf(id);
-    watchedList.splice(index, 1);
+    const index = watched.findIndex(movie => movie.id === id);
     watched.splice(index, 1);
-    localStorage.setItem('watched', JSON.stringify(watched));
-    localStorage.setItem('watchedList', JSON.stringify(watchedList));
+    // если массив watched пустой - удаляем его
+    if (watched.length === 0) {
+      localStorage.removeItem('watched');
+    } else {
+      localStorage.setItem('watched', JSON.stringify(watched));
+    }
   }
 }
 
