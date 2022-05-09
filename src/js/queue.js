@@ -1,17 +1,33 @@
 // добавляет фильм в список "Queue"
 // список "Queue" есть массив с с обьектами фильмов
 // принимает обьект фильма
-function addToQueue(movie) {
+function addToQueue({
+  id,
+  poster_path,
+  genres: [genre_id, name],
+  release_date,
+  vote_average,
+  title,
+}) {
   // если в localStorage нет поля  'queue' то создаем его
   // и делаем в нем массив с  фильмом
+  const localMovie = {
+    id: id,
+    poster_path: poster_path,
+    title: title,
+    genres: [genre_id, name],
+    release_date: release_date,
+    vote_average: vote_average,
+    // isRating: movie.isRating,
+  };
 
   if (!localStorage.hasOwnProperty('queue')) {
-    localStorage.setItem('queue', JSON.stringify([movie]));
+    localStorage.setItem('queue', JSON.stringify([localMovie]));
   } else {
     // иначе добавляем в массив queue
-    if (!isInQueue(movie.id)) {
+    if (!isInQueue(id)) {
       let queue = JSON.parse(localStorage.getItem('queue'));
-      queue.push(movie);
+      queue.push(localMovie);
       localStorage.setItem('queue', JSON.stringify(queue));
     }
   }

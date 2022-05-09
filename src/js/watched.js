@@ -1,17 +1,33 @@
 // добавляет фильм в список "Посмотреть позже"
 // список "Посмотреть позже" есть массив с обьектами фильмов
 // принимает обьект фильма
-function addToWatched(movie) {
+function addToWatched({
+  id,
+  poster_path,
+  genres: [genre_id, name],
+  release_date,
+  vote_average,
+  title,
+}) {
   // если в localStorage нет поля  'watched' то создаем его
   // и делаем в нем массив с  фильмом
+  const localMovie = {
+    id: id,
+    poster_path: poster_path,
+    title: title,
+    genres: [genre_id, name],
+    release_date: release_date,
+    vote_average: vote_average,
+    // isRating: movie.isRating,
+  };
 
   if (!localStorage.hasOwnProperty('watched')) {
-    localStorage.setItem('watched', JSON.stringify([movie]));
+    localStorage.setItem('watched', JSON.stringify([localMovie]));
   } else {
     // иначе добавляем в массив watched
-    if (!isInWatched(movie.id)) {
+    if (!isInWatched(id)) {
       let watched = JSON.parse(localStorage.getItem('watched'));
-      watched.push(movie);
+      watched.push(localMovie);
       localStorage.setItem('watched', JSON.stringify(watched));
     }
   }
