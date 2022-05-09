@@ -1,6 +1,8 @@
+import 'swiper/swiper-bundle.min.css';
 import './sass/main.scss';
 
 import pagination from './js/pagination';
+import swiper from './js/swiper';
 
 import { refs } from './js/refs';
 

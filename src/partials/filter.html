@@ -1,93 +1,122 @@
 <div class="container">
-    <div class="filter">
-        <div class="filter__primaryText ">
-            <button class="filter__btn" type="button">
-                <svg class="filter__svg" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-filter"></use>
-                </svg>
-            </button>
-            Filter
-        </div>
-        <div class="filter__body is-hidden">
-            <ul class="filter__content">
-
-                <li class="select" data-select="genres">
-                    <div class="select__header">
-                        <div class="select__text">
-                            <p class="select__title">Жанри</p>
-                            <p class="select__extra"></p>
-                        </div>
-                        <div class="select__icon ">
-                            <svg class="select__svg" width="20" height="14">
-                                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="select__dropdown is-hidden">
-                        <div class="select__content ">
-                            
-                        </div>
-                    </div>
-
-                </li>
-                <li class="select" data-select="date">
-                    <div class="select__header">
-                        <div class="select__text">
-                            <p class="select__title">Дата</p>
-                            <p class="select__extra"></p>
-                        </div>
-                        <div class="select__icon ">
-                            <svg class="select__svg" width="20" height="14">
-                                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="select__dropdown is-hidden">
-                        <div class="select__content ">
-                
-                        </div>
-                    </div>
-                
-                </li>
-                <li class="select" data-select="date">
-                    <div class="select__header">
-                        <div class="select__text">
-                            <p class="select__title">Дата</p>
-                            <p class="select__extra"></p>
-                        </div>
-                        <div class="select__icon ">
-                            <svg class="select__svg" width="20" height="14">
-                                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="select__dropdown is-hidden">
-                        <div class="select__content ">
-                
-                        </div>
-                    </div>
-                
-                </li>
-                <li class="select" data-select="genres">
-                    <div class="select__header">
-                        <div class="select__text">
-                            <p class="select__title">Жанри</p>
-                            <p class="select__extra"></p>
-                        </div>
-                        <div class="select__icon ">
-                            <svg class="select__svg" width="20" height="14">
-                                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="select__dropdown is-hidden">
-                        <div class="select__content ">
-                
-                        </div>
-                    </div>
-                
-                </li>
-            </ul>
-        </div>
+  <div class="filter">
+    <div class="filter__primaryText">
+      <button class="filter__btn" type="button">
+        <svg class="filter__svg" width="16" height="16">
+          <use href="./images/sprite.svg#icon-filter"></use>
+        </svg>
+      </button>
+      Filter
     </div>
+    <div class="filter__body is-hidden">
+      <ul class="filter__content">
+        <li class="select" data-select="genres">
+          <div class="select__header">
+            <div class="select__text">
+              <p class="select__title">Жанри</p>
+              <p class="select__extra"></p>
+            </div>
+            <div class="select__icon">
+              <svg class="select__svg" width="20" height="14">
+                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="genres__dropdown select__dropdown is-hidden">
+            <div class="genres__content select__content">
+              <!-- Slider main container -->
+              <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                  <div class="swiper-slide">
+                    <i class="genre-icon smile outline icon"></i>Комедии
+                  </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-button swiper-button-prev"></div>
+                <div class="swiper-button swiper-button-next"></div> -->
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="select" data-select="date">
+          <div class="select__header">
+            <div class="select__text">
+              <p class="select__title">Дата</p>
+              <p class="select__extra"></p>
+            </div>
+            <div class="select__icon">
+              <svg class="select__svg" width="20" height="14">
+                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="select__dropdown is-hidden">
+            <div class="select__content"></div>
+          </div>
+        </li>
+        <li class="select" data-select="date">
+          <div class="select__header">
+            <div class="select__text">
+              <p class="select__title">Дата</p>
+              <p class="select__extra"></p>
+            </div>
+            <div class="select__icon">
+              <svg class="select__svg" width="20" height="14">
+                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="select__dropdown is-hidden">
+            <div class="select__content"></div>
+          </div>
+        </li>
+        <li class="select" data-select="genres">
+          <div class="select__header">
+            <div class="select__text">
+              <p class="select__title">Жанри</p>
+              <p class="select__extra"></p>
+            </div>
+            <div class="select__icon">
+              <svg class="select__svg" width="20" height="14">
+                <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="select__dropdown is-hidden">
+            <div class="select__content"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
