@@ -23,9 +23,15 @@ export default function filter() {
       }
     });
     if (!dropdownContainesHiddenArr.every(e => e === true)) {
-      ref.selectDropdownAll.forEach(
-        elem => !elem.classList.contains('is-hidden') && elem.classList.toggle('is-hidden'),
-      );
+      ref.selectDropdownAll.forEach(elem => {
+        if (!elem.classList.contains('is-hidden')) {
+          elem.classList.toggle('is-hidden');
+          elem
+            .closest('.select')
+            .querySelector('.select__svg')
+            .classList.toggle('select__svg--rotate');
+        }
+      });
     }
   }
 
