@@ -1,3 +1,4 @@
+import renderDate from './renderDateFilter';
 export default function filter() {
   const ref = {
     filterMain: document.querySelector('.filter__content'),
@@ -52,7 +53,20 @@ export default function filter() {
     const dropdown = select.querySelector('.select__dropdown');
     const icon = select.querySelector('.select__svg');
     toggalDropdownHidden(dropdown);
+    render(select);
+
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
+  }
+
+  function render(select) {
+    const dataSet = select.dataset.select;
+    switch (dataSet) {
+      case 'date': {
+        renderDate();
+      }
+      case 'genres': {
+      }
+    }
   }
 }
