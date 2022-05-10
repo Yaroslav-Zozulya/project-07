@@ -25,6 +25,17 @@ button {
   border: 1px solid var(--btn-border-color);
   width: 129.5px;
 
+  &:active {
+      background: var(--btn-hover-background);
+      border: transparent;
+      -webkit-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+      -moz-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+      box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
+  
+      transform: translate(0px, 2px);
+    }
+    
+
   @media screen and (min-width: 768px) {
     width: 152px;
   }
@@ -34,21 +45,18 @@ button {
   }
 }
 
-.library_button:active {
-  background: var(--btn-hover-background);
-  border: transparent;
-  -webkit-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
-  -moz-box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
-  box-shadow: 0px 0px 50px 0px rgba(255, 107, 1, 1);
-
-  transform: translate(0px, 2px);
-}
 
 .modal_button {
   width: 110px;
   border: transparent;
 
   transition: border 1000ms linear;
+
+  &:active {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transform: translate(0px, 2px);
+    }
+
 
   @media screen and (min-width: 768px) {
     width: 125px;
@@ -59,10 +67,6 @@ button {
   }
 }
 
-.modal_button:active {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transform: translate(0px, 2px);
-}
 
 .modal_button--white {
   color: var(--main-text-color);
