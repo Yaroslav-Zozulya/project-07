@@ -37,7 +37,8 @@ function markUpMovie(
 
 // При визові ф-ції renderMovie передається першим параметром data, а другим якщо потрібнен рейтинг фільмів -  true.
 function renderMovie(data, isRating = false) {
-  return data.results.map(d => markUpMovie(d, isRating)).join(' ');
+  let dataRender = data.results || data;
+  return dataRender.map(d => markUpMovie(d, isRating)).join(' ');
 }
 
 export default renderMovie;
