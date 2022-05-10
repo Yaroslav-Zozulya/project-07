@@ -1,4 +1,30 @@
- 
+import Swiper, { Navigation, Pagination,EffectCoverflow } from 'swiper';
+Swiper.use([Pagination, Navigation]);
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+   
+    centeredSlidesBounds: true,
+    spaceBetween: 10,
+    centeredSlides: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    slidesPerView: 1,
+     
+     breakpoints: {
+            1024: {
+                spaceBetween: 10,
+                slidesPerView: 3,
+                },
+            },
+            768: { 
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+        }
+ )
+
 const refs = {
     openModalBtn: document.querySelector('.footer-developed-by-link'),
     closeModalBtn: document.querySelector('.btn-close'),

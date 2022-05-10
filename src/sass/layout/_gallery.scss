@@ -65,7 +65,7 @@
       transition: transform linear 350ms, opacity linear 250ms;
   }
 
-  .movie-info:hover::after {
+ .collection > .movie-card:hover .movie-info::after {
       transform: scale(1);
       opacity: 1;
   }
@@ -81,12 +81,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-        transform: scale(1.1);
-    }
+   
 }
-
+.collection>.movie-card:hover .poster {
+    transform: scale(1.1);
+}
 .movie-link {
     display: flex;
     flex-direction: column;
