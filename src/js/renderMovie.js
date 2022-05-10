@@ -13,13 +13,27 @@ function markUpMovie(
   let rating = isRating ? `<p class="movie-rating">${vote_average}</p>` : '';
   let genres = markUpGenres(genre_ids);
   let poster = poster_path
-    ? `https://image.tmdb.org/t/p/original/${poster_path}`
+    ? `${poster_path}`
     : 'https://www.hpl24.pl/userdata/public/gfx/f6194102ce247a5d6891a7b039fc49ad.jpg';
   return `<li class="movie-card" data-id=${id}>
             <a href="" class="movie-link">
-              <div class="poster-thumb">
-                  <img src=${poster} alt="${title}" loading="lazy" class="poster"/>
-              </div>
+              
+              <picture class="poster-thumb">
+                    <source
+                        srcset="
+                       https://image.tmdb.org/t/p/w500/${poster}     1x,
+                        https://image.tmdb.org/t/p/original/${poster} 2x
+                        "
+                        type="image/jpeg"
+                    />
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/${poster_path}"
+                        alt="${title}"
+                        loading="lazy"
+                        class="poster"
+                    />
+                </picture>
                
                 <div class="movie-info">     
                     <h2 class="movie-title">${title}</h2>
