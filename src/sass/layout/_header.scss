@@ -4,7 +4,9 @@
 }
 
 // ===================== HEADER =======================
-  
+.header__container{
+position: relative;
+}
 .header{
     min-height: 230px;
     padding-top: 46px;
@@ -276,3 +278,31 @@ animation-duration: 1s;
     }
 
 }
+
+.checkbox-container {
+    position: absolute;
+    top: 210px;
+    right: 20px;
+
+    @media screen and (min-width: 768px) {
+        right: 80px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        right: 45px;
+    }
+
+    transition: transform linear 250ms;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.3);
+    }
+}
+
+.checkbox__icon {
+    position: absolute;
+    top: 3px;
+    left: -3px;
+}
+
