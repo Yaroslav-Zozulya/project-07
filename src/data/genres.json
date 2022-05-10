@@ -14,7 +14,8 @@
     },
     {
       "id": 35,
-      "name": "Comedy"
+      "name": "Comedy",
+      "icon": "smile outline icon"
     },
     {
       "id": 80,
@@ -26,7 +27,8 @@
     },
     {
       "id": 18,
-      "name": "Drama"
+      "name": "Drama",
+      "icon": "frown outline icon"
     },
     {
       "id": 10751,

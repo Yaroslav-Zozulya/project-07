@@ -2,7 +2,8 @@ import 'swiper/swiper-bundle.min.css';
 import './sass/main.scss';
 
 import pagination from './js/pagination';
-import swiper from './js/swiper';
+
+import renderGenres from './js/renderGenres';
 
 import { refs } from './js/refs';
 
@@ -20,3 +21,4 @@ refs.library.addEventListener('click', onLibBtnClick);
 
 displayTrandingMovies();
 filter();
+renderGenres();
