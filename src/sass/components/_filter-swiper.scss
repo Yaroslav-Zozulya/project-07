@@ -33,8 +33,13 @@
 
   color: #ffffff;
   background-color: #312b45;
-  &--active,
+
+  &:hover,
   &:focus {
+    border-color: #ffffff;
+  }
+
+  &--active {
     background-color: #7e798f;
     border-color: #7e798f;
   }

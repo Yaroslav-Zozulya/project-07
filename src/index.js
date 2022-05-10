@@ -21,4 +21,3 @@ refs.library.addEventListener('click', onLibBtnClick);
 
 displayTrandingMovies();
 filter();
-renderGenres();
