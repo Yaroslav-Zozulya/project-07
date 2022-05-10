@@ -2,15 +2,18 @@
   "genres": [
     {
       "id": 28,
-      "name": "Action"
+      "name": "Action",
+      "icon": "bomb icon"
     },
     {
       "id": 12,
-      "name": "Adventure"
+      "name": "Adventure",
+      "icon": "compass outline icon"
     },
     {
       "id": 16,
-      "name": "Animation"
+      "name": "Animation",
+      "icon": "paint brush icon"
     },
     {
       "id": 35,
@@ -19,11 +22,13 @@
     },
     {
       "id": 80,
-      "name": "Crime"
+      "name": "Crime",
+      "icon": "user secret icon"
     },
     {
       "id": 99,
-      "name": "Documentary"
+      "name": "Documentary",
+      "icon": "search icon"
     },
     {
       "id": 18,
@@ -32,51 +37,63 @@
     },
     {
       "id": 10751,
-      "name": "Family"
+      "name": "Family",
+      "icon": "users icon"
     },
     {
       "id": 14,
-      "name": "Fantasy"
+      "name": "Fantasy",
+      "icon": "magic icon"
     },
     {
       "id": 36,
-      "name": "History"
+      "name": "History",
+      "icon": "fort awesome icon"
     },
     {
       "id": 27,
-      "name": "Horror"
+      "name": "Horror",
+      "icon": "snapchat ghost icon"
     },
     {
       "id": 10402,
-      "name": "Music"
+      "name": "Music",
+      "icon": "music icon"
     },
     {
       "id": 9648,
-      "name": "Mystery"
+      "name": "Mystery",
+      "icon": "question icon"
     },
     {
       "id": 10749,
-      "name": "Romance"
+      "name": "Romance",
+      "icon": "heart icon"
     },
     {
       "id": 878,
-      "name": "Science Fiction"
+      "name": "Science Fiction",
+      "icon": "rocket icon"
     },
     {
       "id": 10770,
-      "name": "TV Movie"
+      "name": "TV Movie",
+      "icon": "tv icon"
     },
     {
       "id": 53,
-      "name": "Thriller"
+      "name": "Thriller",
+      "icon": "eye icon"
     },
     {
       "id": 10752,
-      "name": "War"
+      "name": "War",
+      "icon": "fighter jet icon"
     },
     {
       "id": 37,
-      "name": "Western"
+      "name": "Western",
+      "icon": "sticker mule icon"
     }
   ]
 }
