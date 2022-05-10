@@ -121,4 +121,4 @@ var t,o=arguments[3];!function(o,i){"function"==typeof t&&t.amd?t([],function(){
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=t(require("./js/pagination")),r=require("./js/refs"),i=t(require("./js/displayTrandingMovies")),s=t(require("./js/movie-by-word")),n=t(require("./js/renderModal")),d=require("./js/renderHeader");function t(e){return e&&e.__esModule?e:{default:e}}r.refs.logo.addEventListener("click",i.default),r.refs.form.addEventListener("submit",s.default),r.refs.home.addEventListener("click",d.onHomeBtnClick),r.refs.library.addEventListener("click",d.onLibBtnClick),(0,i.default)();
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/refs":"VyiV","./js/displayTrandingMovies":"n5XF","./js/movie-by-word":"LPZ9","./js/renderModal":"TqZv","./js/renderHeader":"msBH"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.724ed2d5.js.map
+//# sourceMappingURL=/project-07/src.d32c8a5c.js.map
