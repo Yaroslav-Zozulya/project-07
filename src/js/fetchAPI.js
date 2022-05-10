@@ -12,7 +12,7 @@ function getMoviesByTrending(page = 1) {
 function getMoviesByQuery(query, page = 1) {
   return axios
     .get(
-      `/3/search/movie?api_key=${AUTH_TOKEN}&language=en-US&page=1&include_adult=false&query=${query}&page=${page}`,
+      `/3/search/movie?api_key=${AUTH_TOKEN}&language=en-US&include_adult=false&query=${query}&page=${page}`,
     )
     .then(response => response.data);
 }
@@ -22,5 +22,6 @@ function getMovieById(id) {
     .get(`/3/movie/${id}?api_key=${AUTH_TOKEN}&language=en-US`)
     .then(response => response.data);
 }
+
 
 export default { getMoviesByTrending, getMoviesByQuery, getMovieById };
