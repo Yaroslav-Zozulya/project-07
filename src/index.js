@@ -16,7 +16,7 @@ import filter from './js/filter';
 
 refs.logo.addEventListener('click', displayTrandingMovies);
 refs.form.addEventListener('submit', renderMovieByQuery);
-refs.home.addEventListener('click', onHomeBtnClick);
+refs.home.addEventListener('click', displayTrandingMovies);
 refs.library.addEventListener('click', onLibBtnClick);
 
 displayTrandingMovies();
