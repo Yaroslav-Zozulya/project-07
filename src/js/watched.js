@@ -1,21 +1,19 @@
 // добавляет фильм в список "Посмотреть позже"
 // список "Посмотреть позже" есть массив с обьектами фильмов
 // принимает обьект фильма
-function addToWatched({
-  id,
-  poster_path,
-  genres: [genre_id, name],
-  release_date,
-  vote_average,
-  title,
-}) {
+function addToWatched({ id, poster_path, title, genres, release_date, vote_average }) {
   // если в localStorage нет поля  'watched' то создаем его
   // и делаем в нем массив с  фильмом
+  let genre_ids = [];
+  // в массив genre_ids добавляем id фильмов
+  genres.map(genre => {
+    genre_ids.push(genre.id);
+  });
   const localMovie = {
     id: id,
     poster_path: poster_path,
     title: title,
-    genres: [genre_id, name],
+    genre_ids: genre_ids,
     release_date: release_date,
     vote_average: vote_average,
     // isRating: movie.isRating,

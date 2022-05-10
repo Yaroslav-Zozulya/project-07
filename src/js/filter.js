@@ -1,25 +1,58 @@
 export default function filter() {
-  const filterMain = document.querySelector('.filter__body');
-  const openSelect = document.querySelector('.select__icon .select__svg');
-  const openFilter = document.querySelector('.filter__primaryText');
+  const ref = {
+    filterMain: document.querySelector('.filter__content'),
+    selectDropdownAll: document.querySelectorAll('.select__dropdown'),
+    openFilter: document.querySelector('.filter__primaryText'),
+  };
 
-  filterMain.addEventListener('click', e => {
-    if (e.target.nodeName === 'UL') {
-      return;
-    }
-    const select = e.target.closest('.select');
-    const dropdown = select.querySelector('.select__dropdown');
-    const icon = select.querySelector('.select__svg');
-    dropdown.classList.toggle('is-hidden');
-    icon.classList.toggle('select__svg--rotate');
-    /*e.currentTarget.classList.toggle('select__svg--rotate');
-    const select = e.currentTarget.closest('.select');
-    const selectContent = select.querySelector('.select__dropdown');
-    selectContent.classList.toggle('is-hidden');*/
-  });
-  openFilter.addEventListener('click', e => {
+  ref.filterMain.addEventListener('click', onDropdownOpen);
+
+  ref.openFilter.addEventListener('click', e => {
     const filter = e.currentTarget.closest('.filter');
     const filterBody = filter.querySelector('.filter__body');
     filterBody.classList.toggle('is-hidden');
   });
+
+  function toggalDropdownHidden(dropdown) {
+    const dropdownContainesHiddenArr = [];
+    ref.selectDropdownAll.forEach(elem => {
+      if (elem !== dropdown) {
+        dropdownContainesHiddenArr.push(elem.classList.contains('is-hidden'));
+      } else {
+        dropdownContainesHiddenArr.push(true);
+      }
+    });
+    if (!dropdownContainesHiddenArr.every(e => e === true)) {
+      ref.selectDropdownAll.forEach(elem => {
+        if (!elem.classList.contains('is-hidden')) {
+          elem.classList.toggle('is-hidden');
+          elem
+            .closest('.select')
+            .querySelector('.select__svg')
+            .classList.toggle('select__svg--rotate');
+        }
+      });
+    }
+  }
+
+  function onDropdownOpen(e) {
+    if (
+      !e.target.classList.contains('select') &&
+      !e.target.classList.contains('select__header') &&
+      !e.target.classList.contains('select__text') &&
+      !e.target.classList.contains('select__title') &&
+      !e.target.classList.contains('select__extra') &&
+      !e.target.classList.contains('select__icon') &&
+      !e.target.classList.contains('select__svg')
+    ) {
+      return;
+    }
+
+    const select = e.target.closest('.select');
+    const dropdown = select.querySelector('.select__dropdown');
+    const icon = select.querySelector('.select__svg');
+    toggalDropdownHidden(dropdown);
+    dropdown.classList.toggle('is-hidden');
+    icon.classList.toggle('select__svg--rotate');
+  }
 }
