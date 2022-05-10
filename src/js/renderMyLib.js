@@ -8,34 +8,29 @@ refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   refs.containerMovies.innerHTML = '';
-
-  // refs.watched.addEventListener('click', onWatchedBtnClick);
-  // refs.queue.addEventListener('click', onQueueBtnClick);
-
-  // if (!isActiveWatched()) {
-  //   refs.watched.classList.add('.library__btn--currently');
-  // }
-  // refs.queue.classList.remove('.library__btn--currently');
   onLibBtnClick();
   renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
 function onQueueBtnClick() {
   refs.containerMovies.innerHTML = '';
-  refs.queue.classList.add('.library__btn--currently');
-  refs.watched.classList.remove('.library__btn--currently');
+  refs.queue.classList.add('library__btn--currently');
+  refs.watched.classList.remove('library__btn--currently');
   renderMyLib('queue');
 }
 
 function onWatchedBtnClick() {
   refs.containerMovies.innerHTML = '';
-  refs.watched.classList.add('.library__btn--currently');
-  refs.queue.classList.remove('.library__btn--currently');
+  if (!refs.watched.classList.contains('library__btn--currently')) {
+    refs.watched.classList.add('library__btn--currently');
+  }
+
+  refs.queue.classList.remove('library__btn--currently');
   renderMyLib('watched');
 }
 
 // function isActiveWatched() {
-//   return refs.watched.classList.contains('.library__btn--currently');
+//   return refs.watched.classList.contains('library__btn--currently');
 // }
 
 function renderMyLib(localStorData) {
@@ -55,12 +50,12 @@ function renderMyLib(localStorData) {
 }
 
 function renderMyLibOnCloseModal() {
-  if (refs.library.classList.contains('.library__btn--currently')) {
-    if (refs.watched.classList.contains('.library__btn--currently')) {
+  if (refs.library.classList.contains('library__btn--currently')) {
+    if (refs.watched.classList.contains('library__btn--currently')) {
       refs.containerMovies.innerHTML = '';
       renderMyLib('watched');
     }
-    if (refs.queue.classList.contains('.library__btn--currently')) {
+    if (refs.queue.classList.contains('library__btn--currently')) {
       refs.containerMovies.innerHTML = '';
       renderMyLib('queue');
     }
