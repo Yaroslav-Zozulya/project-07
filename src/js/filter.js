@@ -10,6 +10,7 @@ export default function filter() {
     const select = e.target.closest('.select');
     const dropdown = select.querySelector('.select__dropdown');
     const icon = select.querySelector('.select__svg');
+    console.log(dropdown);
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
     /*e.currentTarget.classList.toggle('select__svg--rotate');
