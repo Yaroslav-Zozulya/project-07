@@ -65,6 +65,8 @@ export default function filter() {
       case 'date': {
         renderDate();
       }
+      case 'genres': {
+      }
     }
   }
 }
