@@ -13,10 +13,6 @@ export default function filter() {
     console.log(dropdown);
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
-    /*e.currentTarget.classList.toggle('select__svg--rotate');
-    const select = e.currentTarget.closest('.select');
-    const selectContent = select.querySelector('.select__dropdown');
-    selectContent.classList.toggle('is-hidden');*/
   });
   openFilter.addEventListener('click', e => {
     const filter = e.currentTarget.closest('.filter');
