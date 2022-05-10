@@ -1,7 +1,6 @@
 import renderMovie from './renderMovie';
 import { refs } from './refs';
-// import { onLibBtnClick } from './renderHeader';
-
+import { onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
 
 refs.library.addEventListener('click', onMyLibBtnClick);
@@ -11,11 +10,11 @@ refs.queue.addEventListener('click', onQueueBtnClick);
 function onMyLibBtnClick() {
   refs.containerMovies.innerHTML = '';
 
-  if (!isActiveWatched()) {
-    refs.watched.classList.add('.library__btn--currently');
-  }
-  refs.queue.classList.remove('.library__btn--currently');
-  // onLibBtnClick();
+  // if (!isActiveWatched()) {
+  //   refs.watched.classList.add('.library__btn--currently');
+  // }
+  // refs.queue.classList.remove('.library__btn--currently');
+  onLibBtnClick();
   renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
@@ -33,9 +32,9 @@ function onWatchedBtnClick() {
   renderMyLib('watched');
 }
 
-function isActiveWatched() {
-  return refs.watched.classList.contains('.library__btn--currently');
-}
+// function isActiveWatched() {
+//   return refs.watched.classList.contains('.library__btn--currently');
+// }
 
 function renderMyLib(localStorData) {
   const dataStore = localStorage.getItem(localStorData);
