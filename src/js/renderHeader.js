@@ -1,10 +1,6 @@
 import { refs } from './refs';
 
-function onHomeBtnClick() {
-  refs.formEl.reset();
- 
 export function onHomeBtnClick() {
-
   refs.home.classList.add('nav__btn--currently');
   refs.library.classList.remove('nav__btn--currently');
   refs.header.classList.remove('header--library');
@@ -13,7 +9,6 @@ export function onHomeBtnClick() {
 }
 
 export function onLibBtnClick() {
-
   refs.home.classList.remove('nav__btn--currently');
   refs.library.classList.add('nav__btn--currently');
   refs.header.classList.add('header--library');
