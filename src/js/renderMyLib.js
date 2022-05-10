@@ -14,7 +14,6 @@ const refs = {
 refs.btnMyLib.addEventListener('click', onMyLibBtnClick);
 refs.btnWatched.addEventListener('click', onWatchedBtnClick);
 refs.btnQueue.addEventListener('click', onQueueBtnClick);
-refs.watchedBtn.addEventListener('click', addToWatched); //test
 
 function onMyLibBtnClick() {
   refs.containerMovies.innerHTML = '';
