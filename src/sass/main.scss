@@ -9,6 +9,7 @@
 @import './components/buttons';
 @import './components/loader';
 @import './components/select';
+@import './components/filter-swiper';
 
 //LAYOUT
 @import './layout/header';
@@ -17,3 +18,5 @@
 @import './layout/footer';
 @import './layout/film-modal';
 @import './layout/arrow';
+@import './layout/pagination';
+@import './layout/darkMode';

@@ -1,0 +1,43 @@
+#pagination.tui-pagination {
+    // height: 40px;
+    margin: 0;
+}
+
+#pagination.tui-pagination .tui-page-btn,
+#pagination.tui-pagination .tui-next-is-elip,
+#pagination.tui-pagination .tui-page-btn .tui-next,
+#pagination.tui-pagination .tui-last {
+   
+    margin: 0;
+
+    color: var(--main-text-color);
+    font-size: 12px;
+    line-height: 1.33;
+    text-decoration: none;
+    border: transparent;
+    border-width: 0;
+    border-radius: 5px;
+
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+#pagination.tui-pagination .tui-ico-ellip {
+    margin-top: 12px;
+}
+
+#pagination.tui-pagination .tui-ico-next,
+#pagination.tui-pagination .tui-ico-last,
+#pagination.tui-pagination .tui-ico-first,
+#pagination.tui-pagination .tui-ico-prev {
+    margin-top: 7px;
+   
+}
+
+
+#pagination.tui-pagination .tui-is-selected {
+    background-color: var(--btn-hover-background);
+    border-color: var(--btn-hover-background);
+    color: var(--btn-border-color);
+}
