@@ -23,8 +23,7 @@
 }
 
 .collection >.movie-card {
-    
-  
+   
     @media screen and (max-width: 767px) {
         &:not(:last-child) {
             margin-bottom: 20px;
@@ -45,6 +44,31 @@
         margin-left: 16px;
     }
 }
+
+.movie-info {
+    transform: scale(1);
+    transition: transform linear 250ms;
+    padding-top: 8px;
+}
+  
+  .movie-info::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: var(--btn-hover-background);
+
+      transform: scale(0);
+      opacity: 0;
+      transition: transform linear 350ms, opacity linear 250ms;
+  }
+
+  .movie-info:hover::after {
+      transform: scale(1);
+      opacity: 1;
+  }
 
 .poster-thumb {
     border-radius: 5px;
@@ -107,9 +131,7 @@
     color: var(--main-text-color);
 }
 
-.movie-info {
-    padding-top: 8px; 
-}
+
 
 .movie-description {
   flex-grow: 1;
