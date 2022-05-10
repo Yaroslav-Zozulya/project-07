@@ -1,9 +1,10 @@
 // Функцию нужно вызвать при открытии модалки, ожидает ссылки на бекдроп, модалку, и кнопку закрытия
-
+import { renderMyLibOnCloseModal } from './renderMyLib';
 export default function modalСloser(backdropRefs, modalRefs, btnClose) {
   function closeModal() {
     backdropRefs.classList.add('is-hidden');
     modalRefs.innerHTML = '';
+    renderMyLibOnCloseModal();
   }
 
   const closeWithEsc = event => {

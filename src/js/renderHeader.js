@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { onQueueBtnClick, onWatchedBtnClick } from './renderMyLib';
 
 export function onHomeBtnClick() {
   refs.home.classList.add('nav__btn--currently');
@@ -6,6 +7,8 @@ export function onHomeBtnClick() {
   refs.header.classList.remove('header--library');
   refs.librarySection.classList.add('visually-hidden');
   refs.formEl.classList.remove('visually-hidden');
+  refs.watched.removeEventListener('click', onWatchedBtnClick);
+  refs.queue.removeEventListener('click', onQueueBtnClick);
 }
 
 export function onLibBtnClick() {
@@ -16,4 +19,6 @@ export function onLibBtnClick() {
   refs.queue.classList.remove('library__btn--currently');
   refs.formEl.classList.add('visually-hidden');
   refs.librarySection.classList.remove('visually-hidden');
+  refs.watched.addEventListener('click', onWatchedBtnClick);
+  refs.queue.addEventListener('click', onQueueBtnClick);
 }

@@ -1,14 +1,16 @@
-import renderMovie from './renderMovie';
 import { refs } from './refs';
-import { onLibBtnClick } from './renderHeader';
+import renderMovie from './renderMovie';
+import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
 
+refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
-refs.watched.addEventListener('click', onWatchedBtnClick);
-refs.queue.addEventListener('click', onQueueBtnClick);
 
 function onMyLibBtnClick() {
   refs.containerMovies.innerHTML = '';
+
+  // refs.watched.addEventListener('click', onWatchedBtnClick);
+  // refs.queue.addEventListener('click', onQueueBtnClick);
 
   // if (!isActiveWatched()) {
   //   refs.watched.classList.add('.library__btn--currently');
@@ -52,4 +54,17 @@ function renderMyLib(localStorData) {
   }
 }
 
-export default renderMyLib;
+function renderMyLibOnCloseModal() {
+  if (refs.library.classList.contains('.library__btn--currently')) {
+    if (refs.watched.classList.contains('.library__btn--currently')) {
+      refs.containerMovies.innerHTML = '';
+      renderMyLib('watched');
+    }
+    if (refs.queue.classList.contains('.library__btn--currently')) {
+      refs.containerMovies.innerHTML = '';
+      renderMyLib('queue');
+    }
+  }
+}
+
+export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal };
