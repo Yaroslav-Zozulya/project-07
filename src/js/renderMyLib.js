@@ -50,7 +50,7 @@ function renderMyLib(localStorData) {
 }
 
 function renderMyLibOnCloseModal() {
-  if (refs.library.classList.contains('library__btn--currently')) {
+  if (refs.library.classList.contains('nav__btn--currently')) {
     if (refs.watched.classList.contains('library__btn--currently')) {
       refs.containerMovies.innerHTML = '';
       renderMyLib('watched');
