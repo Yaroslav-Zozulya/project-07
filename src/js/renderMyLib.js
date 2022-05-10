@@ -1,4 +1,4 @@
-import renderMovie from 'renderMovie';
+import renderMovie from './renderMovie';
 import { Notify } from 'notiflix';
 
 const refs = {
@@ -14,7 +14,7 @@ refs.btnQueue.addEventListener('click', onQueueBtnClick);
 
 //рендер watched movies т.к. кнопка watched активна по умолчанию
 function onMyLibBtnClick() {
-  refs.containerMovies.innerHTML('');
+  refs.containerMovies.innerHTML = '';
 
   if (!isActiveWatched()) {
     refs.btnWatched.classList.add('active');
@@ -24,7 +24,7 @@ function onMyLibBtnClick() {
 }
 
 function onQueueBtnClick() {
-  refs.containerMovies.innerHTML('');
+  refs.containerMovies.innerHTML = '';
   refs.btnQueue.classList.add('active');
   refs.btnWatched.classList.remove('active');
   renderMyLib('queue');
@@ -33,7 +33,7 @@ function onQueueBtnClick() {
 function onWatchedBtnClick() {
   refs.btnWatched.classList.add('active');
   refs.btnQueue.classList.remove('active');
-  refs.containerMovies.innerHTML('');
+  refs.containerMovies.innerHTML = '';
   renderMyLib('watched');
 }
 
