@@ -14,4 +14,5 @@ export const refs = {
   galleryEl: document.querySelector('.gallery'),
   galleryContainerEl: document.querySelector('.gallery > .container'),
   emptyPicture: document.querySelector('.emptyPicture'),
+  arrowRefs: document.querySelector('.return-arrow'),
 };
