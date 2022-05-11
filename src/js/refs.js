@@ -11,5 +11,5 @@ export const refs = {
   librarySection: document.querySelector('.library'),
   header: document.querySelector('.header'),
   formEl: document.querySelector('.form'),
-   galleryEl: document.querySelector('.gallery'),
+  galleryEl: document.querySelector('.gallery'),
 };

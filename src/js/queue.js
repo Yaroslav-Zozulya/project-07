@@ -1,21 +1,19 @@
 // добавляет фильм в список "Queue"
 // список "Queue" есть массив с с обьектами фильмов
 // принимает обьект фильма
-function addToQueue({
-  id,
-  poster_path,
-  genres: [genre_id, name],
-  release_date,
-  vote_average,
-  title,
-}) {
+function addToQueue({ id, poster_path, genres, release_date, vote_average, title }) {
   // если в localStorage нет поля  'queue' то создаем его
   // и делаем в нем массив с  фильмом
+  let genre_ids = [];
+  // в массив genre_ids добавляем id фильмов
+  genres.map(genre => {
+    genre_ids.push(genre.id);
+  });
   const localMovie = {
     id: id,
     poster_path: poster_path,
     title: title,
-    genres: [genre_id, name],
+    genre_ids: genre_ids,
     release_date: release_date,
     vote_average: vote_average,
     // isRating: movie.isRating,

@@ -4,7 +4,9 @@
 }
 
 // ===================== HEADER =======================
-    
+.header__container{
+position: relative;
+}
 .header{
     min-height: 230px;
     padding-top: 46px;
@@ -72,6 +74,9 @@
     align-items: center;
 }
 
+.logo-btn {
+    --animate-duration: 1.25s;
+}
 
 .logo-text {
     margin-left: 10px;
@@ -230,7 +235,7 @@ text-align: center;
     margin-left: 20px;
 }
 
-.llibrary_button--currenly {
+.library__btn--currently {
     border: 0;
     background-color: var(--secondary-text-color);
 
@@ -250,3 +255,54 @@ text-align: center;
     border: 0;
     clip: rect(0 0 0 0);
 }
+
+.animate__animated{
+animation-duration: 1s;
+animation-fill-mode: both;
+}
+
+.animate__flip{
+animation-name: flip;
+animation-duration: 1s;
+}
+
+
+@keyframes flip {
+    from {
+        -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    
+      
+    }
+
+}
+
+.checkbox-container {
+    position: absolute;
+    top: 210px;
+    right: 20px;
+
+    @media screen and (min-width: 768px) {
+        right: 80px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        right: 45px;
+    }
+
+    transition: transform linear 250ms;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.3);
+    }
+}
+
+.checkbox__icon {
+    position: absolute;
+    top: 3px;
+    left: -3px;
+}
+

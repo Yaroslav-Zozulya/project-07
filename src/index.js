@@ -11,7 +11,7 @@ import { onHomeBtnClick, onLibBtnClick } from './js/renderHeader';
 
 refs.logo.addEventListener('click', displayTrandingMovies);
 refs.form.addEventListener('submit', renderMovieByQuery);
-refs.home.addEventListener('click', onHomeBtnClick);
+refs.home.addEventListener('click', displayTrandingMovies);
 refs.library.addEventListener('click', onLibBtnClick);
 
 displayTrandingMovies();
