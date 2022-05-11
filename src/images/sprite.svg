@@ -38,6 +38,7 @@
 <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.0667" d="M28 16h2.667"></path>
 <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.0667" d="M5.627 26.373l1.893-1.893"></path>
 <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.0667" d="M24.48 7.52l1.893-1.893"></path>
+
 </symbol>
 <symbol id = "icon-filter" viewBox="0 0 30 30"> 
 <path fill="#111224" d="M17 11H4a1 1 0 0 1 0-2h13a1 1 0 0 1 0 2zm9 0h-4a1 1 0 0 1 0-2h4a1 1 0 0 1 0 2z"/>

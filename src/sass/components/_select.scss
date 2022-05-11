@@ -78,7 +78,7 @@
     
 }
 .select__content{
-    height: 50px;
+    height: 100%;
     background-color: #5e5574;
     border-radius: 4px;
     box-shadow: 0 16px 32px rgb(7 5 14 / 40%);
@@ -87,5 +87,9 @@
     transition:transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.select__item{
+        padding: 6px;
+        color: var(--main-background-color)
 }
 

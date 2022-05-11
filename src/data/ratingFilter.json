@@ -1,0 +1,34 @@
+{
+  "rating": [
+    {
+      "id": 1,
+      "name": "Будь-який рейтинг",
+      "query": ""
+    },
+    {
+      "id": 2,
+      "name": "Більше 9",
+      "query": "&vote_average.gte=9"
+    },
+    {
+      "id": 3,
+      "name": "Більше 8",
+      "query": "&vote_average.gte=8"
+    },
+    {
+      "id": 4,
+      "name": "Більше 7",
+      "query": "&vote_average.gte=7"
+    },
+    {
+      "id": 5,
+      "name": "Більше 6",
+      "query": "&vote_average.gte=6"
+    },
+    {
+      "id": 6,
+      "name": "Більше 5",
+      "query": "&vote_average.gte=5"
+    }
+  ]
+}

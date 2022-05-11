@@ -4,7 +4,7 @@ function renderDate() {
   return date.date.map(markupDate);
 }
 function markupDate(data) {
-  return `<li class="date__item" data-query=${data.query}>${data.name}</li>`;
+  return `<li class="select__item date__item" data-query=${data.query}>${data.name}</li>`;
 }
 
 function appendDate() {
