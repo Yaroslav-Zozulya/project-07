@@ -1,14 +1,24 @@
 import renderGenres from './renderGenres';
 import renderDate from './renderDateFilter';
+import renderRating from './rendeRatingFilter';
+import filterMovie from './displayFilterMovie';
 export default function filter() {
+  renderDate();
+  renderGenres();
+  renderRating();
   const ref = {
     filterMain: document.querySelector('.filter__content'),
     selectDropdownAll: document.querySelectorAll('.select__dropdown'),
     openFilter: document.querySelector('.filter__primaryText'),
     containerGenres: document.querySelector('.swiper-wrapper'),
+    ratingList: document.querySelector('.rating__list'),
+    dateList: document.querySelector('.date__list'),
+    clearFilter: document.querySelector('.filter__clear'),
   };
 
   const genres_ids = [];
+  let data_query = '';
+  let rating_query = '';
 
   ref.filterMain.addEventListener('click', onDropdownOpen);
 
@@ -36,6 +46,39 @@ export default function filter() {
     target.blur();
     genres_ids.splice(genres_ids.indexOf(target.dataset.id), 1);
   });
+
+  ref.ratingList.addEventListener('click', e => {
+    if (e.target.nodeName !== 'LI') {
+      return;
+    }
+    changeTextExtraData(e.target);
+    rating_query = e.target.dataset.query;
+    setDataToRender();
+  });
+
+  ref.dateList.addEventListener('click', e => {
+    if (e.target.nodeName !== 'LI') {
+      return;
+    }
+    changeTextExtraData(e.target);
+    data_query = e.target.dataset.query;
+    setDataToRender();
+  });
+
+  ref.clearFilter.addEventListener('click', e => {
+    data_query = '';
+    rating_query = '';
+    setDataToRender();
+  });
+
+  function setDataToRender() {
+    filterMovie(data_query, rating_query);
+  }
+  //Змінює текст в p.select__extra
+  function changeTextExtraData(target) {
+    const chosenDate = target.closest('.select').querySelector('.select__extra');
+    chosenDate.innerHTML = target.textContent;
+  }
 
   function toggalDropdownHidden(dropdown) {
     const dropdownContainesHiddenArr = [];
@@ -76,21 +119,9 @@ export default function filter() {
     const dropdown = select.querySelector('.select__dropdown');
     const icon = select.querySelector('.select__svg');
     toggalDropdownHidden(dropdown);
-    render(select);
+    //render(select);
 
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
-  }
-
-  function render(select) {
-    const dataSet = select.dataset.select;
-    switch (dataSet) {
-      case 'date': {
-        renderDate();
-      }
-      case 'genres': {
-        renderGenres();
-      }
-    }
   }
 }
