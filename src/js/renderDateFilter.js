@@ -6,10 +6,11 @@ function renderDate() {
 function markupDate(data) {
   return `<li class="date__item" data-query=${data.query}>${data.name}</li>`;
 }
+const dateString = renderDate().join('');
 
 function appendDate() {
   const list = document.querySelector('.filter .date__list');
-  list.innerHTML = renderDate().join('');
+  list.innerHTML = dateString;
 }
 
 export default appendDate;
