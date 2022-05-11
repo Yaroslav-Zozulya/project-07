@@ -3,7 +3,7 @@ export const refs = {
   containerMovies: document.querySelector('.collection'),
   form: document.querySelector('.form'),
   input: document.querySelector('.form__input'),
-   home: document.querySelector('.js-nav-home-btn'),
+  home: document.querySelector('.js-nav-home-btn'),
   library: document.querySelector('.js-nav-library-btn'),
   logo: document.querySelector('.js-logo-btn'),
   watched: document.querySelector('.js-btn-watched'),
@@ -12,4 +12,6 @@ export const refs = {
   header: document.querySelector('.header'),
   formEl: document.querySelector('.form'),
   galleryEl: document.querySelector('.gallery'),
+  galleryContainerEl: document.querySelector('.gallery > .container'),
+  emptyPicture: document.querySelector('.emptyPicture'),
 };

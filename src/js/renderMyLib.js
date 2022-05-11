@@ -29,18 +29,16 @@ function onWatchedBtnClick() {
   renderMyLib('watched');
 }
 
-// function isActiveWatched() {
-//   return refs.watched.classList.contains('library__btn--currently');
-// }
-
 function renderMyLib(localStorData) {
   const dataStore = localStorage.getItem(localStorData);
   if (!dataStore) {
+    displayEmptyLib();
     Notify.info('There is no movies in your Library');
     return;
   }
 
   try {
+    // refs.containerMovies.innerHTML = '';
     const parseDataStore = JSON.parse(dataStore);
     const markup = renderMovie(parseDataStore, true);
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
@@ -60,6 +58,21 @@ function renderMyLibOnCloseModal() {
       renderMyLib('queue');
     }
   }
+}
+
+// function markupEmpty() {
+//   return '<img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" />';
+// }
+
+function displayEmptyLib() {
+  // const imgEl = document.createElement('img');
+  // imgEl.src = './images/no-result-to-show.png';
+  // imgEl.alt = 'no-result-to-show';
+  // imgEl.className = 'emptyPicture';
+  // refs.containerMovies.after(imgEl);
+
+  refs.containerMovies.innerHTML =
+    '<li><img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>';
 }
 
 export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal };
