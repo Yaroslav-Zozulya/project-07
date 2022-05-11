@@ -12,6 +12,7 @@ import renderMovieByQuery from './js/movie-by-word';
 import renderModal from './js/renderModal';
 import { onHomeBtnClick, onLibBtnClick } from './js/renderHeader';
 import openModalTeam from './js/teamModal';
+import returner from './js/returner';
 
 import filter from './js/filter';
 
@@ -22,3 +23,4 @@ refs.library.addEventListener('click', onLibBtnClick);
 
 displayTrandingMovies();
 filter();
+returner();

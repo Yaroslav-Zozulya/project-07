@@ -1,11 +1,28 @@
 .return-arrow {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  width: 60px;
+  bottom: 20px;
+  right: 30px;
   fill: var(--footer-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(0deg);
+  transition: all 750ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     fill: var(--btn-hover-background);
   }
+  @media screen and (min-width: 768px){
+    width: 100px;
+    bottom: 30px;
+  }
+  @media screen and (min-width: 1024px){
+    bottom: 50px;
+    right: 50px;
+  }
+}
+.return-arrow.is-hidden-arrow {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(180deg);
+  transition: all 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }
