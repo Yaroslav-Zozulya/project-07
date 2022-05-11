@@ -7,20 +7,17 @@ refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
-  refs.containerMovies.innerHTML = '';
   onLibBtnClick();
   renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
 function onQueueBtnClick() {
-  refs.containerMovies.innerHTML = '';
   refs.queue.classList.add('library__btn--currently');
   refs.watched.classList.remove('library__btn--currently');
   renderMyLib('queue');
 }
 
 function onWatchedBtnClick() {
-  refs.containerMovies.innerHTML = '';
   if (!refs.watched.classList.contains('library__btn--currently')) {
     refs.watched.classList.add('library__btn--currently');
   }
@@ -32,13 +29,14 @@ function onWatchedBtnClick() {
 function renderMyLib(localStorData) {
   const dataStore = localStorage.getItem(localStorData);
   if (!dataStore) {
+    refs.containerMovies.innerHTML = '';
     displayEmptyLib();
     Notify.info('There is no movies in your Library');
     return;
   }
 
   try {
-    // refs.containerMovies.innerHTML = '';
+    refs.containerMovies.innerHTML = '';
     const parseDataStore = JSON.parse(dataStore);
     const markup = renderMovie(parseDataStore, true);
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
@@ -50,11 +48,9 @@ function renderMyLib(localStorData) {
 function renderMyLibOnCloseModal() {
   if (refs.library.classList.contains('nav__btn--currently')) {
     if (refs.watched.classList.contains('library__btn--currently')) {
-      refs.containerMovies.innerHTML = '';
       renderMyLib('watched');
     }
     if (refs.queue.classList.contains('library__btn--currently')) {
-      refs.containerMovies.innerHTML = '';
       renderMyLib('queue');
     }
   }
