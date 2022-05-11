@@ -11,6 +11,7 @@ import displayTrandingMovies from './js/displayTrandingMovies';
 import renderMovieByQuery from './js/movie-by-word';
 import renderModal from './js/renderModal';
 import { onHomeBtnClick, onLibBtnClick } from './js/renderHeader';
+import openModalTeam from './js/teamModal';
 
 import filter from './js/filter';
 
