@@ -1,13 +1,12 @@
 import Swiper, { Navigation, Pagination, EffectCoverflow } from 'swiper';
 Swiper.use([Pagination, Navigation]);
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.team__swiper', {
   // Optional parameters
-
   centeredSlidesBounds: true,
   spaceBetween: 10,
   centeredSlides: true,
   pagination: {
-    el: '.swiper-pagination',
+    el: '.team__swiper-pagination',
     clickable: true,
   },
   slidesPerView: 1,

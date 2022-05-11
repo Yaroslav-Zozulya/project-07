@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.swiper {
+.filter__swiper {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -53,22 +53,9 @@
   pointer-events: none;
 }
 
-.swiper-pagination {
+.filter__swiper-pagination {
   bottom: 5px !important;
 }
-.swiper-pagination-bullet-active {
+.filter__swiper-pagination .swiper-pagination-bullet {
   background-color: #ffffff;
-}
-.swiper-button {
-  &::after {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.72);
-  }
-}
-.swiper-button-prev {
-  left: 0;
-}
-
-.swiper-button-next {
-  right: 0;
 }

@@ -10,15 +10,17 @@ export default function filter() {
     filterMain: document.querySelector('.filter__content'),
     selectDropdownAll: document.querySelectorAll('.select__dropdown'),
     openFilter: document.querySelector('.filter__primaryText'),
-    containerGenres: document.querySelector('.swiper-wrapper'),
+    containerGenres: document.querySelector('.filter__swiper-wrapper'),
+    genresExtra: document.querySelector('.genres__extra'),
     ratingList: document.querySelector('.rating__list'),
     dateList: document.querySelector('.date__list'),
     clearFilter: document.querySelector('.filter__clear'),
   };
 
-  const genres_ids = [];
-  let data_query = '';
+  const selected_genres = [];
+  let date_query = '';
   let rating_query = '';
+  let genres_query = '';
 
   ref.filterMain.addEventListener('click', onDropdownOpen);
 
@@ -38,13 +40,22 @@ export default function filter() {
     // Если жанр ещё не выбран, то вешаем класс и добавляем id жанра в массив
     if (!target.classList.contains(ACTIVE_CLASS)) {
       target.classList.add(ACTIVE_CLASS);
-      genres_ids.push(target.dataset.id);
-      return;
+      selected_genres.push({ name: target.dataset.name, id: target.dataset.id });
+      // Иначе удаляем класс, снимаем фокус с кнопки и удаляем id жанра из массива
+    } else {
+      target.classList.remove(ACTIVE_CLASS);
+      target.blur();
+      selected_genres.splice(
+        selected_genres.findIndex(({ id }) => id === target.dataset.id),
+        1,
+      );
     }
-    // Иначе удаляем класс, снимаем фокус с кнопки и удаляем id жанра из массива
-    target.classList.remove(ACTIVE_CLASS);
-    target.blur();
-    genres_ids.splice(genres_ids.indexOf(target.dataset.id), 1);
+
+    const genres_names = selected_genres.map(({ name }) => name).join(', ');
+    const genres_ids = selected_genres.map(({ id }) => id).join(',');
+    ref.genresExtra.textContent = genres_names;
+    genres_query = `$&with_genres=${genres_ids}`;
+    setDataToRender();
   });
 
   ref.ratingList.addEventListener('click', e => {
@@ -61,18 +72,20 @@ export default function filter() {
       return;
     }
     changeTextExtraData(e.target);
-    data_query = e.target.dataset.query;
+    date_query = e.target.dataset.query;
     setDataToRender();
   });
 
   ref.clearFilter.addEventListener('click', e => {
-    data_query = '';
+    date_query = '';
     rating_query = '';
+    genres_query = '';
+    document.querySelectorAll('.select__extra').forEach(item => (item.innerHTML = ''));
     setDataToRender();
   });
 
   function setDataToRender() {
-    filterMovie(data_query, rating_query);
+    filterMovie(genres_query, date_query, rating_query);
   }
   //Змінює текст в p.select__extra
   function changeTextExtraData(target) {

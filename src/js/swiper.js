@@ -1,28 +1,33 @@
 // import Swiper bundle with all modules installed
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Pagination } from 'swiper';
 
-export default function createSwiper() {
-  const swiper = new Swiper('.swiper', {
-    modules: [Navigation, Pagination],
+export default new Swiper('.filter__swiper', {
+  modules: [Pagination],
 
-    freeMode: true,
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      dynamicBullets: true,
+  freeMode: true,
+  watchSlidesProgress: true,
+  watchOverflow: true,
+
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true,
+  // If we need pagination
+  pagination: {
+    el: '.filter__swiper-pagination',
+    dynamicBullets: true,
+    clickable: true,
+  },
+
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 12,
     },
-
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 3,
-        spaceBetween: 12,
-      },
-      // when window width is >= 480px
-      768: {
-        slidesPerView: 5,
-        spaceBetween: 12,
-      },
+    768: {
+      slidesPerView: 5,
+      slidesPerGroup: 3,
+      spaceBetween: 12,
     },
-  });
-}
+  },
+});
