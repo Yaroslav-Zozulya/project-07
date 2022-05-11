@@ -23,5 +23,4 @@ function getMovieById(id) {
     .then(response => response.data);
 }
 
-
 export default { getMoviesByTrending, getMoviesByQuery, getMovieById };
