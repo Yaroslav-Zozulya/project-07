@@ -335,4 +335,4 @@ var t,e=arguments[3];!function(e,i){"function"==typeof t&&t.amd?t([],function(){
 },{"swiper":"Riml"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=n(require("./js/pagination")),r=require("./js/refs"),i=n(require("./js/displayTrandingMovies")),s=n(require("./js/movie-by-word")),d=n(require("./js/renderModal")),a=require("./js/renderHeader"),t=n(require("./js/teamModal"));function n(e){return e&&e.__esModule?e:{default:e}}r.refs.logo.addEventListener("click",i.default),r.refs.form.addEventListener("submit",s.default),r.refs.home.addEventListener("click",i.default),r.refs.library.addEventListener("click",a.onLibBtnClick),(0,i.default)();
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/refs":"VyiV","./js/displayTrandingMovies":"n5XF","./js/movie-by-word":"LPZ9","./js/renderModal":"TqZv","./js/renderHeader":"msBH","./js/teamModal":"Jvd2"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.283769cd.js.map
+//# sourceMappingURL=/project-07/src.8fe40eb5.js.map
