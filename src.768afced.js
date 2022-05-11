@@ -337,4 +337,4 @@ var t,e=arguments[3];!function(e,i){"function"==typeof t&&t.amd?t([],function(){
 },{"./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=u(require("./js/pagination")),r=require("./js/refs"),i=u(require("./js/displayTrandingMovies")),s=u(require("./js/movie-by-word")),d=u(require("./js/renderModal")),t=require("./js/renderHeader"),a=u(require("./js/teamModal")),n=u(require("./js/returner"));function u(e){return e&&e.__esModule?e:{default:e}}r.refs.logo.addEventListener("click",i.default),r.refs.form.addEventListener("submit",s.default),r.refs.home.addEventListener("click",i.default),r.refs.library.addEventListener("click",t.onLibBtnClick),(0,i.default)(),(0,n.default)();
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/refs":"VyiV","./js/displayTrandingMovies":"n5XF","./js/movie-by-word":"LPZ9","./js/renderModal":"TqZv","./js/renderHeader":"msBH","./js/teamModal":"Jvd2","./js/returner":"NQcT"}]},{},["Focm"], null)
-//# sourceMappingURL=/project-07/src.c4d814ad.js.map
+//# sourceMappingURL=/project-07/src.768afced.js.map
