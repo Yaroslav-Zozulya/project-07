@@ -57,17 +57,7 @@ function renderMyLibOnCloseModal() {
   }
 }
 
-// function markupEmpty() {
-//   return '<img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" />';
-// }
-
 function displayEmptyLib() {
-  // const imgEl = document.createElement('img');
-  // imgEl.src = './images/no-result-to-show.png';
-  // imgEl.alt = 'no-result-to-show';
-  // imgEl.className = 'emptyPicture';
-  // refs.containerMovies.after(imgEl);
-
   refs.containerMovies.innerHTML = `<li><img src=${imgEmpty} alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>`;
 }
 
