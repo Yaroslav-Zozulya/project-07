@@ -1,10 +1,14 @@
+import renderGenres from './renderGenres';
 import renderDate from './renderDateFilter';
 export default function filter() {
   const ref = {
     filterMain: document.querySelector('.filter__content'),
     selectDropdownAll: document.querySelectorAll('.select__dropdown'),
     openFilter: document.querySelector('.filter__primaryText'),
+    containerGenres: document.querySelector('.swiper-wrapper'),
   };
+
+  const genres_ids = [];
 
   ref.filterMain.addEventListener('click', onDropdownOpen);
 
@@ -12,6 +16,25 @@ export default function filter() {
     const filter = e.currentTarget.closest('.filter');
     const filterBody = filter.querySelector('.filter__body');
     filterBody.classList.toggle('is-hidden');
+  });
+
+  ref.containerGenres.addEventListener('click', ({ target }) => {
+    if (target.nodeName !== 'BUTTON') {
+      return;
+    }
+
+    const ACTIVE_CLASS = 'btn-genre--active';
+
+    // Если жанр ещё не выбран, то вешаем класс и добавляем id жанра в массив
+    if (!target.classList.contains(ACTIVE_CLASS)) {
+      target.classList.add(ACTIVE_CLASS);
+      genres_ids.push(target.dataset.id);
+      return;
+    }
+    // Иначе удаляем класс, снимаем фокус с кнопки и удаляем id жанра из массива
+    target.classList.remove(ACTIVE_CLASS);
+    target.blur();
+    genres_ids.splice(genres_ids.indexOf(target.dataset.id), 1);
   });
 
   function toggalDropdownHidden(dropdown) {
@@ -66,6 +89,7 @@ export default function filter() {
         renderDate();
       }
       case 'genres': {
+        renderGenres();
       }
     }
   }
