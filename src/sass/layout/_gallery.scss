@@ -9,18 +9,6 @@
     }
 }
 
-.gallery-container{
-    margin: 0 auto;
-    @media screen and (max-width: 767px){
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-    @media screen and (min-width: 768px) {
-        padding-right: 32px;
-        padding-left: 32px;
-    }
-}
-
 .collection{
  
     @media screen and (min-width: 768px){
@@ -35,35 +23,52 @@
 }
 
 .collection >.movie-card {
-  
+   
     @media screen and (max-width: 767px) {
         &:not(:last-child) {
             margin-bottom: 20px;
         }
     }
     @media screen and (min-width: 768px){
+        display: flex;
+        flex-direction: column;
         flex-basis: calc(100% / 2 - 32px);
+        width: 335px;
         margin-left: 32px;
         margin-top: 32px;
         
     }
     @media screen and (min-width: 1024px){
         flex-basis: calc(100% / 3 - 16px);
+        width: 310px;
         margin-left: 16px;
     }
 }
 
-.movie-card {
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: 768px) {
-        width: 335px;
-    }
-    @media screen and (min-width: 1024px) {
-        width: 310px;
-    }
+.movie-info {
+    transform: scale(1);
+    transition: transform linear 250ms;
+    padding-top: 8px;
 }
+  
+  .movie-info::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: var(--btn-hover-background);
+
+      transform: scale(0);
+      opacity: 0;
+      transition: transform linear 350ms, opacity linear 250ms;
+  }
+
+ .collection > .movie-card:hover .movie-info::after {
+      transform: scale(1);
+      opacity: 1;
+  }
 
 .poster-thumb {
     border-radius: 5px;
@@ -76,12 +81,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover,
-    &:focus {
-        transform: scale(1.1);
-    }
+   
 }
-
+.collection>.movie-card:hover .poster {
+    transform: scale(1.1);
+}
 .movie-link {
     display: flex;
     flex-direction: column;
@@ -126,9 +130,7 @@
     color: var(--main-text-color);
 }
 
-.movie-info {
-    padding-top: 8px; 
-}
+
 
 .movie-description {
   flex-grow: 1;
