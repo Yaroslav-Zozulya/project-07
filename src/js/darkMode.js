@@ -10,7 +10,7 @@ const darkModeIcon = document.querySelector('.dark-mode-icon');
 
 export default function darkModeToggle() {
   // Раскоментировать после появления иконки
-  // darkModeIcon.classList.toggle('dark-mode-icon_style');
+  darkModeIcon.classList.toggle('dark-mode-icon_style');
   bodyRefs.classList.toggle('dark-body');
   footerRefs.classList.toggle('dark-footer');
   modalRefs.classList.toggle('dark-modal');
