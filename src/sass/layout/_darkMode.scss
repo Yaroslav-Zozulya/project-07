@@ -16,9 +16,9 @@ body {
 .dark-modal {
   background-color: var(--dark-mode-modal);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
-
 .dark-mode-icon_style {
   fill: var(--btn-hover-background);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
