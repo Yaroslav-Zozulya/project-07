@@ -21,4 +21,5 @@ export function onLibBtnClick() {
   refs.librarySection.classList.remove('visually-hidden');
   refs.watched.addEventListener('click', onWatchedBtnClick);
   refs.queue.addEventListener('click', onQueueBtnClick);
+  refs.logo.addEventListener('click', onHomeBtnClick);
 }

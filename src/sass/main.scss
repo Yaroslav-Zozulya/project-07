@@ -1,6 +1,8 @@
 //UTILS
 @import './utils/variables';
-@import './utils/is-hidden'; // BASE
+@import './utils/is-hidden';
+@import './utils/center-img';
+// BASE
 @import './base/normalize';
 @import './base/reset';
 
@@ -17,3 +19,5 @@
 @import './layout/arrow';
 @import './layout/pagination';
 @import './layout/darkMode';
+@import './layout/team-modal';
+@import '../../node_modules/swiper/swiper-bundle.css';

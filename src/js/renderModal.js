@@ -19,7 +19,10 @@ async function onOpenModal(event) {
   if (event.target.nodeName === 'UL') {
     return;
   }
-
+  if (!event.target.closest('.movie-card')) {
+    //исправлена ошибка null.dataset
+    return;
+  }
   let idMovie = event.target.closest('.movie-card').dataset.id;
 
   const dataMovie = await API.getMovieById(idMovie);
