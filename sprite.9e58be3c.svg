@@ -26,6 +26,7 @@
                 <path fill="none" stroke="#818181" style="stroke: var(--color2, #818181)" stroke-linejoin="round" ></path>
 </symbol>
 <symbol id="icon-day" viewBox="0 0 32 32">
+
 <path  style="stroke: var(--color1, #fff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.0667" d="M28 17.053c-0.584 6.135-5.71 10.896-11.949 10.896-6.627 0-12-5.373-12-12 0-6.239 4.761-11.365 10.847-11.945l0.048-0.004c-1.142 1.53-1.828 3.459-1.828 5.548 0 5.155 4.179 9.333 9.333 9.333 2.089 0 4.017-0.686 5.572-1.845l-0.025 0.018z"></path>
 </symbol>
 <symbol id="icon-night" viewBox="0 0 32 32">
