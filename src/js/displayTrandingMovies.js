@@ -24,3 +24,13 @@ function displayTrandingMovie() {
 }
 
 export default displayTrandingMovie;
+
+
+
+
+
+
+
+
+
+
