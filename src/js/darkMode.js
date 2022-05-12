@@ -1,3 +1,5 @@
+import { refs } from './refs';
+
 // Функция должна вызываться после нажатия на иконку включения "ночного режима"
 
 const footerRefs = document.querySelector('.footer');

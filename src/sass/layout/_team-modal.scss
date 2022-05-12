@@ -100,6 +100,7 @@ width: 100vw;
 }
 
 .team-img {
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin: 10px auto;
    overflow: hidden;
    border-radius: 50%;
@@ -116,31 +117,10 @@ width: 100vw;
 box-shadow: none;
 }
 
-.film-modal__btn-close {
-    position: absolute;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-
-    stroke: var(--main-background-color);
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    &:hover {
-        background-color: var(--btn-hover-background);
-        stroke: #f7f7f7;
-    }
+.btn-close-team {
+stroke: var(--main-background-color);
 }
     
-
 .team__header {
   
     color: var(--main-text-color);
