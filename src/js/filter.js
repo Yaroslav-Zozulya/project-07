@@ -3,11 +3,9 @@ import renderDate from './renderDateFilter';
 import renderRating from './rendeRatingFilter';
 import filterMovie from './displayFilterMovie';
 export default function filter() {
-  renderDate();
-  renderGenres();
-  renderRating();
   const ref = {
     filterMain: document.querySelector('.filter__content'),
+    filterBody: document.querySelector('.filter__body'),
     selectDropdownAll: document.querySelectorAll('.select__dropdown'),
     openFilter: document.querySelector('.filter__primaryText'),
     containerGenres: document.querySelector('.filter__swiper-wrapper'),
@@ -22,12 +20,18 @@ export default function filter() {
   let rating_query = '';
   let genres_query = '';
 
+  renderDate();
+  renderGenres();
+  renderRating();
+
   ref.filterMain.addEventListener('click', onDropdownOpen);
 
   ref.openFilter.addEventListener('click', e => {
     const filter = e.currentTarget.closest('.filter');
     const filterBody = filter.querySelector('.filter__body');
     filterBody.classList.toggle('is-hidden');
+    e.currentTarget.classList.toggle('filter__primaryText--active');
+    isClearActive();
   });
 
   ref.containerGenres.addEventListener('click', ({ target }) => {
@@ -58,6 +62,15 @@ export default function filter() {
     setDataToRender();
   });
 
+  ref.filterBody.addEventListener('click', e => {
+    if (
+      e.target.classList.contains('filter__body') ||
+      e.target.classList.contains('filter__content')
+    ) {
+      toggalDropdownHidden(e.currentTarget);
+    }
+  });
+
   ref.ratingList.addEventListener('click', e => {
     if (e.target.nodeName !== 'LI') {
       return;
@@ -80,21 +93,25 @@ export default function filter() {
     date_query = '';
     rating_query = '';
     genres_query = '';
+    selected_genres.length = 0;
     document.querySelectorAll('.select__extra').forEach(item => (item.innerHTML = ''));
     setDataToRender();
   });
 
   function setDataToRender() {
     filterMovie(genres_query, date_query, rating_query);
+    isClearActive();
   }
   //Змінює текст в p.select__extra
   function changeTextExtraData(target) {
     const chosenDate = target.closest('.select').querySelector('.select__extra');
     chosenDate.innerHTML = target.textContent;
+    isClearActive();
   }
 
   function toggalDropdownHidden(dropdown) {
     const dropdownContainesHiddenArr = [];
+
     ref.selectDropdownAll.forEach(elem => {
       if (elem !== dropdown) {
         dropdownContainesHiddenArr.push(elem.classList.contains('is-hidden'));
@@ -113,6 +130,7 @@ export default function filter() {
         }
       });
     }
+    isClearActive();
   }
 
   function onDropdownOpen(e) {
@@ -123,7 +141,8 @@ export default function filter() {
       !e.target.classList.contains('select__title') &&
       !e.target.classList.contains('select__extra') &&
       !e.target.classList.contains('select__icon') &&
-      !e.target.classList.contains('select__svg')
+      !e.target.classList.contains('select__svg') &&
+      !e.target.classList.contains('filter__body')
     ) {
       return;
     }
@@ -132,9 +151,18 @@ export default function filter() {
     const dropdown = select.querySelector('.select__dropdown');
     const icon = select.querySelector('.select__svg');
     toggalDropdownHidden(dropdown);
-    //render(select);
 
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
+    isClearActive();
+  }
+
+  function isClearActive() {
+    if (date_query === '' && rating_query === '' && genres_query === '') {
+      ref.clearFilter.classList.add('filter__clear--notActive');
+    } else {
+      ref.clearFilter.classList.remove('filter__clear--notActive');
+    }
+    return;
   }
 }

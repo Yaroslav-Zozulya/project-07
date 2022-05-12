@@ -14,6 +14,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: end;
   color: var(--main-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &--active {
@@ -25,6 +26,13 @@
   background-color: inherit;
   height: 16px;
   margin-right: 5px;
+}
+
+.filter__svg{
+  fill: var(--main-text-color);
+  .filter__primaryText--active &{
+    fill: var(--secondary-text-color);
+  }
 }
 
 .filter__body {
@@ -71,5 +79,33 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+}
+.filter__clear{
+  display: inline-flex;
+  align-items: center;
+  color: var(--main-background-color);
+
+  &:hover, &:focus{
+    color: var(--secondary-text-color);
+    cursor: pointer;
+  }
+  &--notActive{
+    pointer-events: none;
+    
+    color: var(--footer-text-color);
+  }
+}
+
+.filter__iconClear{
+  stroke: var(--main-background-color);
+  .filter__clear:hover &, .filter__clear:focus &{
+    stroke: var(--secondary-text-color);
+    cursor: pointer;
+  }
+  .filter__clear--notActive &{
+    pointer-events: none;
+    
+    stroke: var(--footer-text-color);
   }
 }
