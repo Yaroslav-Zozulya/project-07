@@ -19,6 +19,16 @@ export default new Swiper('.filter__swiper', {
   },
 
   breakpoints: {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 12,
+    },
+    250: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 12,
+    },
     320: {
       slidesPerView: 3,
       slidesPerGroup: 3,

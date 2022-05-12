@@ -4,6 +4,7 @@ import renderRating from './rendeRatingFilter';
 import filterMovie from './displayFilterMovie';
 export default function filter() {
   const ref = {
+    filterContainer: document.querySelector('.filter'),
     filterMain: document.querySelector('.filter__content'),
     filterBody: document.querySelector('.filter__body'),
     selectDropdownAll: document.querySelectorAll('.select__dropdown'),
@@ -15,6 +16,7 @@ export default function filter() {
     clearFilter: document.querySelector('.filter__clear'),
   };
 
+  let filterIsOpen = false;
   const selected_genres = [];
   let date_query = '';
   let rating_query = '';
@@ -26,12 +28,15 @@ export default function filter() {
 
   ref.filterMain.addEventListener('click', onDropdownOpen);
 
+  //При
   ref.openFilter.addEventListener('click', e => {
-    const filter = e.currentTarget.closest('.filter');
-    const filterBody = filter.querySelector('.filter__body');
-    filterBody.classList.toggle('is-hidden');
-    e.currentTarget.classList.toggle('filter__primaryText--active');
-    isClearActive();
+    //Открываем/скрываем фильтр.
+    toggleFilter();
+
+    //Если фильтр открыт - вешаем слушатель на документ.
+    if (filterIsOpen) {
+      document.addEventListener('click', onDocumentClick);
+    }
   });
 
   ref.containerGenres.addEventListener('click', ({ target }) => {
@@ -75,6 +80,10 @@ export default function filter() {
     if (e.target.nodeName !== 'LI') {
       return;
     }
+
+    document.querySelector('.rating__item--active')?.classList.remove('rating__item--active');
+    e.target.classList.add('rating__item--active');
+
     changeTextExtraData(e.target);
     rating_query = e.target.dataset.query;
     setDataToRender();
@@ -84,6 +93,9 @@ export default function filter() {
     if (e.target.nodeName !== 'LI') {
       return;
     }
+    document.querySelector('.date__item--active')?.classList.remove('date__item--active');
+    e.target.classList.add('date__item--active');
+
     changeTextExtraData(e.target);
     date_query = e.target.dataset.query;
     setDataToRender();
@@ -95,8 +107,29 @@ export default function filter() {
     genres_query = '';
     selected_genres.length = 0;
     document.querySelectorAll('.select__extra').forEach(item => (item.innerHTML = ''));
+    document
+      .querySelectorAll('.btn-genre--active')
+      .forEach(item => item.classList.remove('btn-genre--active'));
+    document.querySelector('.date__item--active')?.classList.remove('date__item--active');
+    document.querySelector('.rating__item--active')?.classList.remove('rating__item--active');
     setDataToRender();
   });
+
+  function toggleFilter() {
+    filterIsOpen = !filterIsOpen;
+
+    ref.filterBody.classList.toggle('is-hidden');
+    ref.openFilter.classList.toggle('filter__primaryText--active');
+    isClearActive();
+  }
+
+  function onDocumentClick(event) {
+    //Если кликаем НЕ по фильтру или его внутренним элементам, то скрываем фильтр и снимаем слушатель с документа.
+    if (event.target !== ref.filterBody && !ref.filterContainer.contains(event.target)) {
+      toggleFilter();
+      document.removeEventListener('click', onDocumentClick);
+    }
+  }
 
   function setDataToRender() {
     filterMovie(genres_query, date_query, rating_query);
@@ -152,6 +185,7 @@ export default function filter() {
     const icon = select.querySelector('.select__svg');
     toggalDropdownHidden(dropdown);
 
+    //e.target.classList.toggle('select__header--active');
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
     isClearActive();
