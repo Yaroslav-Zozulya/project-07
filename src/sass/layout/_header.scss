@@ -261,3 +261,13 @@
   display: flex;
   justify-content: end;
 }
+
+.dark-mode-icon{
+    transition: transform linear 500ms;
+    &:hover,
+    &:focus {
+    transform: rotate(180deg);
+      fill: var(--btn-hover-background);
+  
+}
+}
