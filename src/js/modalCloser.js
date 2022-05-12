@@ -5,6 +5,7 @@ export default function modalСloser(backdropRefs, modalRefs, btnClose) {
     backdropRefs.classList.add('is-hidden');
     modalRefs.innerHTML = '';
     renderMyLibOnCloseModal();
+    global.isOpen = false;
   }
 
   const closeWithEsc = event => {
