@@ -2,6 +2,7 @@ import { refs } from './refs';
 import renderMovie from './renderMovie';
 import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
+import imgEmpty from '../images/no-result-to-show.png';
 
 refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
@@ -56,19 +57,8 @@ function renderMyLibOnCloseModal() {
   }
 }
 
-// function markupEmpty() {
-//   return '<img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" />';
-// }
-
 function displayEmptyLib() {
-  // const imgEl = document.createElement('img');
-  // imgEl.src = './images/no-result-to-show.png';
-  // imgEl.alt = 'no-result-to-show';
-  // imgEl.className = 'emptyPicture';
-  // refs.containerMovies.after(imgEl);
-
-  refs.containerMovies.innerHTML =
-    '<li><img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>';
+  refs.containerMovies.innerHTML = `<li><img src=${imgEmpty} alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>`;
 }
 
 export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal };
