@@ -28,13 +28,13 @@ function markUpMovie(
                     <source
                         srcset="
                       ${poster}     1x,
-                       ${posterOrigin} 2x
+                       ${poster} 2x
                         "
                         type="image/jpeg"
                     />
 
                     <img
-                        src="https://image.tmdb.org/t/p/w500${poster}"
+                        src="${poster}"
                         alt="${title}"
                         loading="lazy"
                         class="poster"
