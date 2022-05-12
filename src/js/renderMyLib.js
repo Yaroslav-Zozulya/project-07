@@ -3,19 +3,21 @@ import renderMovie from './renderMovie';
 import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
 import imgEmpty from '../images/no-result-to-show.png';
-
+import { darkModeImageText } from '/js/darkMode';
 refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   onLibBtnClick();
-  renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
+  renderMyLib('watched');
+  darkModeImageText() //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
 function onQueueBtnClick() {
   refs.queue.classList.add('library__btn--currently');
   refs.watched.classList.remove('library__btn--currently');
   renderMyLib('queue');
+  darkModeImageText()
 }
 
 function onWatchedBtnClick() {
@@ -25,6 +27,7 @@ function onWatchedBtnClick() {
 
   refs.queue.classList.remove('library__btn--currently');
   renderMyLib('watched');
+  darkModeImageText()
 }
 
 function renderMyLib(localStorData) {
