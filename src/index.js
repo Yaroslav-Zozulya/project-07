@@ -10,11 +10,13 @@ import renderModal from './js/renderModal';
 import { onHomeBtnClick, onLibBtnClick } from './js/renderHeader';
 import openModalTeam from './js/teamModal';
 import returner from './js/returner';
+import { darkMode } from './js/darkMode';
 
 refs.logo.addEventListener('click', displayTrandingMovies);
 refs.form.addEventListener('submit', renderMovieByQuery);
 refs.home.addEventListener('click', displayTrandingMovies);
 refs.library.addEventListener('click', onLibBtnClick);
+refs.themBtn.addEventListener('click', darkMode);
 
 displayTrandingMovies();
 returner();

@@ -5,20 +5,20 @@ import API from './fetchAPI';
 import checkQuery from './helpers/checkQuery';
 import loader from './loader';
 import { refs } from './refs';
+import { darkModeImageText } from '/js/darkMode';
 
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
+  darkModeImageText()
 }
 
 function findMovies() {
   refs.containerMovies.innerHTML = '';
   loader.addLoader();
-
   API.getMoviesByQuery(refs.input.value)
     .then(data => {
-      if (data.results.length === 0) {
+      if (data.results.length === 0 && data === undefined) {
         Notify.failure('Search result not successful. Enter the correct movie name and');
-        test.innerHTML = '';
         return;
       }
       return renderMovie(data);
@@ -28,6 +28,7 @@ function findMovies() {
       console.log(error);
     })
     .finally(loader.removeLoader);
+    
 }
 
 function onShowGalleryMovie(event) {

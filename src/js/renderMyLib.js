@@ -2,19 +2,22 @@ import { refs } from './refs';
 import renderMovie from './renderMovie';
 import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
-
+import imgEmpty from '../images/no-result-to-show.png';
+import { darkModeImageText } from '/js/darkMode';
 refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   onLibBtnClick();
-  renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
+  renderMyLib('watched');
+  darkModeImageText() //рендер watched movies т.к. кнопка watched активна по умолчанию
 }
 
 function onQueueBtnClick() {
   refs.queue.classList.add('library__btn--currently');
   refs.watched.classList.remove('library__btn--currently');
   renderMyLib('queue');
+  darkModeImageText()
 }
 
 function onWatchedBtnClick() {
@@ -24,6 +27,7 @@ function onWatchedBtnClick() {
 
   refs.queue.classList.remove('library__btn--currently');
   renderMyLib('watched');
+  darkModeImageText()
 }
 
 function renderMyLib(localStorData) {
@@ -56,19 +60,8 @@ function renderMyLibOnCloseModal() {
   }
 }
 
-// function markupEmpty() {
-//   return '<img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" />';
-// }
-
 function displayEmptyLib() {
-  // const imgEl = document.createElement('img');
-  // imgEl.src = './images/no-result-to-show.png';
-  // imgEl.alt = 'no-result-to-show';
-  // imgEl.className = 'emptyPicture';
-  // refs.containerMovies.after(imgEl);
-
-  refs.containerMovies.innerHTML =
-    '<li><img src="./images/no-result-to-show.png" alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>';
+  refs.containerMovies.innerHTML = `<li class="center-img"><img src=${imgEmpty} alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>`;
 }
 
 export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal };
