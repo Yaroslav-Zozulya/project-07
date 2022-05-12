@@ -16,9 +16,8 @@ function findMovies() {
 
   API.getMoviesByQuery(refs.input.value)
     .then(data => {
-      if (data.results.length === 0) {
+      if (data.results.length === 0 && data === undefined) {
         Notify.failure('Search result not successful. Enter the correct movie name and');
-        test.innerHTML = '';
         return;
       }
       return renderMovie(data);

@@ -1,13 +1,13 @@
 import Swiper, { Navigation, Pagination, EffectCoverflow } from 'swiper';
 Swiper.use([Pagination, Navigation]);
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.team__swiper', {
   // Optional parameters
 
   centeredSlidesBounds: true,
   spaceBetween: 10,
   centeredSlides: true,
   pagination: {
-    el: '.swiper-pagination',
+    el: '.team__swiper-pagination',
     clickable: true,
   },
   slidesPerView: 1,
@@ -16,11 +16,12 @@ const swiper = new Swiper('.swiper', {
     1024: {
       spaceBetween: 10,
       slidesPerView: 3,
+      slidesPerGroup: 3,
     },
-  },
-  768: {
+ 768: {
     slidesPerView: 2,
-    spaceBetween: 10,
+   spaceBetween: 10,
+  },
   },
 });
 
