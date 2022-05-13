@@ -17,6 +17,7 @@
   justify-content: end;
   color: var(--main-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   &--active {
     color: var(--secondary-text-color);
   }
@@ -65,7 +66,8 @@
 .filter__content {
   // width: 100%;
   //box-sizing: border-box;
-  background-color: #1f1b2e;
+  //background-color: #1f1b2e;
+  background-color: #ece9e5da;
   padding: 16px;
   border-radius: 6px;
   color: var(--main-background-color);
