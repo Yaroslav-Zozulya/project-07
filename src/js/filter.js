@@ -27,7 +27,6 @@ export default function filter() {
   renderRating();
 
   ref.filterMain.addEventListener('click', onDropdownOpen);
-
   //При
   ref.openFilter.addEventListener('click', e => {
     //Открываем/скрываем фильтр.
