@@ -121,6 +121,7 @@ export default function filter() {
     ref.openFilter.classList.toggle('filter__primaryText--active');
     document.querySelector('.select__dropdown:not(.is-hidden)')?.classList.add('is-hidden');
     document.querySelector('.select__header--active')?.classList.remove('select__header--active');
+    document.querySelector('.select__svg--rotate')?.classList.remove('select__svg--rotate');
     isClearActive();
   }
 
