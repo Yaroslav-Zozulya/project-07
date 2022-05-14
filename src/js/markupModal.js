@@ -23,7 +23,7 @@ function markupModal({
   const watched = isInWatchedList(id);
   const queue = isInQueueList(id);
   let poster = poster_path
-    ? `https://image.tmdb.org/t/p/original/${poster_path}`
+    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
     : 'https://www.hpl24.pl/userdata/public/gfx/f6194102ce247a5d6891a7b039fc49ad.jpg';
 
   return `        
@@ -45,7 +45,7 @@ function markupModal({
                     />
 
                     <img
-                        src="https://image.tmdb.org/t/p/original/${poster_path}"
+                        src="${poster}"
                         alt="${original_title}"
                         loading="lazy"
                         class="film-modal__image"

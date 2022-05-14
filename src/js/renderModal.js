@@ -15,28 +15,34 @@ ref.collectionMovie.addEventListener('click', onOpenModal);
 
 async function onOpenModal(event) {
   event.preventDefault();
+  if (!global.isOpen) {
+    global.isOpen = true;
+    if (event.target.nodeName === 'UL') {
+      return;
+    }
 
-  if (event.target.nodeName === 'UL') {
-    return;
+    if (event.target.nodeName === 'UL') {
+      return;
+    }
+    if (!event.target.closest('.movie-card')) {
+      //исправлена ошибка null.dataset
+      return;
+    }
+    let idMovie = event.target.closest('.movie-card').dataset.id;
+
+    const dataMovie = await API.getMovieById(idMovie);
+    const dataMarkup = await markupModal(dataMovie);
+    const append = await appendModal(dataMarkup);
+
+    ref.modalBackdrop.classList.remove('is-hidden');
+    modalСloser(ref.modalBackdrop, ref.modal, document.querySelector('.btn-close'));
+
+    /* --- Buttons ---- */
+    const watchedBtn = document.querySelector('.modal_button.modal_button--orange');
+    const queueBtn = document.querySelector('.modal_button.modal_button--white');
+    watchedBtn.addEventListener('click', e => onBtnWatched(e, dataMovie));
+    queueBtn.addEventListener('click', e => onBtnQueue(e, dataMovie));
   }
-  if (!event.target.closest('.movie-card')) {
-    //исправлена ошибка null.dataset
-    return;
-  }
-  let idMovie = event.target.closest('.movie-card').dataset.id;
-
-  const dataMovie = await API.getMovieById(idMovie);
-  const dataMarkup = await markupModal(dataMovie);
-  const append = await appendModal(dataMarkup);
-
-  ref.modalBackdrop.classList.remove('is-hidden');
-  modalСloser(ref.modalBackdrop, ref.modal, document.querySelector('.btn-close'));
-
-  /* --- Buttons ---- */
-  const watchedBtn = document.querySelector('.modal_button.modal_button--orange');
-  const queueBtn = document.querySelector('.modal_button.modal_button--white');
-  watchedBtn.addEventListener('click', e => onBtnWatched(e, dataMovie));
-  queueBtn.addEventListener('click', e => onBtnQueue(e, dataMovie));
 }
 
 function onBtnWatched(e, data) {
