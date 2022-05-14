@@ -142,7 +142,7 @@ export default function filter() {
     isClearActive();
   }
 
-  function toggalDropdownHidden(dropdown) {
+  function toggalDropdownHidden(dropdown, header) {
     const dropdownContainesHiddenArr = [];
 
     ref.selectDropdownAll.forEach(elem => {
@@ -155,6 +155,10 @@ export default function filter() {
     if (!dropdownContainesHiddenArr.every(e => e === true)) {
       ref.selectDropdownAll.forEach(elem => {
         if (!elem.classList.contains('is-hidden')) {
+          elem
+            .closest('.select')
+            .querySelector('.select__header')
+            .classList.toggle('select__header--active');
           elem.classList.toggle('is-hidden');
           elem
             .closest('.select')
@@ -182,10 +186,11 @@ export default function filter() {
 
     const select = e.target.closest('.select');
     const dropdown = select.querySelector('.select__dropdown');
+    const header = select.querySelector('.select__header');
     const icon = select.querySelector('.select__svg');
-    toggalDropdownHidden(dropdown);
+    toggalDropdownHidden(dropdown, header);
 
-    //e.target.classList.toggle('select__header--active');
+    header.classList.toggle('select__header--active');
     dropdown.classList.toggle('is-hidden');
     icon.classList.toggle('select__svg--rotate');
     isClearActive();
