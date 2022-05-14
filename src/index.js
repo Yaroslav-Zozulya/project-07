@@ -1,5 +1,4 @@
 import './sass/main.scss';
-
 import pagination from './js/pagination';
 
 import { refs } from './js/refs';
