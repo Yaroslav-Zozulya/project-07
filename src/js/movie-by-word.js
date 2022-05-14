@@ -7,6 +7,7 @@ import loader from './loader';
 import { refs } from './refs';
 import { darkModeImageText } from '/js/darkMode';
 
+
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
   darkModeImageText()
@@ -34,6 +35,7 @@ function findMovies() {
 function onShowGalleryMovie(event) {
   event.preventDefault();
 
+
   const value = refs.input.value.trim();
 
   if (!checkQuery(value)) {
@@ -44,3 +46,4 @@ function onShowGalleryMovie(event) {
 }
 
 export default onShowGalleryMovie;
+
