@@ -1,3 +1,88 @@
-<div class="container">
-  
-</div>
+<section class="filter">
+  <div class="container">
+    <h1 class="visually-hidden">Фильтр</h1>
+    <div class="filter">
+      <div class="filter__primaryText">
+        <button class="filter__btn" type="button">
+          <svg class="filter__svg" width="32" height="32">
+            <use href="./images/sprite.svg#icon-filter"></use>
+          </svg>
+        </button>
+        Filter
+      </div>
+      <div class="filter__body is-hidden">
+        <div class="filter__content">
+          <ul class="filter__list">
+            <li class="select" data-select="genres">
+              <div class="select__header">
+                <div class="select__text">
+                  <p class="select__title">Жанри</p>
+                  <p class="genres__extra select__extra"></p>
+                </div>
+                <div class="select__icon">
+                  <svg class="select__svg" width="20" height="14">
+                    <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="genres__dropdown select__dropdown is-hidden">
+                <div class="genres__content select__content">
+                  <!-- Slider main container -->
+                  <div class="filter__swiper swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="filter__swiper-wrapper swiper-wrapper">
+                      <!-- Slides -->
+                    </div>
+                    <div class="filter__swiper-pagination swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="select" data-select="date">
+              <div class="select__header">
+                <div class="select__text">
+                  <p class="select__title">Рік</p>
+                  <p class="select__extra"></p>
+                </div>
+                <div class="select__icon">
+                  <svg class="select__svg" width="20" height="14">
+                    <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="date__dropdown select__dropdown is-hidden">
+                <div class="date__content select__content">
+                  <ul class="select__list date__list"></ul>
+                </div>
+              </div>
+            </li>
+            <li class="select" data-select="rating">
+              <div class="select__header">
+                <div class="select__text">
+                  <p class="select__title">Рейтинг</p>
+                  <p class="select__extra"></p>
+                </div>
+                <div class="select__icon">
+                  <svg class="select__svg" width="20" height="14">
+                    <use href="./images/sprite.svg#icon-filterOpen" class="select__use"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="select__dropdown is-hidden">
+                <div class="select__content">
+                  <ul class="select__list rating__list"></ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="filter__clear">
+            <svg class="filter__iconClear" width="15" height="15">
+              <use href="./images/sprite.svg#icon-close"></use>
+            </svg>
+            Очистити фільтр
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
