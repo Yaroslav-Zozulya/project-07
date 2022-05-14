@@ -9,6 +9,7 @@
 
 .genres__content {
   height: 100%;
+  padding: 0;
 }
 
 .filter__swiper {
@@ -35,7 +36,11 @@
   font-weight: 500;
 
   color: #ffffff;
-  background-color: #312b45;
+  //background-color: #312b45;
+  background-color: #ee9d63;
+
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
@@ -43,8 +48,8 @@
   }
 
   &--active {
-    background-color: #7e798f;
-    border-color: #7e798f;
+    background-color: var(--btn-hover-background);
+    border-color: var(--btn-hover-background);
   }
 }
 
@@ -60,5 +65,9 @@
   bottom: 5px !important;
 }
 .filter__swiper-pagination .swiper-pagination-bullet {
-  background-color: #ffffff;
+  background-color: #ff5e00;
+}
+
+.filter__swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--btn-hover-background);
 }
