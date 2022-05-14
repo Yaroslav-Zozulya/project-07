@@ -119,6 +119,8 @@ export default function filter() {
 
     ref.filterBody.classList.toggle('is-hidden');
     ref.openFilter.classList.toggle('filter__primaryText--active');
+    document.querySelector('.select__dropdown:not(.is-hidden)')?.classList.add('is-hidden');
+    document.querySelector('.select__header--active')?.classList.remove('select__header--active');
     isClearActive();
   }
 
