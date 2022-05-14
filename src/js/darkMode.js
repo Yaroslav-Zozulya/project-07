@@ -52,19 +52,37 @@ function darkModeSwitch() {
 
 function darkModeTeamModal() {
   const darkModeState = localStorage.getItem('darkModeState');
-  const modalTeamCardRef = document.querySelectorAll('.team__card');
-  const modalTeamSocialRef = document.querySelectorAll('.social-list__link');
 
   if (darkModeState === 'On') {
     document.querySelector('.header-item').classList.add('dark-modal-header-team');
 
-    [...modalTeamCardRef].map(card => card.classList.add('dark-modal-card-team'));
-    [...modalTeamSocialRef].map(icon => icon.classList.add('dark-modal-social-list__item'));
+    [...document.querySelectorAll('.team__card')].map(card =>
+      card.classList.add('dark-modal-card-team'),
+    );
+    [...document.querySelectorAll('.social-list__link')].map(icon =>
+      icon.classList.add('dark-modal-social-list__item'),
+    );
+    [...document.querySelectorAll('.member-description')].map(description =>
+      description.classList.add('dark-modal-description'),
+    );
+    [...document.querySelectorAll('.team__header')].map(header =>
+      header.classList.add('dark-modal-developer'),
+    );
   } else {
     document.querySelector('.header-item').classList.remove('dark-modal-header-team');
 
-    [...modalTeamCardRef].map(card => card.classList.remove('dark-modal-card-team'));
-    [...modalTeamSocialRef].map(icon => icon.classList.remove('dark-modal-social-list__item'));
+    [...document.querySelectorAll('.team__card')].map(card =>
+      card.classList.remove('dark-modal-card-team'),
+    );
+    [...document.querySelectorAll('.social-list__link')].map(icon =>
+      icon.classList.remove('dark-modal-social-list__item'),
+    );
+    [...document.querySelectorAll('.member-description')].map(description =>
+      description.classList.remove('dark-modal-description'),
+    );
+    [...document.querySelectorAll('.team__header')].map(header =>
+      header.classList.add('dark-modal-developer'),
+    );
   }
 }
 
