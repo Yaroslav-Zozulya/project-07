@@ -9,8 +9,8 @@ refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   onLibBtnClick();
-  renderMyLib('watched');
-  darkModeImageText() //рендер watched movies т.к. кнопка watched активна по умолчанию
+  renderMyLib('watched');//рендер watched movies т.к. кнопка watched активна по умолчанию
+  darkModeImageText() 
 }
 
 function onQueueBtnClick() {
@@ -53,9 +53,11 @@ function renderMyLibOnCloseModal() {
   if (refs.library.classList.contains('nav__btn--currently')) {
     if (refs.watched.classList.contains('library__btn--currently')) {
       renderMyLib('watched');
+      darkModeImageText()
     }
     if (refs.queue.classList.contains('library__btn--currently')) {
       renderMyLib('queue');
+      darkModeImageText()
     }
   }
 }
