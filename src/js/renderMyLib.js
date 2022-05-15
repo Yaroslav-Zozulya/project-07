@@ -4,14 +4,19 @@ import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
 import imgEmpty from '../images/no-result-to-show.png';
 import { darkModeImageText } from '/js/darkMode';
+
 refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
+  refs.sliderSection.classList.add('is-hidden');
+  
   onLibBtnClick();
   renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
   darkModeImageText();
 }
+
+onHomeBtnClick
 
 function onQueueBtnClick() {
   refs.queue.classList.add('library__btn--currently');
