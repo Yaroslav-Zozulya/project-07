@@ -1,4 +1,4 @@
-import rating from '../data/ratingFilter.json';
+import rating from '../../data/ratingFilter.json';
 
 function renderRating() {
   return rating.rating.map(markupRating);

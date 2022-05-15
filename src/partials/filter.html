@@ -3,14 +3,14 @@
     <h1 class="visually-hidden">Фильтр</h1>
     <div class="filter">
       <div class="filter__primaryText">
-        <button class="filter__btn" type="button">
+        <!-- <button class="filter__btn" type="button">
           <svg class="filter__svg" width="32" height="32">
             <use href="./images/sprite.svg#icon-filter"></use>
           </svg>
         </button>
-        Filter
+        Filter -->
       </div>
-      <div class="filter__body is-hidden">
+      <div class="filter__body">
         <div class="filter__content">
           <ul class="filter__list">
             <li class="select" data-select="genres">
@@ -75,11 +75,11 @@
               </div>
             </li>
           </ul>
-          <div class="filter__clear">
-            <svg class="filter__iconClear" width="15" height="15">
+          <div class="filter__clear filter__clear--notActive">
+            <svg class="filter__iconClear" width="30" height="30">
               <use href="./images/sprite.svg#icon-close"></use>
             </svg>
-            Очистити фільтр
+            <span class="filter__clear-text">Очистити фільтр</span>
           </div>
         </div>
       </div>

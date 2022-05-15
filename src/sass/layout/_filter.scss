@@ -29,7 +29,7 @@
 
     --filter-extra-text-color: rgb(137, 133, 152);
 
-    --filter-primary-btn-color: #211d2e;
+    --filter-primary-btn-color: #403a53;
     --filter-accent-btn-color: #615878;
 
     --filter-btn-clear-active-text-color: rgb(137, 133, 152);
@@ -43,50 +43,50 @@
 }
 
 .section__filter {
-  @media screen and (min-width: 768px) {
-    padding-top: 10px;
-  }
+  // @media screen and (min-width: 768px) {
+  //   padding-top: 10px;
+  // }
 }
 
 .filter {
-  position: relative;
-  width: 100%;
+  // position: relative;
+  // width: 100%;
 }
 .filter__primaryText {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 10px;
+  // display: inline-flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding: 5px 10px;
+  // border-radius: 10px;
 
-  position: relative;
-  z-index: 1;
+  // position: relative;
+  // z-index: 1;
 
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 500;
-  font-style: normal;
+  // font-size: 15px;
+  // line-height: 20px;
+  // font-weight: 500;
+  // font-style: normal;
 
-  color: var(--filter-main-btn-text-color);
-  transition: color 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  &:hover,
-  &:focus,
-  &--active {
-    color: var(--filter-main-btn-active-text-color);
-    .filter__btn {
-      background-color: var(--filter-accent-btn-color);
-    }
+  // color: var(--filter-main-btn-text-color);
+  // transition: color 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  // cursor: pointer;
+  // &:hover,
+  // &:focus,
+  // &--active {
+  //   color: var(--filter-main-btn-active-text-color);
+  //   .filter__btn {
+  //     background-color: var(--filter-accent-btn-color);
+  //   }
 
-    .filter__svg {
-      fill: var(--filter-primary-text-color);
-    }
-  }
-  &--active {
-    .filter__btn {
-      transform: rotateZ(90deg);
-    }
-  }
+  //   .filter__svg {
+  //     fill: var(--filter-primary-text-color);
+  //   }
+  // }
+  // &--active {
+  //   .filter__btn {
+  //     transform: rotateZ(90deg);
+  //   }
+  // }
 }
 .filter__btn {
   color: var(--filter-main-btn-text-color);
@@ -112,25 +112,25 @@
 
 .filter__body {
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  // top: 0;
+  // left: 0;
 
   display: inline-block;
   width: 100%;
 
-  padding: 5px 15px;
+  //padding: 5px 15px;
   z-index: 3;
-  transform: translateY(35%);
+  //transform: translateY(35%);
   opacity: 1;
   visibility: visible;
   //max-height: 400px;
 
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (max-width: 767px) {
-    transform: translateY(18%);
-  }
+  // @media screen and (max-width: 767px) {
+  //   transform: translateY(18%);
+  // }
   &.is-hidden {
     opacity: 0;
     visibility: hidden;
@@ -138,14 +138,20 @@
   }
 }
 .filter__content {
-  background-color: var(--filter-primary-bg-color);
-  padding: 16px;
+  //background-color: var(--filter-primary-bg-color);
+  padding: 16px 0;
   border-radius: 6px;
   color: var(--filter-primary-text-color);
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .filter__list {
-  margin-bottom: 15px;
+  width: 100%;
+  //margin-bottom: 15px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -157,12 +163,13 @@
   display: inline-flex;
   align-items: center;
   color: var(--filter-btn-clear-active-text-color);
+  margin-top: 5px;
 
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    transform: scale(115%) translateX(15%);
+    transform: scale(115%);
     cursor: pointer;
   }
   &--notActive {
@@ -170,10 +177,16 @@
 
     color: var(--filter-btn-clear-text-color);
   }
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .filter__iconClear {
+  width: 20px;
+  height: 20px;
   stroke: currentColor;
+
   .filter__clear:hover &,
   .filter__clear:focus & {
     stroke: var(--filter-btn-clear-active-text-color);
@@ -183,5 +196,22 @@
     pointer-events: none;
 
     stroke: var(--filter-btn-clear-text-color);
+  }
+  @media screen and (min-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.filter__clear-text {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
   }
 }

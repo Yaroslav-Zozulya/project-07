@@ -1,4 +1,4 @@
-import genres from '../data/genres.json';
+import genres from '../../data/genres.json';
 import './swiper';
 
 const refs = {
