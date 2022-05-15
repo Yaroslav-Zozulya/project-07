@@ -2,7 +2,7 @@ import API from './fetchAPI';
 import renderMovie from './renderMovie';
 import loader from './loader';
 import { darkModeImageText } from '/js/darkMode';
-import { paginationInit } from './pagination';
+import { trendingMoviesPagination } from './pagination/trendingMoviesPagination';
 
 const ref = {
   containerMovies: document.querySelector('.collection'),
@@ -22,7 +22,7 @@ function displayTrandingMovie(page) {
   }
 
   API.getMoviesByTrending(page)
-    .then(paginationInit)
+    .then(trendingMoviesPagination)
     .then(renderMovie)
     .then(appendGallery)
     .finally(loader.removeLoader);

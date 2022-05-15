@@ -1,42 +1,28 @@
-import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-import { refs } from './refs';
-import API from './fetchAPI';
-import displayTrandingMovie from './displayTrandingMovies';
-import renderMovie from './renderMovie';
-import onShowGalleryMovie from './movie-by-word';
+import displayTrandingMovie from '../displayTrandingMovies';
+import { createPaginationConfig } from './createPaginationConfig';
+import { findMovies } from '../movie-by-word';
+import { checkTotalResults } from './checkTotalResults';
 
-function pagination(data) {
-  let { page, total_results } = data;
+export function trendingMoviesPagination(data) {
+  const pagination = createPaginationConfig(data);
 
-  const options = {
-    totalItems: total_results,
-    itemsPerPage: 20,
-    visiblePages: 5,
-    page: page,
-  };
-
-  const container = refs.pagination;
-  const pagination = new Pagination(container, options);
-  // instance.getCurrentPage();
   pagination.on('afterMove', event => {
     const page = event.page;
-
-    // if (refs.input.value !== '') {
-    //   onShowGalleryMovie(page);
-    // } else {
-    //   displayTrandingMovie(page);
-    // }
+    displayTrandingMovie(page);
   });
-}
 
-export function paginationInit(data) {
-  pagination(data);
   return data;
 }
 
-function appendGallery(data) {
-  refs.containerMovies.innerHTML = data;
+export function searchPagination(data) {
+  checkTotalResults(data);
+  const pagination = createPaginationConfig(data);
+  pagination.on('afterMove', event => {
+    const page = event.page;
+    findMovies(page);
+  });
+
+  return data;
 }
 
 // export default paginationInit;
