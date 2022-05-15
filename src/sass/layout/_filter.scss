@@ -1,14 +1,56 @@
-.section__filter{
+// ПАЛИТРА для светлой и темной темы
+.filter {
+  --filter-main-btn-text-color: #000000;
+  --filter-main-btn-active-text-color: #ff6b08;
+  --filter-main-btn-bg-color: transparent;
 
+  --filter-primary-bg-color: #ece9e5da;
 
-@media screen and (min-width: 768px) {
-  padding-top: 10px;  
+  --filter-primary-text-color: #ffffff;
+  --filter-extra-text-color: #f3c9ac;
+
+  --filter-primary-btn-color: #ee9d63;
+  --filter-accent-btn-color: #ff6b08;
+
+  --filter-btn-clear-text-color: #545454;
+  --filter-btn-clear-active-text-color: #ff6b08;
+
+  --filter-pagination-color: #ee9d63;
+  --filter-pagination-active-color: #ff6b08;
+
+  --filter-scrollbar-first-color: #ff6b08;
+  --filter-scrollbar-second-color: #ee9d63;
+
+  &.dark {
+    --filter-main-btn-text-color: #ffffff;
+    --filter-main-btn-active-text-color: #ffffff;
+
+    --filter-primary-bg-color: rgba(57, 52, 69, 0.908);
+
+    --filter-extra-text-color: rgb(137, 133, 152);
+
+    --filter-primary-btn-color: #211d2e;
+    --filter-accent-btn-color: #615878;
+
+    --filter-btn-clear-active-text-color: rgb(137, 133, 152);
+
+    --filter-pagination-color: #675c91;
+    --filter-pagination-active-color: #70668c;
+
+    --filter-scrollbar-first-color: #211d2e;
+    --filter-scrollbar-second-color: #615878;
+  }
 }
+
+.section__filter {
+  @media screen and (min-width: 768px) {
+    padding-top: 10px;
+  }
 }
+
 .filter {
   position: relative;
   width: 100%;
-  
 }
 .filter__primaryText {
   display: inline-flex;
@@ -25,40 +67,36 @@
   font-weight: 500;
   font-style: normal;
 
-  // display: flex;
-  // align-items: center;
-  // justify-content: end;
-  color: #000000;
+  color: var(--filter-main-btn-text-color);
   transition: color 600ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   &:hover,
-  &:focus {
-    color: var(--secondary-text-color);
+  &:focus,
+  &--active {
+    color: var(--filter-main-btn-active-text-color);
     .filter__btn {
-      background-color: var(--secondary-text-color);
+      background-color: var(--filter-accent-btn-color);
     }
+
     .filter__svg {
-      fill: #ffffff;
+      fill: var(--filter-primary-text-color);
     }
   }
   &--active {
-    color: var(--secondary-text-color);
     .filter__btn {
-      background-color: var(--secondary-text-color);
       transform: rotateZ(90deg);
     }
   }
 }
 .filter__btn {
-  color: #000000;
+  color: var(--filter-main-btn-text-color);
   border: none;
   background-color: inherit;
   height: 32px;
   margin-right: 5px;
-  background-color: #ffffff;
+  background-color: var(--filter-main-btn-bg-color);
   border-radius: 50%;
 
-  //transform: rotateZ(0);
   transition: background-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -68,7 +106,7 @@
 
   transition: fill 600ms cubic-bezier(0.4, 0, 0.2, 1);
   .filter__primaryText--active & {
-    fill: #ffffff;
+    fill: var(--filter-primary-text-color);
   }
 }
 
@@ -91,26 +129,19 @@
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
   @media screen and (max-width: 767px) {
-    transform: translateY(10%);
+    transform: translateY(18%);
   }
   &.is-hidden {
-    //height: 0;
-    //max-height: 0;
     opacity: 0;
     visibility: hidden;
-    //overflow: hidden;
-
     transform: translateY(0);
   }
 }
 .filter__content {
-  // width: 100%;
-  //box-sizing: border-box;
-  //background-color: #1f1b2e;
-  background-color: #ece9e5da;
+  background-color: var(--filter-primary-bg-color);
   padding: 16px;
   border-radius: 6px;
-  color: var(--main-background-color);
+  color: var(--filter-primary-text-color);
 }
 
 .filter__list {
@@ -125,7 +156,7 @@
 .filter__clear {
   display: inline-flex;
   align-items: center;
-  color: var(--secondary-text-color);
+  color: var(--filter-btn-clear-active-text-color);
 
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -137,7 +168,7 @@
   &--notActive {
     pointer-events: none;
 
-    color: var(--footer-text-color);
+    color: var(--filter-btn-clear-text-color);
   }
 }
 
@@ -145,12 +176,12 @@
   stroke: currentColor;
   .filter__clear:hover &,
   .filter__clear:focus & {
-    stroke: var(--secondary-text-color);
+    stroke: var(--filter-btn-clear-active-text-color);
     cursor: pointer;
   }
   .filter__clear--notActive & {
     pointer-events: none;
 
-    stroke: var(--footer-text-color);
+    stroke: var(--filter-btn-clear-text-color);
   }
 }

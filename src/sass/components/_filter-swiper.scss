@@ -35,9 +35,9 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
 
-  color: #ffffff;
+  color: var(--filter-primary-text-color);
   //background-color: #312b45;
-  background-color: #ee9d63;
+  background-color: var(--filter-primary-btn-color);
 
   transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -48,8 +48,8 @@
   }
 
   &--active {
-    background-color: var(--btn-hover-background);
-    border-color: var(--btn-hover-background);
+    background-color: var(--filter-accent-btn-color);
+    border-color: var(--filter-accent-btn-color);
   }
 }
 
@@ -65,9 +65,9 @@
   bottom: 5px !important;
 }
 .filter__swiper-pagination .swiper-pagination-bullet {
-  background-color: #ff5e00;
+  background-color: var(--filter-pagination-color);
 }
 
 .filter__swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--btn-hover-background);
+  background-color: var(--filter-pagination-active-color);
 }
