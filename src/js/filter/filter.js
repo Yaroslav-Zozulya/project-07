@@ -3,7 +3,7 @@ import refs from './refs';
 import renderGenres from './renderGenres';
 import renderDate from './renderDateFilter';
 import renderRating from './renderRatingFilter';
-import filterMovie from '../displayFilterMovie';
+import filterMovie from './displayFilterMovie';
 
 const selected_genres = [];
 let date_query = '';
@@ -115,6 +115,22 @@ function onGenreBtnClick({ target }) {
   refs.genresExtra.textContent = genres_names;
   genres_query = `$&with_genres=${genres_ids}`;
   setDataToRender();
+  isClearActive;
+}
+
+function toggleFilter() {
+  document.querySelector('.select__dropdown:not(.is-hidden)')?.classList.add('is-hidden');
+  document.querySelector('.select__header--active')?.classList.remove('select__header--active');
+  document.querySelector('.select__svg--rotate')?.classList.remove('select__svg--rotate');
+  isClearActive();
+}
+
+function onDocumentClick(event) {
+  //Если кликаем НЕ по фильтру или его внутренним элементам, то скрываем фильтр и снимаем слушатель с документа.
+  if (event.target !== refs.filterBody && !refs.filterContainer.contains(event.target)) {
+    toggleFilter();
+    document.removeEventListener('click', onDocumentClick);
+  }
 }
 
 function setDataToRender() {
@@ -157,27 +173,12 @@ function toggleDropdownHidden(dropdown, header) {
 }
 
 function isClearActive() {
-  if (date_query === '' && rating_query === '' && genres_query === '') {
+  if (date_query === '' && rating_query === '' && !selected_genres.length) {
     refs.clearFilter.classList.add('filter__clear--notActive');
   } else {
     refs.clearFilter.classList.remove('filter__clear--notActive');
   }
   return;
-}
-
-function toggleFilter() {
-  document.querySelector('.select__dropdown:not(.is-hidden)')?.classList.add('is-hidden');
-  document.querySelector('.select__header--active')?.classList.remove('select__header--active');
-  document.querySelector('.select__svg--rotate')?.classList.remove('select__svg--rotate');
-  isClearActive();
-}
-
-function onDocumentClick(event) {
-  //Если кликаем НЕ по фильтру или его внутренним элементам, то скрываем фильтр и снимаем слушатель с документа.
-  if (event.target !== refs.filterBody && !refs.filterContainer.contains(event.target)) {
-    toggleFilter();
-    document.removeEventListener('click', onDocumentClick);
-  }
 }
 
 export default function filter() {
