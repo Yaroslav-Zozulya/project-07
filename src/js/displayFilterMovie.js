@@ -1,4 +1,4 @@
-import APIfilter from './fetchFilter';
+import API from './fetchAPI';
 import renderMovie from './renderMovie';
 import loader from './loader';
 
@@ -12,7 +12,7 @@ function appendGallery(data) {
 
 function filterMovie(...args) {
   loader.addLoader();
-  APIfilter(...args)
+  API.fetchFilter(...args)
     .then(data => {
       return renderMovie(data.data);
     })

@@ -1,7 +1,14 @@
+.section__filter{
+
+
+@media screen and (min-width: 768px) {
+  padding-top: 10px;  
+}
+}
 .filter {
   position: relative;
   width: 100%;
-  padding-top: 10px;
+  
 }
 .filter__primaryText {
   display: inline-flex;
@@ -43,7 +50,7 @@
   }
 }
 .filter__btn {
-  color: var(--secondary-text-color);
+  color: #000000;
   border: none;
   background-color: inherit;
   height: 32px;
