@@ -1,7 +1,7 @@
 import 'swiper/swiper-bundle.min.css';
 import './sass/main.scss';
 
-import pagination from './js/pagination';
+import pagination from './js/pagination/trendingMoviesPagination';
 
 import renderGenres from './js/renderGenres';
 

@@ -6,35 +6,29 @@ import checkQuery from './helpers/checkQuery';
 import loader from './loader';
 import { refs } from './refs';
 import { darkModeImageText } from '/js/darkMode';
-
+import { searchPagination } from './pagination/trendingMoviesPagination';
 
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
-  darkModeImageText()
+  darkModeImageText();
 }
 
-function findMovies() {
+export function findMovies(page) {
   refs.containerMovies.innerHTML = '';
+
   loader.addLoader();
-  API.getMoviesByQuery(refs.input.value)
-    .then(data => {
-      if (data.results.length === 0 && data === undefined) {
-        Notify.failure('Search result not successful. Enter the correct movie name and');
-        return;
-      }
-      return renderMovie(data);
-    })
+  API.getMoviesByQuery(refs.input.value, page)
+    .then(searchPagination)
+    .then(renderMovie)
     .then(appendGallery)
     .catch(error => {
       console.log(error);
     })
     .finally(loader.removeLoader);
-    
 }
 
 function onShowGalleryMovie(event) {
   event.preventDefault();
-
 
   const value = refs.input.value.trim();
 
@@ -46,4 +40,3 @@ function onShowGalleryMovie(event) {
 }
 
 export default onShowGalleryMovie;
-
