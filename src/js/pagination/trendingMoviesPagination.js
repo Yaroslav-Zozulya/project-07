@@ -4,6 +4,7 @@ import { findMovies } from '../movie-by-word';
 import { checkTotalResults } from './checkTotalResults';
 
 export function trendingMoviesPagination(data) {
+  checkTotalResults(data);
   const pagination = createPaginationConfig(data);
 
   pagination.on('afterMove', event => {
