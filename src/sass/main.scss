@@ -10,9 +10,13 @@
 @import './components/container';
 @import './components/buttons';
 @import './components/loader';
+@import './components/select';
+@import './components/filter-swiper';
+@import './components/date';
 
 //LAYOUT
 @import './layout/header';
+@import './layout/filter';
 @import './layout/gallery';
 @import './layout/footer';
 @import './layout/film-modal';

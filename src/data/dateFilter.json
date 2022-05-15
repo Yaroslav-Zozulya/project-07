@@ -1,0 +1,74 @@
+{
+  "date": [
+    {
+      "id": 1,
+      "name": "Всі фільми",
+      "query": ""
+    },
+    {
+      "id": 2,
+      "name": "2022 рік",
+      "query": "&primary_release_year=2022"
+    },
+    {
+      "id": 3,
+      "name": "2021 рік",
+      "query": "&primary_release_year=2021"
+    },
+    {
+      "id": 4,
+      "name": "2020 рік",
+      "query": "&primary_release_year=2020"
+    },
+    {
+      "id": 5,
+      "name": "2019 рік",
+      "query": "&primary_release_year=2019"
+    },
+    {
+      "id": 6,
+      "name": "2018 рік",
+      "query": "&primary_release_year=2018"
+    },
+    {
+      "id": 7,
+      "name": "2017 рік",
+      "query": "&primary_release_year=2017"
+    },
+    {
+      "id": 8,
+      "name": "2016 рік",
+      "query": "&primary_release_year=2016"
+    },
+    {
+      "id": 9,
+      "name": "2022-2020 рік",
+      "query": "&release_date.gte=2020&release_date.lte=2022"
+    },
+    {
+      "id": 10,
+      "name": "2020-2018 рік",
+      "query": "&release_date.gte=2018&release_date.lte=2020"
+    },
+    {
+      "id": 11,
+      "name": "2018-2016 рік",
+      "query": "&release_date.gte=2016&release_date.lte=2018"
+    },
+    {
+      "id": 12,
+      "name": "2020-2010 рік",
+      "query": "&release_date.gte=2010&release_date.lte=2020"
+    },
+    {
+      "id": 13,
+      "name": "2015-2010 рік",
+      "query": "&release_date.gte=2010&release_date.lte=2015"
+    },
+    {
+      "id": 14,
+      "name": "2010-2000 рік",
+      "query": "&release_date.gte=2000&release_date.lte=2010"
+    }
+  ]
+}
