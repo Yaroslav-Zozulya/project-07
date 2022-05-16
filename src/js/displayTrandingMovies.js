@@ -4,14 +4,12 @@ import loader from './loader';
 import { darkModeImageText } from '/js/darkMode';
 import { trendingMoviesPagination } from './pagination/trendingMoviesPagination';
 import { lazyLoad } from './lazyLoadImg';
-console.log(lazyLoad);
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
 
 function appendGallery(data) {
   ref.containerMovies.innerHTML = data;
-
   darkModeImageText();
 }
 
