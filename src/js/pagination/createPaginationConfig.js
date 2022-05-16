@@ -5,7 +5,10 @@ import { refs } from '../refs';
 export function createPaginationConfig(data) {
   let { page, total_results } = data;
   let currentPage = 3;
-  localStorage.setItem(currentPage, page);
+  localStorage.setItem('currentPage', page);
+  if (!localStorage.hasOwnProperty('currentPage')) {
+    console.log('yes');
+  }
 
   const options = {
     totalItems: total_results,
