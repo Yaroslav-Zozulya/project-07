@@ -71,6 +71,11 @@ function renderMyLibOnCloseModal() {
 function displayEmptyLib() {
   refs.containerMovies.innerHTML = `<li class="center-img"><img src=${imgEmpty} alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>`;
 }
+Notify.init({
+  showOnlyTheLastOne: true,
+  cssAnimationStyle: 'zoom',
+  useIcon: false,
+});
 
 
 export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal, displayEmptyLib };
