@@ -35,7 +35,6 @@ function markUpMovie(
                         alt="${title}"
                         loading="lazy"
                         class="poster"
-
                     />
                 </picture>
                
