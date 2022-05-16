@@ -1,4 +1,5 @@
 export const refs = {
+  paginationContainer: document.querySelector('.container_pagination'),
   pagination: document.querySelector('#pagination'),
   containerMovies: document.querySelector('.collection'),
   form: document.querySelector('.form'),

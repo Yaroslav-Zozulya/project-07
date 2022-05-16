@@ -17,6 +17,7 @@ export function onHomeBtnClick() {
 }
 
 export function onLibBtnClick() {
+  refs.paginationContainer.classList.add('visually-hidden');
   refs.home.classList.remove('nav__btn--currently');
   refs.library.classList.add('nav__btn--currently');
   refs.header.classList.add('header--library');
