@@ -15,7 +15,7 @@ export function findMovies(page) {
   refs.containerMovies.innerHTML = '';
   document.querySelector('.section__filter').classList.add('visually-hidden');
   loader.addLoader();
-  API.getMoviesByQuery(refs.input.value)
+  API.getMoviesByQuery(refs.input.value, page)
     .then(searchPagination)
     .then(data => {
       if (data.results.length === 0) {
@@ -29,7 +29,7 @@ export function findMovies(page) {
         displayEmptyLib();
         return;
       }
-      appendGallery();
+      appendGallery(data);
     })
     .catch(error => {
       console.log(error);
