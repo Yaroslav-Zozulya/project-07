@@ -14,39 +14,31 @@
   background-size: cover;
   background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header/header-light/mob-background-home.jpg');
-
-  @media screen and (min-width: 767px),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/header/header-light/mob-background-home@2x.jpg');
-  }
+    url('../images/header/header-light/mob-background-home.webp');
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/header/header-light/tab-background-home.jpg');
+      url('../images/header/header-light/tab-background-home.webp');
   }
 
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/header/header-light/desk-background-home.jpg');
+      url('../images/header/header-light/desk-background-home.webp');
     max-width: 1024px;
   }
 }
 .header--library {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/header/header-light/header-light-mobile.jpg');
+    url('../images/header/header-light/header-light-mobile@2x.webp');
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/header/header-light/header-light-tablet.jpg');
+      url('../images/header/header-light/header-light-tablet@2x.webp');
   }
 
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/header/header-light/header-light-desktop.jpg');
+      url('../images/header/header-light/header-light-desktop@2x.webp');
   }
 }
 
