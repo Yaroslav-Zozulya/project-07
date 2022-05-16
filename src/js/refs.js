@@ -16,4 +16,6 @@ export const refs = {
   emptyPicture: document.querySelector('.emptyPicture'),
   arrowRefs: document.querySelector('.return-arrow'),
   themBtn: document.querySelector('.dark-mode-icon'),
+  sliderList: document.querySelector('.slider-list'),
+  sliderSection: document.querySelector('.section-slider'),
 };

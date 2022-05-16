@@ -10,14 +10,20 @@
 @import './components/container';
 @import './components/buttons';
 @import './components/loader';
+@import './components/select';
+@import './components/filter-swiper';
+@import './components/date';
 
 //LAYOUT
 @import './layout/header';
+@import './layout/filter';
 @import './layout/gallery';
 @import './layout/footer';
 @import './layout/film-modal';
 @import './layout/arrow';
 @import './layout/pagination';
 @import './layout/darkMode';
+@import './layout/slider';
 @import './layout/team-modal';
 @import '../../node_modules/swiper/swiper-bundle.css';
+

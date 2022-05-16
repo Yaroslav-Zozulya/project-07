@@ -1,9 +1,11 @@
 import API from './fetchAPI';
 import markupModal from './markupModal';
-
+import { darkModeModal } from '/js/darkMode';
 import modalСloser from './modalCloser';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
 import { addToQueue, isInQueue, removeFromQueue } from './queue';
+import { refs } from './refs';
+
 
 const ref = {
   collectionMovie: document.querySelector('.collection'),
@@ -12,6 +14,8 @@ const ref = {
 };
 
 ref.collectionMovie.addEventListener('click', onOpenModal);
+
+
 
 async function onOpenModal(event) {
   event.preventDefault();
@@ -43,6 +47,7 @@ async function onOpenModal(event) {
     watchedBtn.addEventListener('click', e => onBtnWatched(e, dataMovie));
     queueBtn.addEventListener('click', e => onBtnQueue(e, dataMovie));
   }
+  darkModeModal()
 }
 
 function onBtnWatched(e, data) {

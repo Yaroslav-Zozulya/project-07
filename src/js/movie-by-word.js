@@ -6,16 +6,17 @@ import checkQuery from './helpers/checkQuery';
 import loader from './loader';
 import { refs } from './refs';
 import { darkModeImageText } from '/js/darkMode';
-
+import { searchPagination } from './pagination/trendingMoviesPagination';
 
 
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
-  darkModeImageText()
+  darkModeImageText();
 }
 
-function findMovies() {
+export function findMovies(page) {
   refs.containerMovies.innerHTML = '';
+
   loader.addLoader();
   API.getMoviesByQuery(refs.input.value)
     .then(data => {
@@ -36,12 +37,10 @@ function findMovies() {
       console.log(error);
     })
     .finally(loader.removeLoader);
-    
 }
 
 function onShowGalleryMovie(event) {
   event.preventDefault();
-
 
   const value = refs.input.value.trim();
 
@@ -53,4 +52,3 @@ function onShowGalleryMovie(event) {
 }
 
 export default onShowGalleryMovie;
-

@@ -39,6 +39,7 @@ function openModalTeam(event) {
   document.addEventListener('keydown', closeOnEsc);
   refs.modalBackdrop.addEventListener('click', closeOnBackdrop);
   refs.modalBackdrop.classList.remove('is-hidden');
+  darkModeTeamModal()
 }
 
 function modalClose(event) {

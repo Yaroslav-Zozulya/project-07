@@ -23,4 +23,11 @@ function getMovieById(id) {
     .then(response => response.data);
 }
 
-export default { getMoviesByTrending, getMoviesByQuery, getMovieById };
+function fetchFilter(...args) {
+  const query = args.join('');
+  return axios.get(
+    `3/discover/movie?api_key=${AUTH_TOKEN}&sort_by=popularity.desc&include_adult=false${query}`,
+  );
+}
+
+export default { getMoviesByTrending, getMoviesByQuery, getMovieById, fetchFilter };
