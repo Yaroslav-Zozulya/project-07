@@ -9,7 +9,7 @@ import renderGenres from './js/filter/renderGenres';
 import { refs } from './js/refs';
 
 import displayTrandingMovies from './js/displayTrandingMovies';
-import renderMovieByQuery from './js/movie-by-word';
+import renderMovieByQuery from './js/movieByWord';
 import renderModal from './js/renderModal';
 import { onHomeBtnClick, onLibBtnClick } from './js/renderHeader';
 import openModalTeam from './js/teamModal';
