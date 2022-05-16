@@ -256,16 +256,25 @@
 }
 
 .checkbox-container {
-  margin-top: 20px;
-  fill: moccasin;
+  position: absolute;
+    top: -30px;
+      right: 50px;
+  fill: var(--btn-hover-background);
   display: flex;
   justify-content: end;
-}
 
+    @media screen and (min-width: 320px) {
+        right: 40px;
+
+          @media screen and (min-width: 768px) {
+              right: 50px;
+
+               
+          }
+    }
+  }
 .dark-mode-icon {
   transition: transform linear 500ms;
-  &:hover,
-  &:focus {
-    transform: rotate(180deg);
   }
-}
+
+

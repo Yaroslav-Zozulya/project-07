@@ -1,10 +1,6 @@
 import 'swiper/swiper-bundle.min.css';
 import './sass/main.scss';
 
-import pagination from './js/pagination/trendingMoviesPagination';
-
-import renderGenres from './js/renderGenres';
-
 import { refs } from './js/refs';
 
 import displayTrandingMovies from './js/displayTrandingMovies';
