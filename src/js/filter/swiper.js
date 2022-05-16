@@ -11,7 +11,7 @@ export default new Swiper('.filter__swiper', {
   observer: true,
   observeParents: true,
   observeSlideChildren: true,
-  // If we need pagination
+  
   pagination: {
     el: '.filter__swiper-pagination',
     dynamicBullets: true,

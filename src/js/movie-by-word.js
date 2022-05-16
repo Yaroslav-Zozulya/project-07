@@ -15,6 +15,7 @@ function appendGallery(data) {
 
 export function findMovies(page) {
   refs.containerMovies.innerHTML = '';
+  document.querySelector('.section__filter').classList.add('visually-hidden');
 
   loader.addLoader();
   API.getMoviesByQuery(refs.input.value, page)
