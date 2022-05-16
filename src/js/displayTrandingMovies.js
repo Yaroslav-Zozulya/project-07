@@ -21,6 +21,10 @@ function displayTrandingMovie(page) {
     page = 1;
   }
 
+  if (localStorage.hasOwnProperty('currentPage')) {
+    page = Number(localStorage.getItem('currentPage'));
+  }
+
   API.getMoviesByTrending(page)
     .then(trendingMoviesPagination)
     .then(renderMovie)

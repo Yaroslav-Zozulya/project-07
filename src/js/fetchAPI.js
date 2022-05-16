@@ -30,4 +30,13 @@ function fetchFilter(args, page = 1) {
   );
 }
 
-export default { getMoviesByTrending, getMoviesByQuery, getMovieById, fetchFilter };
+function getMoviesSlider(page) {
+
+    page += 1;
+    return axios
+      .get(`/3/trending/movie/day?api_key=${AUTH_TOKEN}&page=${ page }`)
+      .then(response => response.data);
+  }
+
+export default { getMoviesByTrending, getMoviesByQuery, getMovieById, fetchFilter, getMoviesSlider };
+

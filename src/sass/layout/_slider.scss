@@ -1,21 +1,23 @@
-.section-slider {
-
-    display: flex;
-    padding-top: 5px;
-
-    // @media screen and (max-width: 767px) {
-    //     padding-top: 20px;
-    // }
+.section-slider{
+    padding-top: 10px;
 }
-
 .slider__swiper {
     width: 100%;
 }
 
 .slider-item {
     width: 140px;
+
+}
+
+.slider-link {
+    height: 100%;
 }
 
 .slider-image {
+    border-radius: 5px;
+
+    object-fit: cover;
     width: 100%;
+
 }
