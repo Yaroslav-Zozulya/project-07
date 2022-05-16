@@ -3,7 +3,8 @@ import renderMovie from './renderMovie';
 import loader from './loader';
 import { darkModeImageText } from '/js/darkMode';
 import { trendingMoviesPagination } from './pagination/trendingMoviesPagination';
-
+import { lazyLoad } from './lazyLoadImg';
+console.log(lazyLoad);
 const ref = {
   containerMovies: document.querySelector('.collection'),
 };
@@ -29,6 +30,7 @@ function displayTrandingMovie(page) {
     .then(trendingMoviesPagination)
     .then(renderMovie)
     .then(appendGallery)
+    .then(lazyLoad)
     .finally(loader.removeLoader);
 }
 
