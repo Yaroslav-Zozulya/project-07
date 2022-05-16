@@ -1,6 +1,6 @@
-import { findMovies } from '../movie-by-word';
-import { checkTotalResults } from './checkTotalResults';
 import { createPaginationConfig } from './createPaginationConfig';
+import { checkTotalResults } from './checkTotalResults';
+import { findMovies } from '../movieByWord';
 
 export function searchPagination(data) {
   checkTotalResults(data);
