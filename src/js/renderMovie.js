@@ -25,19 +25,26 @@ function markUpMovie(
             <a href="" class="movie-link">
               
               <picture class="poster-thumb">
-                    <source
-                        srcset="
-                      ${poster}     1x,
-                       ${poster} 2x
-                        "
-                        type="image/jpeg"
-                    />
-
+                  
+        <source class="lzy_img" media="(min-width: 1200px)" 
+        srcset="${poster} 1x,
+        ${poster} 2x "  type="image/jpeg" width="310" height="450">
+                                                       
+      
+        <source class="lzy_img" media="(min-width: 768px)"
+         srcset="${poster} 1x,
+            ${poster} 2x"  type="image/jpeg" width="335" height="455">
+                                                                    
+                                            
+        <source class="lzy_img" media="(max-width: 767px)"
+         srcset="${poster} 1x,
+         ${poster} 2x"  type="image/jpeg" width="280" height="400">
+                                               
                     <img
-                        src="${poster}"
+                        src="#"
                         alt="${title}"
                         loading="lazy"
-                        class="poster"
+                        class="poster" 
                     />
                 </picture>
                

@@ -38,11 +38,13 @@ export function findMovies(page) {
 }
 function onShowGalleryMovie(event) {
   event.preventDefault();
+
   const value = refs.input.value.trim();
   if (!checkQuery(value)) {
     Notify.failure('Enter only A-z letters or numbers, please');
     return;
   }
   findMovies();
+  refs.form.reset();
 }
 export default onShowGalleryMovie;
