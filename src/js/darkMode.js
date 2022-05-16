@@ -1,5 +1,6 @@
 const footerRef = document.querySelector('.footer');
 const bodyRef = document.querySelector('body');
+const filterRef = document.querySelector('.filter');
 const modalRef = document.querySelector('.film-modal__content');
 const darkModeIcon = document.querySelector('.dark-mode-icon');
 
@@ -44,6 +45,7 @@ function darkModeSwitch() {
 
   darkModeIcon.classList.toggle('dark-mode-icon_style');
   bodyRef.classList.toggle('dark-body');
+  filterRef.classList.toggle('dark');
   footerRef.classList.toggle('dark-footer');
   modalRef.classList.toggle('dark-modal');
 

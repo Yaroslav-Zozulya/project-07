@@ -23,10 +23,10 @@ function getMovieById(id) {
     .then(response => response.data);
 }
 
-function fetchFilter(...args) {
-  const query = args.join('');
+function fetchFilter(args, page = 1) {
+  const query = args.slice(0, 3).join('');
   return axios.get(
-    `3/discover/movie?api_key=${AUTH_TOKEN}&sort_by=popularity.desc&include_adult=false${query}`,
+    `3/discover/movie?api_key=${AUTH_TOKEN}&sort_by=popularity.desc&include_adult=false${query}&page=${page}`,
   );
 }
 

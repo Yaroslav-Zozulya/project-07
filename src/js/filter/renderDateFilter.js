@@ -1,4 +1,4 @@
-import date from '../data/dateFilter.json';
+import date from '../../data/dateFilter.json';
 
 function renderDate() {
   return date.date.map(markupDate);

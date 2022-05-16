@@ -11,6 +11,7 @@ export const refs = {
   librarySection: document.querySelector('.library'),
   header: document.querySelector('.header'),
   formEl: document.querySelector('.form'),
+  filter: document.querySelector('.section__filter'),
   galleryEl: document.querySelector('.gallery'),
   galleryContainerEl: document.querySelector('.gallery > .container'),
   emptyPicture: document.querySelector('.emptyPicture'),
