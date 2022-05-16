@@ -3,7 +3,7 @@ import refs from './refs';
 import renderGenres from './renderGenres';
 import renderDate from './renderDateFilter';
 import renderRating from './renderRatingFilter';
-import filterMovie from './displayFilterMovie';
+import { getData } from './displayFilterMovie';
 
 const selected_genres = [];
 let date_query = '';
@@ -59,6 +59,7 @@ refs.clearFilter.addEventListener('click', e => {
     .forEach(item => item.classList.remove('btn-genre--active'));
   document.querySelector('.date__item--active')?.classList.remove('date__item--active');
   document.querySelector('.rating__item--active')?.classList.remove('rating__item--active');
+  toggleDropdownHidden(e.target);
   setDataToRender();
 });
 
@@ -80,7 +81,7 @@ function onDropdownOpen(e) {
   const dropdown = select.querySelector('.select__dropdown');
   const header = select.querySelector('.select__header');
   const icon = select.querySelector('.select__svg');
-  toggleDropdownHidden(dropdown, header);
+  toggleDropdownHidden(dropdown);
 
   header.classList.toggle('select__header--active');
   dropdown.classList.toggle('is-hidden');
@@ -134,7 +135,7 @@ function onDocumentClick(event) {
 }
 
 function setDataToRender() {
-  filterMovie(genres_query, date_query, rating_query);
+  getData(genres_query, date_query, rating_query);
   isClearActive();
 }
 //Змінює текст в p.select__extra
@@ -144,7 +145,7 @@ function changeTextExtraData(target) {
   isClearActive();
 }
 
-function toggleDropdownHidden(dropdown, header) {
+function toggleDropdownHidden(dropdown) {
   const dropdownContainesHiddenArr = [];
 
   refs.selectDropdownAll.forEach(elem => {
@@ -168,6 +169,7 @@ function toggleDropdownHidden(dropdown, header) {
           .classList.toggle('select__svg--rotate');
       }
     });
+    document.removeEventListener('click', onDocumentClick);
   }
   isClearActive();
 }
