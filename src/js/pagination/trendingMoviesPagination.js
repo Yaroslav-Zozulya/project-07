@@ -1,8 +1,6 @@
-import displayTrandingMovie from '../displayTrandingMovies';
-import { displayFilterMovie } from '../filter/displayFilterMovie';
 import { createPaginationConfig } from './createPaginationConfig';
-import { findMovies } from '../movie-by-word';
 import { checkTotalResults } from './checkTotalResults';
+import displayTrandingMovie from '../displayTrandingMovies';
 
 export function trendingMoviesPagination(data) {
   checkTotalResults(data);
@@ -22,17 +20,6 @@ export function filterPagination(data) {
   pagination.on('afterMove', event => {
     const page = event.page;
     displayFilterMovie(page);
-  });
-
-  return data;
-}
-
-export function searchPagination(data) {
-  checkTotalResults(data);
-  const pagination = createPaginationConfig(data);
-  pagination.on('afterMove', event => {
-    const page = event.page;
-    findMovies(page);
   });
 
   return data;

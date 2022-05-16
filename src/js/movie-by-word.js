@@ -6,7 +6,7 @@ import checkQuery from './helpers/checkQuery';
 import loader from './loader';
 import { refs } from './refs';
 import { darkModeImageText } from '/js/darkMode';
-import { searchPagination } from './pagination/trendingMoviesPagination';
+import { searchPagination } from './pagination/searchPagination';
 
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
