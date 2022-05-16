@@ -4,6 +4,8 @@ import { darkModeModal } from '/js/darkMode';
 import modalСloser from './modalCloser';
 import { addToWatched, isInWatched, removeFromWatched } from './watched';
 import { addToQueue, isInQueue, removeFromQueue } from './queue';
+import { refs } from './refs';
+
 
 const ref = {
   collectionMovie: document.querySelector('.collection'),
@@ -12,6 +14,8 @@ const ref = {
 };
 
 ref.collectionMovie.addEventListener('click', onOpenModal);
+
+
 
 async function onOpenModal(event) {
   event.preventDefault();
