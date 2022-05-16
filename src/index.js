@@ -1,7 +1,6 @@
 import 'swiper/swiper-bundle.min.css';
 import './sass/main.scss';
 
-
 import pagination from './js/pagination/trendingMoviesPagination';
 
 import renderGenres from './js/filter/renderGenres';
@@ -18,7 +17,6 @@ import returner from './js/returner';
 import { darkMode, darkModeCheck } from './js/darkMode';
 
 import filter from './js/filter/filter';
-
 
 refs.logo.addEventListener('click', displayTrandingMovies);
 refs.form.addEventListener('submit', renderMovieByQuery);
