@@ -29,3 +29,4 @@ displayTrandingMovies();
 filter();
 returner();
 darkModeCheck();
+getFilmSlider();
