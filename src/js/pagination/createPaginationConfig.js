@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+// import 'tui-pagination/dist/tui-pagination.css';
 import { refs } from '../refs';
 
 export function createPaginationConfig(data) {
@@ -10,6 +10,7 @@ export function createPaginationConfig(data) {
     itemsPerPage: 20,
     visiblePages: 5,
     page: page,
+    
   };
 
   return new Pagination(refs.pagination, options);

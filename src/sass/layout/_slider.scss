@@ -1,0 +1,21 @@
+.section-slider {
+
+    display: flex;
+    padding-top: 5px;
+
+    // @media screen and (max-width: 767px) {
+    //     padding-top: 20px;
+    // }
+}
+
+.slider__swiper {
+    width: 100%;
+}
+
+.slider-item {
+    width: 140px;
+}
+
+.slider-image {
+    width: 100%;
+}
