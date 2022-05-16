@@ -10,13 +10,13 @@ refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   refs.sliderSection.classList.add('is-hidden');
-  
+
   onLibBtnClick();
   renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
   darkModeImageText();
 }
 
-onHomeBtnClick
+onHomeBtnClick;
 
 function onQueueBtnClick() {
   refs.queue.classList.add('library__btn--currently');
@@ -72,4 +72,7 @@ function displayEmptyLib() {
   refs.containerMovies.innerHTML = `<li class="center-img"><img src=${imgEmpty} alt="no-result-to-show" loading="lazy" class="emptyPicture" /></li>`;
 }
 
+
 export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal, displayEmptyLib };
+
+
