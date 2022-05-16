@@ -1,17 +1,14 @@
-import Swiper, { Navigation, Pagination, EffectCoverflow } from 'swiper';
+import Swiper, { Navigation, Pagination} from 'swiper';
 Swiper.use([Pagination, Navigation]);
 const swiper = new Swiper('.team__swiper', {
   // Optional parameters
   loop: true,
   centeredSlidesBounds: true,
   spaceBetween: 10,
-  // centeredSlides: true,
   pagination: {
     el: '.team__swiper-pagination',
     clickable: true,
   },
-  // slidesPerView: 1,
-
   breakpoints: {
     1024: {
       spaceBetween: 10,
@@ -22,7 +19,6 @@ const swiper = new Swiper('.team__swiper', {
       slidesPerView: 2,
       slidesPerGroup: 1,
       spaceBetween: 10,
-      // slidesPerView: 1,
     },
   },
 });
