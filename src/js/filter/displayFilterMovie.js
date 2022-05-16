@@ -2,6 +2,7 @@ import API from '../fetchAPI';
 import renderMovie from '../renderMovie';
 import loader from '../loader';
 import { filterPagination } from '../pagination/filterPagination';
+import { darkModeImageText } from '../darkMode';
 
 const ref = {
   containerMovies: document.querySelector('.collection'),
@@ -28,6 +29,7 @@ function displayFilterMovie(page) {
       return renderMovie(data);
     })
     .then(appendGallery)
+    .then(darkModeImageText)
     .finally(loader.removeLoader);
 }
 export { getData, displayFilterMovie };
