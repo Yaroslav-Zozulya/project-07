@@ -273,13 +273,8 @@
           }
     }
   }
-
-
 .dark-mode-icon {
   transition: transform linear 500ms;
-  &:hover,
-  &:focus {
-    transform: rotate(180deg);
   }
-}
+
 
