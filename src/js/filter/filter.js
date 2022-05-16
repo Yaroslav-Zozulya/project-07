@@ -183,8 +183,23 @@ function isClearActive() {
   return;
 }
 
-export default function filter() {
+export function filter() {
   renderDate();
   renderGenres();
   renderRating();
+}
+
+export function clearFilter() {
+  date_query = '';
+  rating_query = '';
+  genres_query = '';
+  selected_genres.length = 0;
+  document.querySelectorAll('.select__extra').forEach(item => (item.innerHTML = ''));
+  document
+    .querySelectorAll('.btn-genre--active')
+    .forEach(item => item.classList.remove('btn-genre--active'));
+  document.querySelector('.date__item--active')?.classList.remove('date__item--active');
+  document.querySelector('.rating__item--active')?.classList.remove('rating__item--active');
+  document.removeEventListener('click', onDocumentClick);
+  toggleFilter();
 }

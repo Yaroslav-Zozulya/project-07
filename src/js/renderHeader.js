@@ -1,17 +1,19 @@
 import { refs } from './refs';
 import { onQueueBtnClick, onWatchedBtnClick } from './renderMyLib';
-
+import { clearFilter } from './filter/filter';
 
 export function onHomeBtnClick() {
   refs.home.classList.add('nav__btn--currently');
   refs.library.classList.remove('nav__btn--currently');
   refs.header.classList.remove('header--library');
   refs.librarySection.classList.add('visually-hidden');
-  refs.filter.classList.remove('visually-hidden');
   refs.formEl.classList.remove('visually-hidden');
   refs.watched.removeEventListener('click', onWatchedBtnClick);
   refs.queue.removeEventListener('click', onQueueBtnClick);
   refs.sliderSection.classList.remove('is-hidden');
+
+  clearFilter();
+  refs.filter.classList.remove('visually-hidden');
 }
 
 export function onLibBtnClick() {
@@ -26,5 +28,4 @@ export function onLibBtnClick() {
   refs.watched.addEventListener('click', onWatchedBtnClick);
   refs.queue.addEventListener('click', onQueueBtnClick);
   refs.logo.addEventListener('click', onHomeBtnClick);
-  
 }

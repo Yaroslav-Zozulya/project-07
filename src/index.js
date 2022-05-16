@@ -16,7 +16,7 @@ import getFilmSlider from './js/slider';
 import returner from './js/returner';
 import { darkMode, darkModeCheck } from './js/darkMode';
 
-import filter from './js/filter/filter';
+import { filter } from './js/filter/filter';
 
 refs.logo.addEventListener('click', displayTrandingMovies);
 refs.form.addEventListener('submit', renderMovieByQuery);
