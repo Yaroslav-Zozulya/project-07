@@ -1,7 +1,7 @@
 import API from '../fetchAPI';
 import renderMovie from '../renderMovie';
 import loader from '../loader';
-import { filterPagination } from '../pagination/trendingMoviesPagination';
+import { filterPagination } from '../pagination/filterPagination';
 
 const ref = {
   containerMovies: document.querySelector('.collection'),
