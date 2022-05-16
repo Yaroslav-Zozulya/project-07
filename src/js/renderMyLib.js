@@ -9,15 +9,15 @@ refs.library.addEventListener('click', onMyLibBtnClick);
 
 function onMyLibBtnClick() {
   onLibBtnClick();
-  renderMyLib('watched');
-  darkModeImageText() //рендер watched movies т.к. кнопка watched активна по умолчанию
+  renderMyLib('watched'); //рендер watched movies т.к. кнопка watched активна по умолчанию
+  darkModeImageText();
 }
 
 function onQueueBtnClick() {
   refs.queue.classList.add('library__btn--currently');
   refs.watched.classList.remove('library__btn--currently');
   renderMyLib('queue');
-  darkModeImageText()
+  darkModeImageText();
 }
 
 function onWatchedBtnClick() {
@@ -27,7 +27,7 @@ function onWatchedBtnClick() {
 
   refs.queue.classList.remove('library__btn--currently');
   renderMyLib('watched');
-  darkModeImageText()
+  darkModeImageText();
 }
 
 function renderMyLib(localStorData) {
@@ -42,6 +42,7 @@ function renderMyLib(localStorData) {
   try {
     refs.containerMovies.innerHTML = '';
     const parseDataStore = JSON.parse(dataStore);
+    console.log(parseDataStore);
     const markup = renderMovie(parseDataStore, true);
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
@@ -53,9 +54,11 @@ function renderMyLibOnCloseModal() {
   if (refs.library.classList.contains('nav__btn--currently')) {
     if (refs.watched.classList.contains('library__btn--currently')) {
       renderMyLib('watched');
+      darkModeImageText();
     }
     if (refs.queue.classList.contains('library__btn--currently')) {
       renderMyLib('queue');
+      darkModeImageText();
     }
   }
 }
