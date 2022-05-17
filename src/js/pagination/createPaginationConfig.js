@@ -1,5 +1,4 @@
 import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
 import { refs } from '../refs';
 
 export function createPaginationConfig(data) {
