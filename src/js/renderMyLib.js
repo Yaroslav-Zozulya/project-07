@@ -4,6 +4,7 @@ import { onHomeBtnClick, onLibBtnClick } from './renderHeader';
 import { Notify } from 'notiflix';
 import imgEmpty from '../images/no-result-to-show.png';
 import { darkModeImageText } from '/js/darkMode';
+import { lazyLoad } from './lazyLoadImg';
 
 refs.home.addEventListener('click', onHomeBtnClick);
 refs.library.addEventListener('click', onMyLibBtnClick);
@@ -47,9 +48,9 @@ function renderMyLib(localStorData) {
   try {
     refs.containerMovies.innerHTML = '';
     const parseDataStore = JSON.parse(dataStore);
-    console.log(parseDataStore);
     const markup = renderMovie(parseDataStore, true);
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
+    lazyLoad();
   } catch (error) {
     console.error(error);
   }
@@ -77,7 +78,10 @@ Notify.init({
   useIcon: false,
 });
 
-
-export { renderMyLib, onQueueBtnClick, onWatchedBtnClick, renderMyLibOnCloseModal, displayEmptyLib };
-
-
+export {
+  renderMyLib,
+  onQueueBtnClick,
+  onWatchedBtnClick,
+  renderMyLibOnCloseModal,
+  displayEmptyLib,
+};

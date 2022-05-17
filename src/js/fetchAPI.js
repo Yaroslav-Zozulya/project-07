@@ -40,4 +40,3 @@ function getMoviesSlider(page) {
 
 
 export default { getMoviesByTrending, getMoviesByQuery, getMovieById, fetchFilter, getMoviesSlider };
-

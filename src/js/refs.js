@@ -20,4 +20,8 @@ export const refs = {
   themBtn: document.querySelector('.dark-mode-icon'),
   sliderList: document.querySelector('.slider-list'),
   sliderSection: document.querySelector('.section-slider'),
+  openModalBtn: document.querySelector('.footer-developed-by-link'),
+  closeModalBtn: document.querySelector('.btn-close'),
+  modalBackdrop: document.querySelector('.backdrop'),
+  modal: document.querySelector('.modal'),
 };

@@ -1,5 +1,5 @@
 .section {
-  padding-top: 60px;
+  padding-top: 26px;
   padding-bottom: 60px;
 
   @media screen and (max-width: 767px) {
@@ -36,7 +36,7 @@
   }
   @media screen and (min-width: 1024px) {
     flex-basis: calc(100% / 3 - 16px);
-    width: 310px;
+    width: 309px;
     margin-left: 16px;
   }
 }
@@ -117,11 +117,15 @@
 }
 
 .movie-title {
+  width: 99%;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   text-transform: uppercase;
   color: var(--main-text-color);
+  white-space: nowrap;
+  overflow-x:hidden;
+  
 }
 
 .movie-description {
@@ -140,13 +144,13 @@
 
 .visually-hidden {
   position: absolute;
-    white-space: nowrap;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    margin: -1px;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }

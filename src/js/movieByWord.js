@@ -7,6 +7,8 @@ import loader from './loader';
 import { refs } from './refs';
 import { darkModeImageText } from '/js/darkMode';
 import { searchPagination } from './pagination/searchPagination';
+import { lazyLoad } from './lazyLoadImg';
+
 function appendGallery(data) {
   refs.containerMovies.innerHTML = data;
   darkModeImageText();
@@ -31,6 +33,7 @@ export function findMovies(page) {
       }
       appendGallery(data);
     })
+    .then(lazyLoad)
     .catch(error => {
       console.log(error);
     })
@@ -39,6 +42,7 @@ export function findMovies(page) {
 }
 function onShowGalleryMovie(event) {
   event.preventDefault();
+
   const value = refs.input.value.trim();
   if (!checkQuery(value)) {
     Notify.failure('Enter only A-z letters or numbers, please');
