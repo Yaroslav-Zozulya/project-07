@@ -1,5 +1,6 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
 import { darkModeTeamModal } from './darkMode';
+import { refs } from './refs';
 Swiper.use([Pagination, Navigation]);
 const swiper = new Swiper('.team__swiper', {
   // Optional parameters
@@ -24,14 +25,6 @@ const swiper = new Swiper('.team__swiper', {
   },
 });
 
-const refs = {
-  openModalBtn: document.querySelector('.footer-developed-by-link'),
-  closeModalBtn: document.querySelector('.btn-close'),
-  modalBackdrop: document.querySelector('.backdrop'),
-  modal: document.querySelector('.modal'),
-};
-
-refs.openModalBtn.addEventListener('click', openModalTeam);
 refs.closeModalBtn.addEventListener('click', modalClose);
 
 function openModalTeam(event) {

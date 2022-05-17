@@ -26,11 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "@vimeo/player": "^2.16.4",
-    "animate.css": "^4.1.1",
     "axios": "^0.27.2",
     "notiflix": "^3.2.5",
-    "simplelightbox": "^2.10.3",
     "swiper": "^8.1.4",
     "tui-pagination": "^3.4.1"
   }
