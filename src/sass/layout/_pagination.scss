@@ -16,28 +16,27 @@
   overflow: hidden;
 }
 
-// .tui-pagination {
-//     height: 40px;
-//     width: 500px;
-//     margin: 0px;
 
-//     display: flex;
-//     justify-content: center;
-//     align-content: center;
-//     align-self: center;
-//     align-items: center;
+.tui-pagination {
+    height: 28px;
+    margin: 0;
+  
+    line-height: 1.33;
+    text-align: center;
+    font-size: 12;
 
-//     line-height: 1.33;
-//     // text-align: center;
-//     font-size: 12;
-// }
+    
+    @media screen and (min-width: 768px){
+      height: 40px;
+    }
+}
 
 .tui-pagination .tui-page-btn {
   display: inline-block;
   position: relative;
-  width: 40px;
-  height: 40px;
-  padding-top: 12px;
+  width: 28px;
+  height: 28px;
+  padding-top: 8px;
   margin-left: 0;
 
   color: var(--main-text-color);
@@ -50,6 +49,13 @@
 
   border: transparent;
   border-radius: 5px;
+
+  @media screen and (min-width: 768px){
+        width: 40px;
+          height: 40px;
+          padding-top: 12px;
+    }
+ 
 }
 
 // .tui-pagination .tui-page-btn:hover {
@@ -101,7 +107,7 @@
 .tui-pagination .tui-prev-is-ellip,
 .tui-pagination .tui-next-is-ellip {
   overflow: hidden;
-  height: 40px;
+  height: 28px;
   padding: 0;
   margin: 0;
   font-size: 12;
@@ -109,6 +115,10 @@
   white-space: nowrap;
   font-weight: normal;
   border: transparent;
+
+  @media screen and (min-width: 768px){
+    height: 40px;
+  }
 }
 
 .tui-pagination .tui-prev-is-ellip {
@@ -141,7 +151,11 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 0px;
-  margin-top: 15px;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+      margin-top: 15px;
+    }
 }
 
 .tui-pagination .tui-prev-is-ellip,
@@ -162,6 +176,7 @@
   width: 11px;
   height: 10px;
   background-position: 0px 0px;
+
 }
 
 .tui-pagination .tui-ico-prev {
@@ -185,9 +200,14 @@
 .tui-pagination .tui-ico-ellip {
   width: 10px;
   height: 2px;
-  margin-top: 20px;
+  margin-top: 14px;
   vertical-align: middle;
   background-position: 0px -24px;
+
+
+  @media screen and (min-width: 768px) {
+      margin-top: 20px;
+    }
 }
 
 .tui-pagination .tui-is-disabled:hover {
