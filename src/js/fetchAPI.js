@@ -38,5 +38,6 @@ function getMoviesSlider(page) {
       .then(response => response.data);
   }
 
+
 export default { getMoviesByTrending, getMoviesByQuery, getMovieById, fetchFilter, getMoviesSlider };
 

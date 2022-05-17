@@ -5,7 +5,7 @@ import { refs } from './refs';
 import onOpenModal from './renderModal';
 Swiper.use([Pagination, Navigation, Autoplay]);
 
-let page = 1;
+
 
 function murkUpSlider({ id, poster_path, vote_average, title }) {
    let poster = poster_path
@@ -32,54 +32,82 @@ function murkUpSlider({ id, poster_path, vote_average, title }) {
          </li>`
         }
 }
-function appendGallery(data) {
-  refs.sliderList.innerHTML = data;
-  const swiperSlider = new Swiper('.slider-swiper', {
-  initialSlide :0,
+
+const options = {
+
+  initialSlide: 0,
   Observer: true, // При изменении самого swiper или его дочерних элементов swiper автоматически инициализируется
   Parents: true, // Swiper автоматически инициализируется при изменении родительского элемента swiper
-  onSlideChangeEnd: function(swiper){
-        swiper.update (); // Обновляем Swiper, этот метод включает в себя методы updateContainerSize, updateSlidesSize, updateProgress, updatePagination, updateClasses. То есть изменение данных заключается в повторной инициализации свайпера;
-       swiperSlider.startAutoplay (); // Перезапуск автоматического переключения;
-        swiperSlider.reLoop (); // Пересчитываем количество слайдов, которые нужно зациклить. Это нужно, когда вы меняете параметр slidesPerView, и его нужно добавлять, когда вам нужно автоматически повернуть;
-},
-       loop: true,
-       slidesPerView: 6,
-       spaceBetween: 5,
-      autoplay: {
-        delay: 1500,
-        stopOnLastSlide: false,
-        disableOnInteraction: false,
+  onSlideChangeEnd: function (swiper) {
+    swiper.update(); // Обновляем Swiper, этот метод включает в себя методы updateContainerSize, updateSlidesSize, updateProgress, updatePagination, updateClasses. То есть изменение данных заключается в повторной инициализации свайпера;
+    swiperSlider.startAutoplay(); // Перезапуск автоматического переключения;
+    swiperSlider.reLoop(); // Пересчитываем количество слайдов, которые нужно зациклить. Это нужно, когда вы меняете параметр slidesPerView, и его нужно добавлять, когда вам нужно автоматически повернуть;
   },
-    on: {
-      init() {
-          this.el.addEventListener('mouseenter', () => {
-            this.autoplay.stop();
-          });
-          this.el.addEventListener('mouseleave', () => {
-            this.autoplay.start();
-          });
-        }
-    },
-  })
+  loop: true,
+  slidesPerView: 6,
+  spaceBetween: 5,
+  autoplay: {
+    delay: 1500,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+  },
+  on: {
+    init() {
+      this.el.addEventListener('mouseenter', () => {
+        this.autoplay.stop();
+      });
+      this.el.addEventListener('mouseleave', () => {
+        this.autoplay.start();
+      });
+    }
+  },
+};
+
+
+
+function appendGallery(data) {
+  refs.sliderList.innerHTML = data;
+  const swiperSlider = new Swiper('.slider-swiper', options);
   swiperSlider.on('click', () => {
     refs.sliderList.addEventListener('click', onOpenModal);
-});
+  });
 }
+
+// let newArray = [];
+
 function getFilmSlider() {
- if (window.innerWidth <= 768) {
-     return;
+    
+  if (window.innerWidth < 768) {
+    return;
   }
-    API.getMoviesSlider(page)
-        .then(data => {return renderMovie(data)})
+  
+  // for (let page = 1; page <= 5; page += 1) {
+    
+    API.getMoviesByTrending(5)
+      .then(data => {
+        // newArray.push(data);  
+        // console.log(newArray);
+        return renderMovie(data)
+      })
       .then(appendGallery)
       .catch(error => {
         console.log(error);
       });
+  
+  // }
 }
+
+
 function renderMovie(data) {
   let dataRender = data.results || data;
     return dataRender.map(d => murkUpSlider(d)).join(' ');
 }
+
+
+// function renderMovie(data) {
+//      newArray = data.results || data;
+//     return newArray.map(d => console.log(murkUpSlider(d))).join(' ');
+// }
+
 export default getFilmSlider;
 

@@ -1,5 +1,14 @@
-.section-slider{
-    padding-top: 10px;
+.section-slider {
+
+    display: flex;
+    padding-top: 5px;
+
+    @media screen and (max-width: 767px) {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+    }
 }
 .slider__swiper {
     width: 100%;

@@ -34,6 +34,7 @@ export function findMovies(page) {
     .catch(error => {
       console.log(error);
     })
+    .then(removeSlider)
     .finally(loader.removeLoader);
 }
 function onShowGalleryMovie(event) {
@@ -45,4 +46,10 @@ function onShowGalleryMovie(event) {
   }
   findMovies();
 }
+
+function removeSlider() {
+  refs.sliderSection.classList.add('is-hidden');
+}
+
+
 export default onShowGalleryMovie;
