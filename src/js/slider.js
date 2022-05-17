@@ -1,4 +1,3 @@
-
 import API from './fetchAPI';
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 import { refs } from './refs';
@@ -15,13 +14,14 @@ function murkUpSlider({ id, poster_path, vote_average, title }) {
             return `<li class="swiper-item swiper-slide movie-card" data-id=${id}>
             <a href="" class="slider-link">
                      <picture>
-                     <source
-                      srcset="
-                      ${poster }     1x,
-                      ${poster } 2x
-                       "
-                       type="image/jpeg"
-                    />
+                        <source class="lzy_img" media="(min-width: 1200px)" 
+                        srcset="${poster} 1x,
+                        ${poster} 2x "  type="image/jpeg" width="155" height="233">
+                                                       
+      
+                         <source class="lzy_img" media="(min-width: 768px)"
+                         srcset="${poster} 1x,
+                         ${poster} 2x"  type="image/jpeg" width="115" height="170">
                     <img class="slider-image"
                         src="${poster }"
                         alt="${title}"
@@ -66,20 +66,20 @@ function appendGallery(data) {
     refs.sliderList.addEventListener('click', onOpenModal);
 });
 }
-function getFilmSlider() {
- if (window.innerWidth <= 768) {
-     return;
+function getFilmSlider(page) {
+  if (window.innerWidth < 768) {
+    return;
   }
-    API.getMoviesSlider(page)
-        .then(data => {return renderMovie(data)})
+    API.getMoviesByTrending(page)
+      .then(data => { return renderMovie(data) })
       .then(appendGallery)
       .catch(error => {
         console.log(error);
       });
-}
+  }
+
 function renderMovie(data) {
   let dataRender = data.results || data;
     return dataRender.map(d => murkUpSlider(d)).join(' ');
 }
 export default getFilmSlider;
-
