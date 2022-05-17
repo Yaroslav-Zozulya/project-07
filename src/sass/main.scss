@@ -5,7 +5,6 @@
 // BASE
 @import './base/normalize';
 @import './base/reset';
-@import './base/fonts';
 
 //COMPONENTS
 @import './components/container';
@@ -28,4 +27,3 @@
 @import './layout/slider';
 @import './layout/team-modal';
 @import '../../node_modules/swiper/swiper-bundle.css';
-
