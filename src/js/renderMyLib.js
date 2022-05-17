@@ -48,7 +48,6 @@ function renderMyLib(localStorData) {
   try {
     refs.containerMovies.innerHTML = '';
     const parseDataStore = JSON.parse(dataStore);
-    console.log(parseDataStore);
     const markup = renderMovie(parseDataStore, true);
     refs.containerMovies.insertAdjacentHTML('beforeend', markup);
     lazyLoad();

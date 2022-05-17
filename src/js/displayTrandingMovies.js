@@ -15,7 +15,6 @@ function appendGallery(data) {
 
 function displayTrandingMovie(page) {
   loader.addLoader();
-
   if (!Number.isInteger(page)) {
     page = 1;
   }

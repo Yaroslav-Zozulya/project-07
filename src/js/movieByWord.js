@@ -48,6 +48,5 @@ function onShowGalleryMovie(event) {
     return;
   }
   findMovies();
-  refs.form.reset();
 }
 export default onShowGalleryMovie;
