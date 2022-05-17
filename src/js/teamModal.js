@@ -1,4 +1,5 @@
-import Swiper, { Navigation, Pagination} from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
+import { darkModeTeamModal } from './darkMode';
 Swiper.use([Pagination, Navigation]);
 const swiper = new Swiper('.team__swiper', {
   // Optional parameters
@@ -39,7 +40,7 @@ function openModalTeam(event) {
   document.addEventListener('keydown', closeOnEsc);
   refs.modalBackdrop.addEventListener('click', closeOnBackdrop);
   refs.modalBackdrop.classList.remove('is-hidden');
-  darkModeTeamModal()
+  darkModeTeamModal();
 }
 
 function modalClose(event) {
