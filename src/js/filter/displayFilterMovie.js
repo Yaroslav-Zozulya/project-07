@@ -3,6 +3,7 @@ import renderMovie from '../renderMovie';
 import loader from '../loader';
 import { filterPagination } from '../pagination/filterPagination';
 import { darkModeImageText } from '../darkMode';
+import { lazyLoad } from '../lazyLoadImg';
 
 const ref = {
   containerMovies: document.querySelector('.collection'),
@@ -29,6 +30,7 @@ function displayFilterMovie(page) {
       return renderMovie(data);
     })
     .then(appendGallery)
+    .then(lazyLoad)
     .then(darkModeImageText)
     .finally(loader.removeLoader);
 }

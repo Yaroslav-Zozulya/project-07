@@ -5,6 +5,7 @@
 // BASE
 @import './base/normalize';
 @import './base/reset';
+@import './base/fonts';
 
 //COMPONENTS
 @import './components/container';
@@ -13,6 +14,7 @@
 @import './components/select';
 @import './components/filter-swiper';
 @import './components/date';
+@import './components/heartBeat';
 
 //LAYOUT
 @import './layout/header';

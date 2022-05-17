@@ -24,22 +24,21 @@ function markUpMovie(
   return `<li class="movie-card" data-id=${id}>
             <a href="" class="movie-link">
               
+
               <picture class="poster-thumb">
                   
         <source class="lzy_img" media="(min-width: 1200px)" 
-        srcset="${poster} 1x,
-        ${poster} 2x "  type="image/jpeg" width="310" height="450">
+        srcset=""  type="image/jpeg" width="310" height="450"  data-src="${poster} 1x,${poster} 2x">
                                                        
       
         <source class="lzy_img" media="(min-width: 768px)"
-         srcset="${poster} 1x,
-            ${poster} 2x"  type="image/jpeg" width="335" height="455">
+         srcset=""  type="image/jpeg" width="335" height="455"  data-src= "${poster} 1x,${poster} 2x">
                                                                     
                                             
         <source class="lzy_img" media="(max-width: 767px)"
-         srcset="${poster} 1x,
-         ${poster} 2x"  type="image/jpeg" width="280" height="400">
+         srcset=""  type="image/jpeg" width="280" height="400"  data-src= "${poster} 1x,${poster} 2x">
                                                
+
                     <img
                         src="#"
                         alt="${title}"
